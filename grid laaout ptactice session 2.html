@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 600px;
+            height: 600px;
+            border: 2px solid red;
+            display: grid;
+            grid-template-rows: 150px 150px 150px;
+            grid-template-columns: 100px 100px 200px;
+            grid-row: 20px;
+            justify-content: center;
+            align-content: end;
+            align-items: center;
+            justify-items:center;
+            
+        }
+        div{
+            /* display: grid; */
+        }
+        #div1 {
+            background-color: rgb(123, 52, 52);
+            /* align-items: center;
+            justify-items: center; */
+
+        }
+
+        #div2 {
+            background-color: rgb(38, 38, 136);
+            align-items: center;
+        justify-items: center;
+        }
+
+        #div3 {
+            background-color: rgb(255, 82, 82);
+            align-items: center;
+        justify-items: center;
+        }
+
+        #div4 {
+            background-color: aqua;
+
+        }
+
+        #div5 {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main id="container">
+        <div id="div1" >
+            <p>Lorem, ipsum dolor sit deserunt.</p>
+        </div>
+        <div id="div2">DIv2</div>
+        <div id="div3" style="display:grid; align-items: center;">DIv3</div>
+        <div id="div4">DIv4</div>
+        <div id="div5">DIv5</div>
+    </main>
+</body>
+
+</html>

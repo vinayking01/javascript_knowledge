@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes mycolorbox {
+            1%{
+                background-color: black;
+                box-shadow: 0px -10px 13px 5px grey;
+
+            }
+             25%{
+                transform: translateY(-300px);
+                background-color: red;
+                
+             }
+             35%{
+                transform: translateY(0px);
+                box-shadow: 0px -10px 13px 5px grey;
+             }
+             50%{
+                transform: translateY(-200px);
+                background-color: yellow;
+             }
+             63%{
+                transform: translateY(0px);
+                box-shadow: 0px -10px 13px 5px grey;
+             }
+             83%{
+                transform: translateY(-100px);
+                background-color: green;
+             }
+             100%{
+                transform: translateY(0px);
+                box-shadow: 0px -10px 13px 5px grey;
+
+             }
+
+        }
+        @keyframes myobject {
+            1%{
+                box-shadow: 0px -10px 10px 2px grey;
+
+            }
+             25%{
+                /* box-shadow: opx 0px 0px 0px red; */
+             }
+             35%{
+                
+                box-shadow: 0px -10px 13px 5px grey;
+             }
+             50%{
+                box-shadow: opx 0px 0px 0px;
+             }
+             63%{
+                
+                box-shadow: 0px -10px 13px 5px grey;
+             }
+             83%{
+                box-shadow: opx 0px 0px 0px;
+             }
+             100%{
+                box-shadow: 0px -10px 13px 5px grey;
+
+             }
+
+        }
+         #box1{
+            height:100px;
+            width:100px;
+            position: absolute;
+            top: 60%;
+            left: 20%;
+            background-color: aqua;
+            border-radius: 200px;
+            
+        }
+        #box1:hover{
+            animation: mycolorbox 10s ease-in-out infinite ;  
+        }
+        #box2{
+            background-color:burlywood; 
+            width: 100px;
+            height: 200px; 
+            position: absolute; 
+            animation: myobject 5s ease-in-out infinite;
+            top: 72%; 
+            left: 20%;
+           
+        } 
+
+
+    </style>
+</head>
+<body>
+    <div id="box1" >
+        <h1 style="text-align: center; font-size: small;" >Bouncing ball</h1>
+    </div>
+    <div id="box2">
+
+    </div>
+</body>
+</html>
