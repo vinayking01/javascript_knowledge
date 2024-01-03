@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       *{
+        margin: 0;
+        padding: 0;
+       } 
+       main{
+        border: 2px solid red;
+        width: 70%;
+        margin: 50px auto;
+        display: grid;
+        grid-template-rows: 130px 200px 200px 130px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 40px;
+        /* grid-template-columns: ; */
+        /* align-items: center; */
+        /* justify-items:center ;
+         */
+
+       }
+       .div1{
+        background-color: red;
+        grid-area: 1 / 1 / 2 / -1;
+       }
+       .div2{
+        background-color: blue;
+        grid-area: 2 / 1 / span 2/ 2;
+    }
+    .div3{
+        background-color: rgb(255, 82, 82);
+        
+    }
+    .div4{
+        background-color: aqua;
+       
+    }
+    .div5{
+        background-color: black;
+    }
+    .div6{
+        background-color: green;
+        grid-column: 2 / -1;
+    }
+    .div7{
+        background-color: cornflowerblue;
+        grid-area: 4 / 1 / -1 / -1;
+    }
+    </style>
+</head>
+<body>
+    <main>
+        <div class=" div1">div1</div>
+        <div class=" div2">div2</div>
+        <div class=" div3">div3</div>
+        <div class=" div4">div4</div>
+        <div class=" div5">div5</div>
+        <div class=" div6">div6</div>
+        <div class="div7">div7</div>
+    </main>
+</body>
+</html>
