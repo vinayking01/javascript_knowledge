@@ -1,0 +1,63 @@
+ <!-- Events  - it is used to call the fcuntion when some event triggers 
+ section 1️⃣ 4 ways of writing Events in JavaScript
+
+ // 1: using inline events alert();
+ // 2: By Calling a funcion (We already seen and most common way of writing) 
+ // 3: using Inline events (HTML onclick="" property and element.onclick)
+ // 4: using Event Listeners (addEventListener and IE's attachEvent) -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        border: 2px solid red;
+    }
+</style>
+<body>
+     <!-- 
+    These are some basic events which are always used inside the HTML. Once oncs of using these events is it unnecceasary addthe text to our HTML file. We will later see the events which directly access thorugh javascript.
+    1. Click( onclick )
+    2. Double Click(ondblclick)
+    3. Right Click ( oncontextmenu)
+    4.  Mouse Hover (onmouseenter)
+    5. Mouse out(onmouseout)
+    6. Mouse Down (onmouseDown)
+    7. Mouse Up(onmouseup)
+    8. Key Press(onkeypress)
+    9. Key Up(onekeyup)
+    10. Load(onload)
+    11. Unload(onunload)
+    12. Resize(onresize)
+    13. Scroll(oncscroll) 
+    These events are used with tag in css.
+    -->
+    <div>
+        <h1 onmousedown=enter()>My heading</h1>
+    </div>
+    <p ondblclick="hide()" id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat facere provident obcaecati aliquid perferendis culpa accusamus quod expedita optio fuga.</p>
+    <div>
+        <h2>The end </h2>
+    </div>
+    <div>
+        <button onclick="hello()">Click Me</button>
+    </div>
+    <script>
+        function hello()
+        {
+            alert("Hey you are Back!");
+        }
+        function hide()
+        {
+            document.getElementById("para").innerHTML ="";
+        }
+        function enter()
+        {
+            document.querySelector('h1').style.color = "red";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+ <!-- AddEvent Listener Methods - EventTarget interface sets up a function that will be called whenever the specified event is delivered to the target. Common targets are Element , or its children, Document -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <style>
+     div {
+         border: 2px solid red;
+     }
+ </style>
+ <body>
+      <!-- 
+
+     -->
+     <div>
+         <h1 id="head1">My heading</h1>
+     </div>
+     <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat facere provident obcaecati aliquid perferendis culpa accusamus quod expedita optio fuga.</p>
+     <div>
+         <h2>The end </h2>
+     </div>
+     <div>
+         <button id="btn1">Click Me</button>
+     </div>
+     <script>
+        /* Question - Why are We using multiple ways to add the events in HTML DOM?
+        Ans - In modern daysmost used is AddeventHandlers.
+        The onclick property is a simple way to assign a single click event handler to an element. If you set it multiple times, the last assigned function will override the previous ones.It doesn't matter you call different events for the same item(id,class etc).
+        
+        Whether addEventListener allows you to attach multiple event handlers to the same event on an element without overwriting existing ones. This makes it more versatile when dealing with complex scenarios where multiple parts of your code or third-party libraries may need to handle the same event.
+        One more benefit of using this is it provide a removeevent function. 
+*/
+        //2. Second Method of suing Events in Javascript 
+         document.getElementById("btn1").onclick = ()=>{
+            alert("Hello");
+         }
+        //  document.getElementById("btn1").onclick = ()=>{
+        //     alert("Hello Ovveride run ");
+        //  }
+        //  document.getElementById("btn1").onmouseover = ()=>{
+        //     alert("Hello Ommouseover it runs ");
+        //  }
+         
+         
+         document.getElementById("head1").onmouseover = ()=>{
+            alert("You hovered over the Heading");
+         }
+         document.getElementById("para").ondblclick = hide;
+         function hide(){
+            document.getElementById("para").innerHTML = " ";
+            console.log("Function called which hides the element");
+         }
+
+    // 3. 3rd Method in Javascript using addEventListner.It tsakes three arguments.- addEventListener(event_fire,function,)
+        document.getElementById("btn1").addEventListener("click",()=>{alert("Hello 22222222222222")})
+        
+
+    //4.  it provide functionality of removing that event. It won't work with arrow fat function so whenever you are removing any event you should take care that it was created with simple function exprtession.
+        // Define the function
+        const mouseenterHandler = () => {
+            document.getElementById("btn1").innerHTML = "You clicked already";
+        };
+
+        document.getElementById("btn1").addEventListener("mouseenter", mouseenterHandler);
+
+        // Later, remove the event listener using the same function reference
+        document.getElementById("btn1").removeEventListener("mouseenter", mouseenterHandler);
+        
+     </script>
+ </body>
+ </html>

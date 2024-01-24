@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class ="parent1">
+        <div id="Schild1">
+           <p>Child1</p> 
+        </div>
+        <div id="Schild2">
+           <p>Child2</p>
+        </div>
+    </div>
+    <div class ="parent1">
+        <div id="Kchild1">
+            <p>child 3</p>
+        </div>
+    </div>
+    <div>
+        <h1 id="heading"> Don't forget to my channel </h1>
+    </div>
+    <p class="parent"> HI Mai toh chali</p>
+    <!-- <form action=""> -->
+        <!-- <button onclick="clicked()" style="border:2px solid black; background-color: red;">
+            Cick Me Here -->
+        <!-- </button> -->
+    <!-- </form> -->
+    <div>
+        <h1 id="clock"></h1>
+        <h2 id="close"> The Closing interval is comming </h2>
+    </div>
+    <script>
+        function clicked()
+        {
+            // var elements = document.getElementsByClassName('parent1');
+            // for (var i = 0; i < elements.length; i++) {
+            //     elements[i].innerHTML = "Welcome to my website";
+            //     console.log("thanks")
+            // }
+            document.querySelector("#heading").innerHTML = "Welcome to the company";
+            // console.log(document.getElementsByClassName("parent1"))
+
+        }
+        var cnt  = 0;
+        function myfunc()
+        {
+            document.getElementById("clock").innerHTML = new Date().toLocaleTimeString();
+            document.getElementById("close").innerHTML = cnt;
+            if(cnt == 8)
+            {
+                // stop
+                clearInterval(p);
+            }
+            cnt++;
+        }
+        var p = setInterval(myfunc,1000);
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!-- There are many wayd to access element  -->
+
+<!-- 1. By Id  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body1">
+    <div class ="parent1" style="border : 2px solid red">
+        <div id="Schild1">
+           <p>Child1</p> 
+        </div>
+        <div id="Schild2">
+           <p>Child2</p>
+        </div>
+    </div>
+    <div class ="parent1" style="background-color: greenyellow;">
+        <div id="Kchild1">
+            <p>child 3</p>
+            <p>Child 4</p>
+        </div>
+        <div id="Kchild2">
+            <p>child 5</p>
+        </div>
+    </div>
+    <div>
+        <h1 id="heading"> Don't forget to my channel </h1>
+    </div>
+    <p class="parent"> HI Mai toh chali</p>
+    <!-- <form action=""> -->
+        <!-- <button onclick="clicked()" style="border:2px solid black; background-color: red;">
+            Cick Me Here -->
+        <!-- </button> -->
+    <!-- </form> -->
+    <div>
+        <h1 id="clock"></h1>
+        <h2 id="close"> The Closing interval is comming </h2>
+    </div>
+    <script>
+    var p = document.getElementById("Schild1").innerHTML = " This is the First accesing the element.";
+    console.log(p);
+
+
+    //1. Targeting Methods in JS DOM - there are multiple methods but we mostly use ID, CLass , TaG .etc.
+
+    // 1.(a) BY ID
+        console.log(document.getElementById("Schild1"));
+    //  (B) By ClassName
+        console.log(document.getElementsByClassName("parent1")); // it returns the collection of all elements that matches that given class in Whole html. 
+
+    // (c) By Tag Name
+        console.log(document.getElementsByTagName('div'));
+    // (d) document.all - gives the array of all things which can acccess in this way. 
+        console.log(document.all[2]); // You can use square backets with any Targeting method which is returning the items in array .
+
+    // (e) querySelector() - it target the given css selector.We can give here anything like tag name,id, class,etc. . It targets only the first enocuntered element in whole HTML and stops there.
+        console.log(document.querySelector('.parent1'));
+        console.log(document.querySelector("#Kchild1 p:first-child")); // Acceessing the ony 1st child of the #Khcild which comes in p tag
+        document.querySelector(".parent1 #Schild2 p").innerText;
+
+    // (f) QuerySelectorAll() - it target the given css selector. we can give here anything like tag name,id,class,etc. IT targets the all element which contains the target attribute. After collection it returns back.
+        console.log(document.querySelectorAll('.parent1'));    
+        console.log(document.querySelectorAll('div'));
+
+    // (g) document.images - It gives the array of Images present in whole array.
+        console.log(document.images);
+
+
+    //2 DOM Get and Set Value Methods
+        //2.(a) Innertext - gives the only text 
+        console.log(document.getElementById('Schild1').innerText);
+        console.log(document.getElementById('body1').innerText);  // it return the any text which is present in anywhere in body inside their sub tags anywhere. and does not include any tags.
+
+        //2.(b)  InnerHtml  - gives the data in HTML formate and also when we want to change the value or text we alwyas use this not innertext.
+        console.log(document.getElementById('body1').innerHTML);
+        document.getElementById('Schild1').innerHTML = "Bye BYE";
+        
+        //(c) AttributeNode - it returns the value of that attribute if exist int that target element. eg - style attribute in class parent1 
+        console.log(document.getElementsByClassName("parent1")[0].getAttribute("style")); // here it return the all styling value like anything border, color, font etc.
+
+        //(d) getAttributeNode - it return the attribute name along with value.This the only difference
+        console.log(document.getElementsByClassName("parent1")[0].getAttributeNode("class"));
+
+        //(e) Attributes - it creates the object which is refering to the collection of all attraibutes stored in formate of eky value pair.
+        console.log(document.getElementsByClassName("parent1")[0].attributes);
+
+        //(f) Remove Attribute  - it is used to remove the attribute.
+
+    //3. Styling in CSS USing DOM Manipulation
+        // (a) Style() Method - it can  be used to access along with set the value.
+        document.querySelector('#Kchild1').Style
+
+
+
+        // console.log(documen.get)
+
+
+
+    </script>
+</body>
+</html>
