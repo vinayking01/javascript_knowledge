@@ -1,0 +1,65 @@
+<!-- 
+    1. there is a special suntax to wokr with promise in javascript which is known as async Await . You will get more control on asynchronous programming .
+    2. A function can be made async by using Asycnc keyword.
+
+    3. async function always retuns a promise. it auomatically wrpas the other values as a promise.
+
+    4. The Await Keyword.
+    this keywords always works inside the async function .
+    the await keyowrd makes a javascript wait until the promise settle and returns its value.
+
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Await</title>
+</head>
+<body>
+    <script>
+        async function harry()
+    {
+        var delhi = new Promise((resolve, reject)=>{
+            setTimeout(()=>{
+                resolve("23 Degreee")
+            },5000)
+        });
+        var banglore = new Promise((resolve, reject)=>{
+            setTimeout(()=>{
+                resolve("30 Degree")
+            },7000)
+        }) 
+
+        console.log("Fetching the Delhi temeprature " )
+        var v1  = await delhi;
+        console.log(" DATA Fetched of Delhi ",v1);
+
+        console.log("Fetching the Banglore temperature ");
+        var v2 =  await banglore;
+        console.log("DATA Fetched of Banglore ", v2);
+ 
+        return (v1,v2);
+    }
+
+    harry().then((x)=>{
+        console.log("Call completed ",x);
+    })
+    
+    console.log("This is outside the function ");
+
+    let i = 1;
+    while(i<5)
+    {
+        console.log(i);
+        i++;
+    }
+
+
+    // when you run this code the program doesn't stop in a paticular function if there is async function it will run parllely and also wait if there is some await statement but parllely runs the code along with async function .
+    
+    </script>
+</body>
+</html>

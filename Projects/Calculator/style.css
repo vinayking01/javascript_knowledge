@@ -1,0 +1,61 @@
+
+#container{
+    border: 2px solid black;
+    width: 300px;
+    margin: auto;
+    height:500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 120px auto auto auto auto auto;
+}
+.box1 {
+    border : 2px solid grey;
+    padding: 14px;
+    text-align: center;
+    font-size: larger;
+    font-weight: 900;
+}
+
+#output{
+grid-column: 1 / 5;
+font-size: x-large;
+font-weight: bold;
+}
+
+#Multi{
+grid-area: 3 / 4 / 4 / 5;
+background-color: rgb(255, 82, 19);
+color: white;
+}
+#Add{
+    grid-area: 4 / 4 / 5 / 5;
+    background-color: rgb(255, 82, 19);
+    color: white;
+}
+#Sub{
+ grid-area: 5 /  4 / 6 / 5;
+ background-color: rgb(255, 82, 19);
+ color: white;
+}
+
+#Div{
+    background-color: rgb(255, 82, 19);
+    color: white;
+}
+#Equal{
+ grid-area: 6 / 4 /7 / 5;
+ background-color: rgb(255, 82, 19);
+ color: white;
+}
+
+#zero{
+grid-area: 6 / 1 / 7 / 3;
+}
+
+#one{
+
+}
+
+#dot{
+grid-area: 6/3/7/4;
+}

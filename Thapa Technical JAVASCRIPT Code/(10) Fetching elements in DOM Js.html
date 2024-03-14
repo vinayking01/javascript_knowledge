@@ -1,4 +1,4 @@
-<!-- There are many wayd to access element  -->
+<!-- There are many ways to access element  -->
 
 <!-- 1. By Id  -->
 
@@ -47,27 +47,29 @@
 
     //1. Targeting Methods in JS DOM - there are multiple methods but we mostly use ID, CLass , TaG .etc.
 
-    // 1.(a) BY ID - it return only undefind not any collections which first encountered.
+    // 1.(a) BY ID - it return only the targeted item, not any collections which first encountered.
         console.log(document.getElementById("Schild1"));
     //  (B) By ClassName -- it creates the collection on the bases of class name . and that return its not collection of child.
-        console.log(document.getElementsByClassName("parent1")); // it returns the collection of all elements that matches that given class in Whole html. 
+        console.log(document.getElementsByClassName("parent1")); // it returns the collection of all elements that matches that givesn class in Whole html. 
 
-    // (c) By Tag Name
-        console.log(document.getElementsByTagName('div'));
-    // (d) document.all - gives the array of all things which can acccess in this way. 
-        console.log(document.all[2]); // You can use square backets with any Targeting method which is returning the items in array .
+    // (c) By Tag Name - it returns the collection of items.
+        // console.log(document.getElementsByTagName('div'));
+      
+    // (d) document.all - gives the array of all the items present in DOM. 
+        console.log(document.all[5]); // You can use square backets with any Targeting method which is returning the items in array .
 
     // (e) querySelector() - it target the given css selector.We can give here anything like tag name,id, class,etc. . It targets only the first enocuntered element in whole HTML and stops there.
         console.log(document.querySelector('.parent1'));
         console.log(document.querySelector("#Kchild1 p:first-child")); // Acceessing the ony 1st child of the #Khcild which comes in p tag
-        document.querySelector(".parent1 #Schild2 p").innerText;
+        
+        console.log(document.querySelector(".parent1 #Schild2 p").innerText);
 
     // (f) QuerySelectorAll() - it target the given css selector. we can give here anything like tag name,id,class,etc. IT targets the all element which contains the target attribute. After collection it returns back.
         console.log(document.querySelectorAll('.parent1'));    
         console.log(document.querySelectorAll('div'));
 
     // (g) document.images - It gives the array of Images present in whole array.
-        console.log(document.images);
+        // console.log(document.images);
 
 
     //2 DOM Get and Set Value Methods
@@ -76,7 +78,7 @@
         console.log(document.getElementById('body1').innerText);  // it return the any text which is present in anywhere in body inside their sub tags anywhere. and does not include any tags.
 
         //2.(b)  InnerHtml  - gives the data in HTML formate and also when we want to change the value or text we alwyas use this not innertext.
-        console.log(document.getElementById('body1').innerHTML);
+        // console.log(document.getElementById('body1').innerHTML);
         document.getElementById('Schild1').innerHTML = "Bye BYE";
         
         //(c) AttributeNode - it returns the value of that attribute if exist int that target element. eg - style attribute in class parent1 
@@ -92,13 +94,11 @@
 
     //3. Styling in CSS USing DOM Manipulation
         // (a) Style() Method - it can  be used to access along with set the value.
-        document.querySelector('#Kchild1').Style
+        // document.querySelector('#Kchild1')
 
 
 
         // console.log(documen.get)
-
-
 
     </script>
 </body>

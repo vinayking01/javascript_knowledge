@@ -12,7 +12,7 @@ console.log(Math.pow(2,3)); // returns the power of x to y
 console.log(Math.sqrt(64)); // tit gives the square root of the number;
 // 5. Absolute function
 console.log(Math.abs(-995)); // it convert the value to positive to number.
-// 6. Ceiling Method - gives the round integer & always first maxium numer
+// 6. Ceiling Method - gives the round integer & always first maximum number
 a1  = 33.54;
 a2  = 33.10;
 console.log(Math.ceil(a1))

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #Exp-details {
+            border: 2px solid red;
+            /* position: relative; */
+            height: 200px;
+        }
+
+        .exp-d-margin div{
+            border: 2px solid black;
+            /* position: relative; */
+            /* height:; */
+            float:left;
+        }
+        :root{
+            --box-width : 0px;
+        }
+       
+
+    </style>
+</head>
+
+<body>
+    <div id="Exp-details">
+        <div class="exp-d-margin" id="box1">
+            <div >
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est impedit recusandae molestiae
+                error, ventore ab.doloribus quaerat, ullam illo sunt, est nihil fugiat maiores ipsum repudiandae
+                adipisci.
+            </div>
+            <div>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam mollitia cumque architecto aliquam
+                autem odit maiores sit optio odio molestias.
+            </div>
+        </div>
+    </div>
+    <br>
+    <div style="width: 200px; border: 2px solid red; height: 40px;  position:relative; border-radius: 20%;">
+    <div style="position: absolute; border: 2px solid black; height:40px; width: var(--box-width); background-color: aqua;border-radius: 20%;" id="inside-box">
+    </div>    
+
+    </div>
+</body>
+<script>
+    var p = document.getElementById('inside-box');
+
+    // var  l  = setInterval(function(){
+    //     // var  m = document.getElementById(p);
+    //     console.log(m);
+    //     p.scrollBy(100,0);
+    // },50);
+
+</script>
+</html>

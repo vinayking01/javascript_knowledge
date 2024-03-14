@@ -5,9 +5,9 @@
 
 // 2. setInterval() -The 'setInterval()' method is used to execute a piece of code repeatedly with a fixed time interval between each call.
 
-//3. clearTimeout() - The 'clearTimeout()' method is used to cancel a timeout established using 'setTimeout()' method.
+// 3. clearTimeout() - The 'clearTimeout()' method is used to cancel a timeout established using 'setTimeout()' method.
 
-// 4. 4. clearInterval() - The 'clearInterval()' method is used to cancel the repeating timed action established using 'setInterval()' 
+// 4. clearInterval() - The 'clearInterval()' method is used to cancel the repeating timed action established using 'setInterval()' 
 
 var cnt  = 1;
 function Hello()
@@ -20,10 +20,13 @@ function Hello()
     }
 }
 
- clearInterval(id);
-var id = setInterval(Hello,1000); //It s=execution start as code starts running. ye parllely chalti hai along with code . It doesn't mean ki phele ye puri line excecute kr le fir niche ke code pe jayega no that is not . How it works.
+//  clearInterval(id);
 
-console.log(id);
-setTimeout(Hello,3000); 
+// if(false)
+// {
+// var id = setInterval(Hello,1000); //It s=execution start as code starts running. ye parllely chalti hai along with code . It doesn't mean ki phele ye puri line excecute kr le fir niche ke code pe jayega no that is not . How it works.
+// }
+// console.log(id);
+const id = setInterval(Hello,3000); 
 console.log("Helow Everyone w=how are you?")
 

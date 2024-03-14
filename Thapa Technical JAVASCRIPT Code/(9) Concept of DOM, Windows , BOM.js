@@ -119,3 +119,32 @@ Common BOM objects include window (global object), navigator (information about 
 // document.querySelector(".child-two").style.color = "yellow"; (benefits of using query selector is we can )
 
 
+// Section 3️⃣: How to add and create tag and text using DOM and attach to HTML
+  //1. First step creation
+    // (a) createElement Method - it is used to create the tags 
+    var item = document.createElement("H2");
+    console.log(item);  // output - <h3> </h3>
+    // (b) CreateTextNode - it is used to create text thea you want to later add on somple place in hTML
+    var data = document.createTextNode("This is heading 3");
+    console.log(data); // output- This is heading 3
+    
+  //2. Append both text and tag elements or also used to append in HTML document
+    // (A) AppendChild - interface adds a node to the end of the list of children of a specified parent node.By default It append always at the end the of the scope of the element
+    item.appendChild(data); // used jiske sath append krna hai.
+    console.log(item); // Output which is still not attached with HTML doc- <h3> This is heading 3 </h3>
+
+  // 3. Append in HTML- Two ways
+  // document.getElementById("parent").appendChild(item) // it end the item at the last after all elements where it is attached.
+
+  //(b) insertBefore - it insert the item in HTML before any item . It take two argument insrtBefore(appending_item, target_element before which you want to append)
+  var target = document.getElementById("box1");
+  target.insertBefore(item,target.childNodes[0]);
+
+
+  // 4. Methods which directly append in HTML with Tags.
+  //  (a) InsertAdjacentHTML - 
+    var target2 = document.getElementById("child-box");
+
+    var item2 = "<h4> This is Heading 4 </h4> "
+    target2.insertAdjacentHTML("afterbegin",item2);
+

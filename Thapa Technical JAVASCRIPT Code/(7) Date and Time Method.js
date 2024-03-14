@@ -14,9 +14,10 @@ new Date(milliseconds)
 
 console.log(new Date()); // gives the current date and time
 console.log(new Date("2023/03/12")); // it can take date in the form of string.
-console.log(new Date(2023,2,12,01,13,50)); // 7 numbers specify year, month, day, hour, minute, second, and millisecond (in that order): in descending order
+console.log(new Date(2023,2,12,1,13,50)); // 7 numbers specify year, month, day, hour, minute, second, and millisecond (in that order): in descending order
 //Specifying a month higher than 11, will not result in an error but add the overflow to the next year:
 console.log( new Date(98,12,4));//One and two digit years will be interpreted as 19xx:
+
 /* Facts - JavaScript stores dates as number of milliseconds since January 01, 1970.
 
 

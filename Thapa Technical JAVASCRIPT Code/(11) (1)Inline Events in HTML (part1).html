@@ -19,6 +19,7 @@
 </style>
 <body>
      <!-- 
+    You cannot use arrow fat function directly with inline events.
     These are some basic events which are always used inside the HTML. Once oncs of using these events is it unnecceasary addthe text to our HTML file. We will later see the events which directly access thorugh javascript.
     1. Click( onclick )
     2. Double Click(ondblclick)
@@ -39,7 +40,7 @@
         <h1 onmousedown=enter()>My heading</h1>
     </div>
     <p ondblclick="hide()" id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat facere provident obcaecati aliquid perferendis culpa accusamus quod expedita optio fuga.</p>
-    <div>
+    <div onclick="hello()">
         <h2>The end </h2>
     </div>
     <div>

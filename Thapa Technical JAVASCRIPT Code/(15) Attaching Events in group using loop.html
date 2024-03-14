@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <!-- 1. Adding your attribute and setting the value which can be later use and accessing it in javascript their value -->
+    <div>
+        <h1 style="color: red;"> Concept of Attaching multiple events in group of item using loop</h1>
+        <h3 style="border: 2px solid black; color: green;"> Click on the headings </h3>
+    </div>
+    <div>
+        <h1 d-value ="7" id="head1" class="Headings"> Heading 1</h1>
+        <h2 id="head2" class="Headings"> Heading 2</h2>
+    </div>
+</body>
+<script>
+    var value  = document.getElementById("head1").getAttribute("d-value");
+    console.log(value);
+
+    // // 2. ParseFloat() - to convert the string into the decimal number
+    console.log(parseFloat("3.232"));
+    console.log(parseInt("322332"));
+
+    // 3. When you have to attach the events in group of items it's better to use loop. Looping the set of items and attaching any events,  it will got stick to that partcular item according to the DOM structure. The whole loop runs at once before making any event trigger at starting of execution always and attach all the events to their respective position which can be easily triggered. (if you have confusion see the calculator program).
+
+    var f = document.getElementsByClassName("Headings");
+    for(var i = 0; i<f.length;i++)
+    {
+        console.log(i);
+        f[i].addEventListener('click',function(){
+            console.log(i);
+            alert(` This is the heading NO. - ${this.innerHTML}`);
+        });
+    }
+
+</script>
+</html>

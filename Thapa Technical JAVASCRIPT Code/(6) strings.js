@@ -1,6 +1,6 @@
  // Methods for String 
 
-/* what we wil do 
+/* what we will do 
  1. Escape character
  2. Findinig a string in a string
  3. Searching for string in a string
@@ -11,7 +11,7 @@
 
 */
 
-// strings can be created as primitives from string literals, oor as obejects using the string () constructor 
+// strings can be created as primitives from string literals, or as objects using the string () constructor 
 
 let myName  = 'Vinode thapa Vinode javascript course is good u'
 let myChannelName = "Vinod "
@@ -42,7 +42,7 @@ console.log(t);
 
  //5. Extracting String Parts - there are three ways to do that
 //  (a) Slice( start,end) - it will give you the substring which start from given index but end at before the given endindex. It support negative indices.
-console.log()
+
 console.log(myName.slice(2,8));
 console.log(myName.slice(-8));
 //  (b) substring ( start,end) - it support negative indices
@@ -58,7 +58,7 @@ console.log(Replace_result);
 //7. CharAt() - it returns the character at the specified index.
 console.log(myName.charAt(4));
 
-//8. CharCodeAt() - it returns the unicode of the specified character at specified index. it returns the UT -16 code.
+//8. CharCodeAt() - it returns the unicode of the specified character at specified index. it returns the UTF -16 code.
 console.log(myName.charCodeAt(0));
 
 
@@ -70,7 +70,7 @@ console.log(a.concat(b));
 console.log(a.concat(" Middle string ",b));
 
 //10.  trim() - it removes the white spaces from both the sides of string.)
-p  = "                               hello world";
+p  = "      hello world     ";
 console.log(p);
 console.log(p.trim())
 

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Thermometer</title>
+</head>
+<body style="background-color: blue;">
+    <h1 style="text-align: center; color: rgb(255, 255, 255); font-size: 100px;">I Am a Thermometer</h1>
+    <div style="text-align: center;" id="outer_box">
+        <div class="fa" style="font-family: Font Awesome 5; color: red; font-size: 100px; " id="inner_box"></div>
+    </div>
+    <script>
+        var inner_box = document.getElementById("inner_box");
+
+        function temperature_load()
+        {
+            var inner_box = document.getElementById("inner_box");
+            inner_box.innerHTML = "&#xf2cb;";
+
+            setTimeout(() => {
+                inner_box.innerHTML = "&#xf2ca;";
+                inner_box.style.color = "white";
+            }, 1000);
+
+            setTimeout(() => {
+                inner_box.innerHTML = "&#xf2c9;"
+                inner_box.style.color = "green";
+            }, 2000);
+
+            setTimeout(() => {
+                inner_box.innerHTML = "&#xf2c8;"
+                inner_box.style.color = "pink";
+            }, 3000);
+
+            setTimeout(() => {
+                inner_box.innerHTML = "&#xf2c7;"
+                inner_box.style.color = "yellow";
+            }, 4000);
+        }
+        temperature_load();
+
+        setInterval(() => {
+            temperature_load();
+        }, 5000);
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,402 @@
+
+body{
+    margin: 0px;
+}
+
+#body-header{
+    height: 600px;
+    opacity: 0.9;
+    background-image: url(image/macbook_mouse.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment:fixed;
+    /* background-color: black;   */
+}
+
+/* horizontal list rule */
+
+.Horizontal-list{
+    list-style: none;
+    padding-left: 0px;
+    /* border: 2px solid black; */
+    text-align: center;
+}
+
+.Horizontal-list li{
+    display: inline-block;
+    margin: 20px 20px 20px 20px;
+ 
+}
+.Horizontal-list li a{
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+.Horizontal-list li a:hover{
+    color:red;
+    text-decoration: underline;
+}
+
+/* social link */
+
+.social-links{
+    list-style: none;
+    text-align: center;
+    opacity: 1;
+}
+
+.social-links li{
+    display: inline-block;
+    margin: 20px 20px 20px 20px;
+    border: 2px solid white;
+    background-color: yellow;
+    border-radius: 10px;  
+}
+
+.social-links li a img
+{
+    height: 40px;
+    width: 40px
+}
+
+.social-links li:hover{
+    box-shadow: 3px 3px 3px 3px red;
+}
+#about{
+    position: relative;
+    height: auto;
+    width: 100%;
+    /* border: 2px solid red; */
+}
+#about #my-pic{
+    width: 15rem;
+    height: 15rem;
+    margin: auto;
+    /* box-shadow: 2px 2px 2px 2px black; */
+    
+}
+#about div img{
+   height: 100%;
+   width:86%;
+   margin-top: -47%;
+    border-radius: 100%;
+    /* box-shadow: 2px 2px 2px 2px black; */
+    /* padding: 0px; */
+    
+}
+
+@media screen and (max-width:800px)
+{
+    #name{
+        margin-top: 0px !important;
+    }
+    #name > h1{
+        font-size: large;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        color: deeppink;
+    }
+
+    .social-links li a img
+    {
+    height: 20px;
+    width: 20px
+    }
+
+    #body-header{
+        height: 400px;
+    }
+    #about #my-pic{
+        width: 9rem;
+        height: 9rem;
+        margin: auto;
+        /* box-shadow: 2px 2px 2px 2px black; */
+        
+    }
+    #about div img{
+       height: 95%;
+       width:86%;
+       margin-top: -47%;
+        border-radius: 100%;
+        /* box-shadow: 2px 2px 2px 2px black; */
+        /* padding: 0px; */
+        
+    }
+
+}
+
+section:nth-child(2n)
+ { 
+    background-color: rgb(255, 237, 237);
+    height: auto;
+} 
+ section:nth-child(2n+1)
+{
+    background-color: white;
+    height:auto;
+}
+
+/* Skills */
+
+
+#skills-display
+{
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+
+#skills-display > div{
+    border: 2px solid black;
+    border-radius: 20px;
+    margin-bottom:20px ;
+    width: 10rem;
+    height:2rem;
+    /* margin: 10px 10px; */
+    text-align: center;
+}
+
+/* Experience */
+
+
+#Exp-details{
+/* border: 2px solid rgb(19, 18, 18); */
+position: relative; 
+width: auto;
+/* height: ;  */
+ margin: auto;
+}
+
+.Experience #Exp-details .exp-d-margin{
+    /* border: 2px solid black; */
+     background-color: aliceblue;
+    position: relative;
+    width: 45%;
+    min-width: 200px;
+    height: 70%;
+    height: auto; 
+    
+
+}
+#Exp-details > div:nth-child(2n)
+{
+    left: 55%;
+}
+
+.line1{
+    width: 0.1px;
+    height: 80%;
+    top: 10%;
+    /* left: 10%; */
+    position: absolute;
+    border: 2px dashed black;
+}
+
+#box1::before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: rgb(159, 84, 84);
+    top: 25%;
+    left: 109.5%;
+    border-radius: 50%;
+    z-index: 1;
+}
+#box3::before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: rgb(159, 84, 84);
+    top: 25%;
+    left: 109.5%;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+#box2::before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: rgb(159, 84, 84);
+    top: 25%;
+    left: -12.5%;
+    border-radius: 50%;
+    z-index: 1;
+}
+#timeline {
+    position: sticky;
+    top: 5%;
+    margin-left: -13.5px;
+}
+#Exp-details > div:nth-child(4)
+{
+    left: 50%;
+}
+
+
+/* media queries for experience section */
+@media screen and (max-width:800px)
+{
+    #Exp-details > div:nth-child(2n)
+  {
+    left: 0%;
+   }
+   .Experience #Exp-details .exp-d-margin{
+    border: 2px solid black;
+    width: 65%;
+    min-width: 220px;
+    margin-top: 15px;
+    margin-left: 25%;
+    }
+    #Exp-details{
+        border: 2px solid rgb(19, 18, 18);
+        position: relative; 
+        width: auto;
+         margin: auto;
+        }
+         
+        .line1{
+            width: 0.1px;
+            height: 90%;
+            top: 5%;
+            left: 10%;
+            position: absolute;
+            border: 2px dashed black;
+        } 
+
+        #box1::before{
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: rgb(159, 84, 84);
+            top: 10%;
+            left: -18.5%;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        #box3::before{
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: rgb(159, 84, 84);
+            top: 10%;
+            left: -18.5%;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        #box2::before{
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: rgb(159, 84, 84);
+            top: 15%;
+            left: -18.5%;
+            border-radius: 50%;
+            z-index: 1;
+        } 
+        #timeline {
+            position: sticky;
+            top: 5%;
+            margin-left: -13.5px;
+        }
+        #Exp-details > div:nth-child(4)
+        {
+            left: 15%;
+        }   
+
+}
+
+
+/* portfolio section */
+
+#portfolio-details{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#portfolio-details > div{
+    margin: 20px 20px;
+}
+
+#portfolio-details > div > a >img{
+    width: 230px;
+    height: 210px;
+}
+
+@media screen and (max-width:800px){
+    #portfolio-details{
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around; 
+    }
+    #portfolio-details > div{
+        margin: 20px 20px;
+    }
+    
+    #portfolio-details > div > a >img{
+        width: 150px;
+        height: 150px;
+    }
+      
+}
+
+/* contact */
+
+#Contact:nth-child(6){
+    background-image: linear-gradient(rgb(30, 30, 154),purple);
+}
+
+input{
+  border-top-style: hidden;
+  border-left-style: hidden;
+  border-right-style: hidden;
+  margin-bottom: 3vh; 
+  height: 25px;
+  padding-bottom: 4px;
+  width: 300px; 
+}
+
+.Contact-details{
+    /* border: 2px solid red; */
+    margin-top:6vh;
+    /* text-align: center; */
+     display: flex;
+     flex-wrap: wrap;
+    justify-content: space-around;
+}
+#form-details{
+    margin-top: 1.9rem;
+}
+#form-details,#my-details{
+    width: 350px;
+    padding-left: 15vw;
+    padding-right: 10vw;
+    /* border: 2px solid blue; */
+}
+#contact-links .social-links img{
+    width: 30px;
+    height: 30px;
+}
+#contact-links .social-links li{
+    display: inline-block;
+    margin: 20px 20px 20px 20px;
+    border: 2px solid white;
+    background-color: rgb(229, 229, 203);
+    border-radius: 10px;  
+    /* padding-left: -30px; */
+}

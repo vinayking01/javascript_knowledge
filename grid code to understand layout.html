@@ -15,54 +15,97 @@
         width: 70%;
         margin: 50px auto;
         display: grid;
-        grid-template-rows: 130px 200px 200px;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-gap: 40px;
-        grid-auto-rows:130px ;
-        /* grid-template-columns: ; */
-        /* align-items: center; */
-        /* justify-items:center ;
-         */
+/*1️⃣ Row and Column define in container*/
+        /* grid-template-rows: auto auto auto;
+        grid-template-columns: auto auto auto ; */
+
+        /* grid-template-rows: 120px 120px 120px; */
+        grid-template-rows: minmax(40px,auto) 120px 120px;
+        /* grid-template-columns: 120px 120px 120px; */ /* remaining space as size will be taken by last column*/ 
+        grid-template-columns: min-content 120px auto;
+        align-items: end;
+        justify-content: end;
+
+/* 2️⃣ Gap between rows and column  */
+        row-gap: 10px;  /* property for gap  or we can use also grid-row-gap or shortand for both column and row grid-gap*/
+        column-gap: 10px;
+        /* grid-gap: 20px 20px;  Shortand property*/
+/* 3️⃣ CSS grid Items postioning elements  and Same property are used for Spanning ( eg - like 1 box jo hai 2 box width ya height le le) 6️⃣ 
+        (a) Grid-row-start (Applies in Grid Item)-it moves the item . Starting position in verticle direction.
+        (b) Grid-columm-start (Applies in Grid Item)- it moves the item end position in horizontal direction
+        (c) Grid-row-end - for ending in row-wise.
+        (d) Grid-column-end - for ending in column-wise(horizontal direction).
+        (e) grid-area - shorthand of positioning both column and row in single way.
+        (f) grid-row - shorthand for same item postioning in verticle direction. eg - gird-row : row-start no / row-end no.
+        (g) grid-column - shorthand for same item positioning in horizontal direction.
+
+
+    Property Used with the row & column
+    1. min-content: When used in the context of rows (grid-template-rows), min-content specifies that each row will take on the minimum required height necessary to fully display its content. This applies to the entire row, regardless of the content quantity within individual grid items. When used in the context of columns (grid-template-columns), min-content determines the width of each column based on the minimum required width of its content.
+
+    2. max-content : When applied to rows (grid-template-rows), max-content sets the height of each row to the maximum required height necessary to fully display its content. This means that each row will be as tall as the tallest content within the entire row, regardless of individual content in grid items.
+    When applied to columns (grid-template-columns), max-content sets the width of each column based on the maximum required width of its content. This means that each column will be as wide as the widest content within the entire column, regardless of individual content in grid items.
+
+    3. minmax(150px, 200px)
+
+*/
+/* 4️⃣  Grid Items Alignment tutorial;
+        (a) Align items- it is used always in container . to align the items vertcally inside the grid items.
+        (b) Justify Items - it is used always in container. to align items horizontally inside the grid items.
+        (c) Align self- it is used individually in particular grid item. to align items vertically.
+        (d) justify self - it is used individually in particular grid item. to align items horizontally.
+*/
+/*   5️⃣ Grid tracks Alignment Means All Columns or rows inside that container.
+        (a) Justify-content - Applied on container. It align the all the column horizontailly.
+        (b) Align-content - Applied on contianer. It alignt the all the rows vertically.
+ */
 
        }
        .div1{
         background-color: red;
-        grid-area: 1 / 1 / 2 / -1;
+        /* grid-area: 1 / 1 / 2 / -1; */
        }
        .div2{
-        background-color: blue;
-        grid-area: 2 / 1 / span 2/ 2;
+        background-color: rgb(90, 90, 189);
+        /* grid-area: 2 / 1 / span 2/ 2; */
     }
     .div3{
         background-color: rgb(255, 82, 82);
+        /* grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 2;
+        grid-column-end: 4; */
+        grid-area: 2 / 2 / 3 / 4; /*row-start/col start/row end/ column-end*/
         
     }
     .div4{
         background-color: aqua;
+        align-self: end;
+        justify-self: end;
        
     }
     .div5{
-        background-color: black;
+        background-color: rgb(130, 110, 110);
     }
     .div6{
         background-color: green;
-        grid-column: 2 / -1;
+        /* grid-column: 2 / -1; */
     }
     .div7{
         background-color: cornflowerblue;
-        grid-area: 4 / 1 / -1 / -1;
+        /* grid-area: 4 / 1 / -1 / -1; */
     }
     </style>
 </head>
 <body>
     <main>
-        <div class=" div1">div1</div>
+        <div class=" div1">div1 Lorem ipsum, dolor sit amet consecteturdsddsdsdsdsssdsd adipisicing elit. Nobis ipsam ullam enim dolorem error assumenda, eligendi sunt et dolores cum, neque quam omnis a accusantium quod hic, quasi debitis similique?</div>
         <div class=" div2">div2</div>
         <div class=" div3">div3</div>
         <div class=" div4">div4</div>
         <div class=" div5">div5</div>
         <div class=" div6">div6</div>
-        <div class="div7">div7</div>
+        <!-- <div class="div7">div7</div> -->
     </main>
 </body>
 </html>
