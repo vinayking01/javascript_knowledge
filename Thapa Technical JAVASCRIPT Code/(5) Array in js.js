@@ -31,6 +31,7 @@
  
  nums.forEach((n) =>{  //t is used to iterate over the elements of an array and execute a provided function once for each array element.
      console.log(n*2);
+     return "this";
  })
  
  // first paramter - denotes the element array.
