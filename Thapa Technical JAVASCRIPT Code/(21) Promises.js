@@ -23,7 +23,7 @@ promise.then(
     // function (error){ console.log("Code giving error "+ error);}
 );
 
-// another way to catch the error 
+// another way to catch the error  
 promise.catch((error)=>{
     console.log("Code giving error "+ error);
 })
