@@ -1,8 +1,8 @@
 <!-- 
-    1. there is a special suntax to wokr with promise in javascript which is known as async Await . You will get more control on asynchronous programming .
+    1. there is a special syntax to work with promise in javascript which is known as async Await . You will get more control on asynchronous programming .
     2. A function can be made async by using Asycnc keyword.
 
-    3. async function always retuns a promise. it auomatically wrpas the other values as a promise.
+    3. async function always retuns a promise. it automatically wrap the other values as a promise.
 
     4. The Await Keyword.
     this keywords always works inside the async function .
@@ -36,7 +36,7 @@
         console.log("Fetching the Delhi temeprature " )
         var v1  = await delhi;
         console.log(" DATA Fetched of Delhi ",v1);
-
+        console.log("sdssdds")
         console.log("Fetching the Banglore temperature ");
         var v2 =  await banglore;
         console.log("DATA Fetched of Banglore ", v2);
@@ -59,6 +59,7 @@
 
 
     // when you run this code the program doesn't stop in a paticular function if there is async function it will run parllely and also wait if there is some await statement but parllely runs the code along with async function .
+    //On the other hand, code that is not inside an async function or is outside the scope of await will run in parallel or concurrently. 
     
     </script>
 </body>
