@@ -35,9 +35,7 @@ citySearch.addEventListener('submit', (e) => {
   });
 
 
-// step 2 : - fetch Weather data - 3495205940cb9a1cc74efc5d72d0cb21  ,  https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
-
-
+// step 2 : - fetch Weather data - get your api key from the API weather after sign up
 const getdateTime = (dt)=>{
 const curDate = new Date(dt * 1000); // Convert seconds to milliseconds
 console.log(curDate);
@@ -64,7 +62,7 @@ return formattedDate;
 
 
 const getweatherdata = async ()=>{
-    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=3495205940cb9a1cc74efc5d72d0cb21`;
+    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&enteryourapikey`;
 
     try{
         const res = await fetch(weatherUrl);
