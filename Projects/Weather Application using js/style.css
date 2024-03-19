@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+body{
+    background-color: black;
+}
+
+.container
+{
+    /* border: 2px solid rgb(253, 0, 0); */
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    width: 60%;
+    margin: auto;
+    margin-top: 40px;
+    padding-top: 20px;
+    /* height: 100px; */
+}
+.weather-header{
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin: auto;
+}
+.weather-search{
+    background-color: rgb(63, 54, 54);
+    padding: 4px 1px;
+    border-radius: 6px;
+    margin-left: 19.5rem;
+    margin-right: 19.5rem;
+}
+
+.fa-magnifying-glass{
+    color: white;
+}
+.weather-forcast{
+    background-color: black;
+    color: white;
+    width: 15%;
+    border-radius: 20px;
+    margin: auto;
+}
+.search-city{
+    background-color: rgb(68, 63, 63);
+    color: white;
+    width: auto;
+}
+input::placeholder{
+    color: white;
+}
+.weather-body{
+    text-align: center;
+}
+
+.weather-footer{
+    display: grid;
+    /* border: 2px solid red; */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 10px 10px;
+}
+
+
+
+.weather-card >div{
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.weather-card i{
+    font-size: 25px;
+    padding-top: 0px;
+}
