@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        h1 {
+            font-size: 50px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: 500;
+            color: azure;
+            text-shadow:5px 5px 5px blue;
+        }
+        p{
+            font-size: 45px;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            font-weight: 900;
+            color: rgb(0, 0, 0);
+            text-shadow:5px 5px 5px rgb(255, 251, 0);
+        }
+        .container{
+            display:flex;
+            position: relative;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .div1, .div2, .div3, .div4{
+            width: 100%;
+            height: 100vh;
+            text-align: center;
+            padding-top: 50vh;
+            border: 2px solid rgb(60, 126, 60);
+            
+        }
+        .section1{
+            background-image: url("/1.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+            /* filter: grayscale();  filter is used to add the effects over the elements along with images  */
+            filter:blur(1px), brightness(2px) ;
+        }
+        .section2{
+            background-image: url("/2.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+        }
+        .section3{
+            background-image: url("/3.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+        }
+        .section4{
+            background-image: url("/1.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+        }
+        @keyframes box-moving {
+            0%{
+                transform: translateX(0px);
+            }
+            100%{
+                translate:1000px ;
+                /* transform: translateX(1000px); */
+            }
+        }
+        .box1{
+            background-color: rgba(23, 23, 223, 0.829);
+            width: 100px;
+            height: 100px;
+            position: relative;
+            top: -90vh;
+            left: -45vw;
+            filter: none;
+            border-radius: 100%;
+
+            transition: all 4s;
+            animation: box-moving 4s ease-in-out infinite;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="container section1">
+        <div class="div1">
+                <h1>Hi, There </h1>
+                <p>what's the Matter Boys?</p>
+        </div>
+        <div class="box1">
+
+        </div>
+        
+    </div>
+    <div  class="container section2">
+        <div class="div2">
+            <h1> Nothing Alright</h1>
+            <p>Are you for real?</p>
+        </div>
+    </div>
+    <div class="container section3">
+        <div class="div3">
+            <h1>Yeah Don't you see </h1>
+            <p>Yeah i am just Joking</p>
+        </div>
+    </div>
+    <div class="container section4">
+        <div class="div4">
+            <h1>I know </h1>
+            <p> Ok bye . See you later</p>
+        </div>
+        
+    </div>
+</body>
+</html>

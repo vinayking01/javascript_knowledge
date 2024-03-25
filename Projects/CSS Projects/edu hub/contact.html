@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        
+        .container-contact {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-content: space-evenly; /* Change to space-evenly or space-around */
+            column-gap: 3rem;
+            row-gap: 3rem;
+        }
+        form {
+            display: grid;
+        }
+        form div {
+            font-size: x-large;
+            font-family: 'Times New Roman', Times, serif;
+            display: grid;
+            width: 100%;
+        }
+        .map-place{
+            display: grid;
+            text-align: center;
+            align-items: center;
+        }
+        .map-place iframe{
+
+            width: 70%;
+            height: 70%;
+          
+            /* place-items: center; */
+        }
+        button{
+        color: white;
+        font-size: 35px;
+        padding: 8px 8px;
+        border-radius: 10px;
+        background-color: var(--main-color);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+    }
+
+        button:hover{
+            box-shadow: var(--button-shadow);
+            background-color: var(--button-hover-color);
+        }
+    </style>
+</head>
+<body><!-- ========== Start "Nav Bar " Section  ========== -->
+    <header class="section-navbar">
+        <div class="container">
+            <div class="nav-image">
+                <a href="index.html"><img src="images/logo.png" alt="Company logo"></a>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="">Blog</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- ========== End "Nav Bar " Section  ========== -->
+    <!-- Using form SPree you can just for debugging purpose you can use the functionality of form submission without hosting and that mail will be receieved on the you personal mailbox
+     -->
+    <h1> Here are the contact details</h1>
+    <div class="container-contact">
+        <div class="form">
+            <form action="https://formspree.io/f/mvoewpzq" method="POST">
+                <div>
+                    <label for="name">Enter Your Name </label>
+                    <input type="text" name="myname" id="name" placeholder="Enter your name" required autocomplete="off">
+                </div>
+                <div>
+                    <label for="contact">Enter your Phone no.</label>
+                    <input type="tel" name="mynumber" id="contact" placeholder="Should be 10 digits" required autocomplete="off">
+                </div>
+                <div>
+                    <label for="myemail">Enter your email</label>
+                    <input type="email" name="email" id="myemail" autocomplete="off">
+                </div>
+                <div>
+                    <label for="mytext">Enter into textarea</label>
+                    <textarea name="mytext" id="mytext" cols="30" rows="10"></textarea>
+                </div>
+                <button type="submit">Send Now<i class="fa-solid fa-arrow-circle-right"></i></button>
+            </form>
+        </div>
+        <div class="map-place">
+            <!-- Content for the second column (if any) -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28018.55500240569!2d77.33974500701791!3d28.62018866514738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5456ef36d9f%3A0x3b7191b1286136c8!2sSector%2062%2C%20Noida%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1711388873030!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+
+    <section class="section-contact " style="margin-top: 5rem;">
+        <div class="container">
+            <!-- ========== Start Bnaner Section ========== -->
+            
+    
+            <!-- ========== End Bnaner Section ========== -->
+            
+            <div class="section-contact-details">
+                <div class="contact-details">
+                    <div class="common-child-heading">
+                        <a href="index.html">Vinay Edu Hub</a>
+                    </div>
+                    <div class="common-child-para">
+                            Engage in hands-on learning experiences that make education fun and memorable. Interactive
+                            lessons encourage active participation and deeper understanding.
+                    </div>
+                    <div class="section-about-img">
+                        <div>
+                            <a href="https://discord.gg/fDuFEXfyyH" target="_blank" alt="my discord server link">
+                                <i class="fa-brands fa-discord"></i>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://www.youtube.com/thapatechnical" target="_blank" alt="my youtube channel link">
+                                <i class="fa-brands fa-youtube"></i>
+                              </a>
+                        </div>
+                        <div>
+                            <a href="https://www.instagram.com/thapatechnical/" target="_blank" alt="my instagram profile link">
+                                <i class="fa-brands fa-instagram"></i>
+                              </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-details" style="justify-content: end;">
+                    <div class="common-child-heading">
+                        <a href="index.html">Courses</a>
+                    </div>
+                    <div class="common-child-para">
+                        <ul>
+                            <li>Course1</li>
+                            <li>Course1</li>
+                            <li>Course1</li>
+                            <li>Course1</li>
+                            <li>Course1</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                <div class="contact-details" style="justify-content: end";>
+                    <div class="common-child-heading">
+                        <a href="index.html">Links</a>
+                    </div>
+                    <div class="common-child-para">
+                            <ul>
+                                <li>Link1</li>
+                                <li>link2</li>
+                                <li>link2</li>
+                                <li>link2</li>
+                                <li>link2</li>
+                            </ul>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========== End Contact Section  ========== -->
+</body>
+</html>

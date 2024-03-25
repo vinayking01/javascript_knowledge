@@ -1,0 +1,78 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+.bigger-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* border: 2px solid red; */
+    margin: 0;
+}
+.container{
+    background-color: rgb(255, 221, 0);
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: changecolor 4s ease-in-out infinite;
+}
+
+@keyframes changecolor {
+    0%{
+        background-color: rgb(255, 221, 0);
+    }
+    25%{
+        background-color: rgb(255, 221, 0);
+    }
+    50%{
+        background-color: black;
+    }
+    75%{
+        background-color: rgb(255, 221, 0);
+    }
+    100%{
+        background-color: rgb(255, 221, 0);
+    }
+}
+.fixed-circle{
+    background-color: rgb(255, 140, 0);
+    width: 170px;
+    height: 170px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.moving-circle{
+ background-color: black;
+ width: inherit;
+ height: inherit;
+ border-radius: 100%;
+position: relative;
+/* right: -120px; */
+animation: movingcircle 4s ease-in-out infinite;
+}
+
+@keyframes movingcircle {
+    0%{
+        transform: translateX(170px);
+        scale: 1;
+
+    }
+    50%{
+        transform: translateX(0px);
+        scale: 0.9;
+    }
+    100%
+    {
+        transform: translateX(-170px);
+        scale: 1;
+    }
+}
