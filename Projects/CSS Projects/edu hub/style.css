@@ -2,11 +2,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* scroll-snap-align:;  this is the proeprty use during scrolling search more about in internet*/
+   
+}
+html{
+    scroll-behavior: smooth; /* For smooth scrolling*/
 }
 
 body {
     scrollbar-width: thin; /* Width of the scrollbar */
     scrollbar-color: #888 #f1f1f1; /* Thumb and track colors */
+    scroll-behavior: smooth;
 }
 
 :root{
@@ -366,7 +372,7 @@ margin:20px 10px;
     -ms-border-radius: 100%;
     -o-border-radius: 100%;
 
-    & h1{
+    & h3{
         display: grid;
         justify-content: center;
         align-content: center;
@@ -380,8 +386,8 @@ margin:20px 10px;
 }
 .section-num-img-right .number {
     display: inline-block;
-    /*margin: auto;
-    */background-color:rgb(202, 202, 240);
+    margin: auto;
+    background-color:rgb(202, 202, 240);
     text-align: center;
     border-radius: 100%;
     -webkit-border-radius: 100%;
@@ -389,7 +395,7 @@ margin:20px 10px;
     -ms-border-radius: 100%;
     -o-border-radius: 100%;
 
-    & h1{
+    & h3{
         display: grid;
         justify-content: center;
         align-content: center;
@@ -575,7 +581,12 @@ margin:20px 10px;
 
 /***** Media queries Responsiveness *****/ 
 
-
+@media screen and (min-width:1201px){
+    .common-child-para{
+        font-size:1.4rem;
+    }
+    
+}
 @media screen and (min-width:1000px ) and (max-width:1200px){
     html{
         font-size: 85%;
@@ -590,6 +601,10 @@ margin:20px 10px;
     .common-child-para{
         font-size:1.4rem;
     }
+    /* .container-banner{
+        width: 70%;
+        height: 70%;
+    } */
 }
 
 @media screen and (max-width:1000px) {
