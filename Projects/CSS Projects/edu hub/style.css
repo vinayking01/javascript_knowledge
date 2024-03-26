@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+body {
+    scrollbar-width: thin; /* Width of the scrollbar */
+    scrollbar-color: #888 #f1f1f1; /* Thumb and track colors */
+}
+
 :root{
     --main-color: #0062ff;
     --supporting-color: #00ebf3fe;
@@ -29,6 +34,35 @@ p, li ,a {
 section{
     padding-top: 5.6rem ;
 }
+
+/***** scrollbar Section *****/
+
+/* width */
+::-webkit-scrollbar {
+    width: 1rem;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--supporting-color);
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--heading-color);
+  }
+  
+  /***** End scrollbar Section *****/
 
 /***** Start Nav - bar Section *****/
 
@@ -537,3 +571,194 @@ margin:20px 10px;
 
 
 /***** End Contact Section *****/
+
+
+/***** Media queries Responsiveness *****/ 
+
+
+@media screen and (min-width:1000px ) and (max-width:1200px){
+    html{
+        font-size: 85%;
+    }
+    .section-hero{  
+        padding-bottom: 10%;
+    }
+    button{
+        font-size: 25px;
+        
+    }
+    .common-child-para{
+        font-size:1.4rem;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .grid{
+        grid-template-columns: 1fr;
+    }
+    .section-hero-image{
+        text-align: center;
+        grid-row: 1;
+        margin-bottom: 100px;
+        & figcaption img {
+            width: 50%;
+            height: 50%;
+        }
+    
+    }
+    .section-course-skills {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .section-expert-instructor-skills{
+        .expert-photo{
+            grid-row: 1;
+            grid-column: 1;
+        }
+    }
+    
+    .expert-photo .section-num-img{
+        border: none;
+        width: 20rem;
+        height: 40rem;
+        background-color:white;
+        box-shadow: none;
+        border-radius: none;
+        -webkit-border-radius: none;
+        -moz-border-radius: none;
+        -ms-border-radius: none;
+        -o-border-radius: none;
+        /*transition: all 2s ease-in-out;
+        *//*animation-name: color-changes;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        */animation: none;
+        top:17em;
+    }
+    .container-banner{
+        bottom : -50px;
+        
+    }
+    .section-contact {
+        padding-top: 15rem;
+    }
+    .contact-banner{
+        grid-template-columns: 1fr;
+
+        & .section-hero-image{
+            margin-bottom: 10px;
+        }
+    }
+
+    
+}
+@media screen and (min-width:768px) and (max-width:1000px) {
+
+
+    .section-hero{
+        padding-bottom: 15%;
+    }
+    
+    .section-hero-paragraph{
+    font-size: 1.8em;
+    }
+        
+    html{
+        font-size: 80% ;
+    }
+    button{
+        font-size: 20px;
+        
+    }
+    .common-child-para{
+        font-size:1.6rem;
+    }
+   
+}
+@media screen and (max-width:730px) {
+    .section-about-offers {
+        grid-template-columns: 1fr;
+    }
+    .section-about-img div img{
+        width: 70px;
+        height: 70px;
+        background-color:#c2cfe3;
+        border-radius: 100%;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        -ms-border-radius: 100%;
+        -o-border-radius: 100%;
+        text-align: center;
+        transition: all 0.3s linear;
+        -webkit-transition: all 0.3s linear;
+        -moz-transition: all 0.3s linear;
+        -ms-transition: all 0.3s linear;
+        -o-transition: all 0.3s linear;
+    }
+    .offer{
+        /* border: 2px solid black; */
+        text-align: start;
+    }
+    .section-course-skills {
+        grid-template-columns: 1fr;
+    }
+
+    .common-child-para{
+        font-size:1.9rem;
+    }
+}
+
+
+
+
+@media screen and (width <= 767px) {
+        
+    html{
+        font-size: 70% ;
+
+    }
+
+    .section-navbar .container{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        box-shadow: 2px 2px 10px grey;
+    }
+    .nav-image{
+        text-align: center;
+    }
+
+    button{
+        font-size: 18px;
+    }
+    .section-expert-instructor-skills {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-column-gap: 20px;
+    }
+    .expert-boxex-left {
+        padding-top: 200px;
+          text-align: start;
+    }
+    .expert-photo .section-num-img{
+        
+        top:10em;
+    }
+    .expert-boxex-left {
+        padding-top: 10px;
+
+    }
+
+    .contact-banner{
+        margin:0rem 13rem;
+    }
+    .common-child-para{
+        font-size:1.4rem;
+    }
+}
+
+/***** End Media queries Responsiveness *****/
+
+
+
