@@ -38,7 +38,6 @@ Even though you didn't explicitly create a promise using the Promise constructor
         // 1.  Parse the response as JSON and return it as a promise
         console.log(response);
         return response.json(); // Note- The response.json() method is specifically designed to handle parsing JSON data from a fetch response, while JSON.parse() is a standalone JavaScript method used to parse JSON strings into JavaScript objects.
-        
     })
     .then((data) => {
         // Handle the JSON data
