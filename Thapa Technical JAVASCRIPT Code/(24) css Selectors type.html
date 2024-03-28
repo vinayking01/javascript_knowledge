@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors</title>
+    <style>
+        /***** Descendent selector  *****/ 
+        
+        .inner p{
+            background-color: red; /* select all items. it means in .inner present anywhere either it is present inside the sub-child of inner would be also effected.*/
+        }
+
+
+        /***** End Descendent selector  *****/
+        
+        /***** Start Child Selector *****/ 
+        .inner > p {
+            background-color: blue;/* Select all items. which can be direct child ('p') of parent ('.inner1') */
+
+        }
+        /***** End Child Selector *****/
+        
+        /***** Adjacent sibling *****/ 
+        .inner1 + p{
+            background-color: rgb(0, 255, 115);   /*After parent ('.inner1') it searches for only immediate sibling ('.p'). means select only single sibling */
+        } 
+
+        /***** End Adjacent sibling *****/
+        
+        /***** General Sibling selector *****/ 
+        
+        .inner1 ~ p{
+            background-color: pink;  /*It selects all the sibling , preceded by ('.inner1'). not only immediate sibling*/
+        }
+        
+        /***** End General Sibling selector *****/
+
+
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner">
+            <p>Just entered</p>
+            <div class="inner1">
+                <p>sa</p>
+            </div>
+            <p>as</p>
+            <div class="inner1">
+                <h2>Inner 1 </h2>
+            </div>
+            <p>Close to inner1  or inner2</p>
+            <div class="inner2">
+                <h2>Inner 2</h2>
+                <p>No i just want to check</p>
+            </div>
+            <p>outside the inner div</p>
+        </div>
+    </div>
+</body>
+</html>
