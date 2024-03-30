@@ -1,0 +1,56 @@
+[
+    {
+        "id" :1,
+        "name" :"Computer",
+        "discription" : "Powerful laptop with a quad-core i5 processor, 8GB RAM, 256GB SSD, and a 14-inch FHD display. ",
+        "discount_price": 999.90,
+        "Actual_price":3999.99,
+        "Stocks_number" : 50,
+        "image" : "./public/images/lapi.png"
+    },
+    {
+        "id" :2,
+        "name" :"Mobiles",
+        "discription" : "PFeature-rich smartphone with a 6.2-inch screen, 12MP dual camera, 128GB storage, and a 4000mAh battery.",
+        "discount_price": 499.90,
+        "Actual_price":1999.99,
+        "Stocks_number" : 100,
+        "image" : "./public/images/mobiles.png"
+    },
+    {
+        "id" :3,
+        "name" :"Audio",
+        "disription" : "High-quality wireless headphones with over-ear design, 20 hours of battery life, and a sleek black color.",
+        "discount_price": 149.90,
+        "Actual_price":599.99,
+        "Stocks_number" : 30,
+        "image" : "./public/images/headphone.png"
+    },
+    {
+        "id" :4,
+        "name" :"Wearables",
+        "discription" :" Smartwatch with a 1.3-inch AMOLED display, water-resistant design, fitness tracking features, and a stylish silver color.",
+        "discount_price": 199.90,
+        "Actual_price":179.99,
+        "Stocks_number" : 30,
+        "image" : "./public/images/tv.png"
+    },
+    {
+        "id" :5,
+        "name" :"Speakers",
+        "discription" :"High-quality wireless headphones with over-ear design, 20 hours of battery life, and a sleek black color.",
+        "discount_price": 149.90,
+        "Actual_price":429.99,
+        "Stocks_number" : 30,
+        "image" : "./public/images/speakers.png"
+    },
+    {
+        "id" :6,
+        "name" :"Mobiles",
+        "discription" :"High-quality Mobiles with over-ear design, 20 hours of battery life, and a sleek black color.",
+        "discount_price": 249.90,
+        "Actual_price":579.99,
+        "Stocks_number" : 30,
+        "image" : "./public/images/mobiles.png"
+    }
+]
