@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- ========== Start toast box ========== -->
+    <div class="toast container">
+      <!-- <div class="toastbox"> <h3>Product ${product_name} added </h3>
+      </div> -->
+    </div>
+    <!-- ========== End toast box ========== -->
+    
+    
+
+
+    <!-- ========== Start Section Nav bar ========== -->
+
+    <header class="section-nav-bar">
+      <section>
+        <div class="container">
+          <div class="offerbox-nav">
+            <div >
+              <p class="offerbox-nav-para">Free shipping, 30-day return or refund guarantee.</p>
+            </div>
+            <div class="logged-in-out-btn">
+              <div>
+                <button> Sign In</button>
+                <button> Sign Up</button>
+              </div>
+            </div>
+          </div>
+          <div class="main-nav">
+            <div class="main-logo">
+              <img src="./public/images/logo.png" alt="Vinay Store">
+            </div>
+            <div class="nav-links">
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Products</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+                <div id="cart" >
+                  <a href ='ShowingFinal_CartList.html' class="fa-solid fa-cart-shopping cart-value"> 0 </a>
+                </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+    </header>
+    <!-- ========== End Section Nav bar ========== -->
+    <!-- ========== Start Hero Section ========== -->
+<section class="section-cart-items">
+      <div class="container ">
+        <div class="cart-content">
+           
+
+        </div>
+
+        <!-- ========== Start Template Element ========== -->
+        
+        <template id="Cart-template-container">
+            <div id="card-value" class="card">
+              <div class="article">
+                  <div class="category"></div>
+                  <div class="img-container"><img class="product_image" src="" alt=""></div>
+                  <h2 class="product_name"></h2>
+                  <h3 class="price"></h3>
+              </div>
+                <div class="stockElement">
+                    <button class="cartIncrement">+</button>
+                    <p class="productQuantity">1</p>
+                    <button class="cartDecrement">-</button>
+                </div>
+                <div class="remove-button">
+                  <button class="rm-cart-buttom">
+                    <i class="fa-solid fa-cart-shopping"></i> Remove 
+                  </button>
+                </div> 
+            </div>
+        </template>
+        <!-- ========== End Template Element ========== -->        
+      </div>
+    <div class ="container2">
+      <div class="productCartTotalElement">
+        <div class="card-cart">
+            <p>Selected Offer Summary</p>
+            <div class="productOrderTotal">
+              <div class="psb" style="display: flex; justify-content: space-between; font-size: 15px; margin-top: 20px; ">
+                <p>Sub Total:</p>
+                <p class="productSubTotal">₹0</p>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 15px; margin: 20px 0px;">
+                <p>Tax:</p>
+                <p class="productTax">₹50</p>
+              </div>
+              <hr>
+              <div class="pft" style="display: flex; justify-content: space-between; font-size: 15px;">
+                <p>Final Total:</p>
+                <p class="productFinalTotal">50</p>
+              </div>
+            </div>
+        </div>
+    </div>
+    </div>
+ </section>
+  <!-- ========== End Hero Section ========== -->
+  
+
+
+    
+    <!-- ========== Start Footer ========== -->
+
+<section  class="section-footer">
+    <div class="container footer-container">
+      <div class="first-footer-box">
+        <div class="footer-child f-child1">
+          <img src="./public/images/logo.png" alt="company logo">
+          <div><p>Welcome to Vinay EcomStore, your ultimate destination for cutting-edge gadgets!</p></div>
+          <img src="https://i.postimg.cc/Nj9dgJ98/cards.png" alt="cards">
+        </div>
+        <div class="footer-child f-child2">
+          <h2>SHOPPING</h2>
+          <ul>
+            <li><a href="#">Computer Store</a></li>
+            <li><a href="#">Phone Store</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Sales & Discount</a></li>
+          </ul>
+        </div>
+        <div class="footer-child f-child3">
+          <h2>EXPERIENCE</h2>
+          <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Payment Method</a></li>
+            <li><a href="#">Delivery</a></li>
+            <li><a href="#">Return & Exchanges</a></li>
+          </ul>
+        </div>
+        <div class="footer-child f-child4">
+          <h2>NEWSLETTER</h2>
+          <p>Be the first to know about new arrivals, sales & promos!</p>
+        </div>
+      </div>
+      <div class="second-footer-box">
+        <p>Design and Code by Vinay Technical</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- ========== End Footer ========== -->
+  
+  
+      <script type="module"  src="ShowAddToCart.js">
+    
+      </script> 
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script>
+        AOS.init();
+      </script>
+    </body>
+  </html>
+  

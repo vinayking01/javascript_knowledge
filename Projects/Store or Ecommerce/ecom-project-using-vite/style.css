@@ -126,14 +126,17 @@ button:hover{
 }
 
 #cart{
-  background-color: #000a19;
+  background-color: #000000;
   height: 30px;
   width: 50px;
-& i{
-  color: white;
-  }
+  
   place-content: center;
   text-align: center;
+}
+
+.fa-solid {
+  color: white;
+  text-decoration: none;
 }
 
 .nav-links ul{
@@ -148,7 +151,7 @@ button:hover{
     }
 
 & li a:hover{
-  color: var(--main-color);
+  color: var(white);
 
 }
 & li a:hover::before{
@@ -183,6 +186,69 @@ button:hover{
   
 }
 /***** End Section Nav Bar *****/
+
+/***** Toast Notification *****/ 
+
+@keyframes sliding_toast {
+  0%{
+    transform: translateX(100%);
+    opacity: 0.4;
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+}
+  50%{
+      transform: translateX(0%);
+      opacity: 0.6;
+    
+}
+  100%{
+    opacity: 1;
+    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    -o-transform: translateX(0%);
+}
+    
+}
+
+.toast{
+  display: flex;
+  justify-content: end;
+  position:fixed;
+  top: 10%;
+  right: 20px;
+  z-index:1000;
+  
+
+}
+
+
+
+.toastbox{
+  background-color: rgb(31, 29, 29);
+  padding: 5px 5px;
+  text-align: center;
+  margin-right: 20px;
+  width: 100%;
+  animation-name: sliding_toast;
+  animation-duration: 2s;
+  animation-direction: linear;
+  /* animation-timing-function: ease-in-out; */
+  color:white;
+  border: 2p solid white;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+
+/***** End Toast Notification *****/
+
+
 
 /*****  Hero Section *****/ 
 main{
@@ -359,6 +425,119 @@ color: var(--bg-color);
 
 /***** Section Our Store *****/ 
 
+.store-container{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  justify-content: space-around;
+  column-gap: 3.6rem;
+  row-gap: 3.6rem;
+  padding: 20px 40px;
+  background-color: #ffffff;
+  & .inner-box{
+    height: auto;
+  }
+
+  & .card{
+    padding: 20px 20px;
+    background-color: #ffffff;
+    box-shadow: 3px 3px 10px rgb(191, 189, 189);
+  }
+  & .category{
+    font-size: 17px;
+    background-color: rgb(227, 216, 163);
+    padding: 3px 0px;
+    text-align: center;
+    margin-right: 80%;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+  & .img-container {
+    width: auto;
+    height: 300px;
+    text-align: center;
+
+  }
+  & .product_image{
+    width: 80%;
+    height: 80%;
+  }
+  & h2{
+    font-size: 1.6rem;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: capitalize;
+    padding: 5px 0px;
+  }
+
+  & .rating i{
+    color: rgb(213, 220, 7);
+    padding: 5px 0px;
+  }
+
+  & .product-description{
+    padding: 10px 0px;
+  }
+
+  & .price{
+    display: flex;
+    width: 200px;
+    margin: 20px 0px;
+    justify-content: space-between;
+
+    & .ActualPrice{
+      text-decoration:line-through;
+      color: #262729;
+    }
+    &  p{
+      font-size: 1.3rem;
+    }
+  }
+
+  & .stock-details{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 0.8rem;
+
+    & .stock-remaining {
+      font-size: 1.6rem;
+    }
+  }
+  & .product-stocks{
+    font-size: 1.3rem;
+
+  }
+  & .productQuantityElement {
+    padding: 10px 0px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-content: space-between;
+    align-items: center;
+    & .productProperty{
+      font-size: 1rem;
+    }
+  }
+  & .stockElement{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    & button{
+      padding: 3px 3px;
+    }
+    & p{
+      border:2px solid black;
+      padding: 5px 5px;
+      margin: 0px 5px;  
+      text-align: center;
+      place-items: center;
+      justify-content: center;
+    }
+  }
+
+  & .add-to-cart-button{
+    font-size: 1.1rem;
+  }
+}
 
 
 /***** End Section Our Store *****/
@@ -576,3 +755,104 @@ margin:20px 10px;
 }
 /***** End Footer Section *****/
 
+/***** Cart content *****/ 
+
+.section-cart-items .container2{
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-right: 22px;
+  & .cart-content{
+  padding: 20px 0px;
+    border: 2px solid black;
+  }
+
+  & .productCartTotalElement{
+    padding-top: 4.4rem;
+
+    display: flex;
+    justify-content: end;
+    margin-bottom:50px;
+
+  }
+
+  & .card-cart{
+    border: 5px solid black;
+    padding: 20px 20px;
+
+    & >p{
+      font-size: 20px;
+    }
+  }
+}
+
+
+.section-cart-items .container{
+  display: grid;
+  grid-template-columns: 1fr;
+  
+  & .remove-button{
+    display: grid;
+    place-content: center;
+  }
+  & .cart-content{
+  padding: 20px 0px;
+
+  & .card{
+    display: grid;
+    grid-template-columns: 2fr 0.5fr 0.5fr;
+    border: 1px solid grey;
+    margin-bottom: 5px;
+
+    & .category{
+      font-size: 17px;
+      background-color: rgb(227, 216, 163);
+      padding: 3px 10px;
+      text-align: center;
+      height: 25px;
+      
+      border-radius: 30px;
+      -webkit-border-radius: 30px;
+      -moz-border-radius: 30px;
+      -ms-border-radius: 30px;
+      -o-border-radius: 30px;
+  }
+    & .article{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      place-items: center;
+    }
+    & .img-container{
+      width: 100px;
+      height: 100px;
+
+      & img{
+        width: 100%;
+        height: 100%;
+      }
+      
+    }
+
+    & .stockElement{
+      display: flex;
+      justify-content: center;
+      place-items: center;
+
+      & button{
+        width: 40px;
+        height: 40px;
+    }
+      & p{
+        border:2px solid black;
+        height: 40px;
+        padding: 5px 5px;
+        margin: 0px 5px;  
+        text-align: center;
+        place-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
+}
+
+/***** End Cart content *****/

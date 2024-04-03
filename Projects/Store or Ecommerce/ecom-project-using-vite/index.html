@@ -10,7 +10,10 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   </head>
   <body>
-    
+    <div class="toast container">
+      <!-- <div class="toastbox"> <h3>Product ${product_name} added </h3>
+      </div> -->
+    </div>
     <!-- ========== Start Section Nav bar ========== -->
 
     <header class="section-nav-bar">
@@ -33,21 +36,25 @@
             </div>
             <div class="nav-links">
                 <ul>
-                  <li><a href="#">Home</a></li>
+                  <li><a href="index.html">Home</a></li>
                   <li><a href="#">About</a></li>
                   <li><a href="#">Products</a></li>
                   <li><a href="#">Contact</a></li>
                 </ul>
                 <div id="cart" >
-                  <i class="fa-solid fa-cart-shopping cart-value"> 0 </i>
+                  <a href ='ShowingFinal_CartList.html' class="fa-solid fa-cart-shopping cart-value"> 0 </a>
                 </div>
             </div>
           </div>
           </div>
         </div>
       </section>
+      
     </header>
     <!-- ========== End Section Nav bar ========== -->
+<!-- ========== Start Section ========== -->
+
+<!-- ========== End Section ========== -->
 
     <!-- ========== Start Hero Section ========== -->
    <section class="section-hero">
@@ -174,18 +181,7 @@
       <h1 style="padding: 20px 20px;"> Checkout Vinay Store </h1>
     </div>
     <div class="container store-container">
-      <div class="product  product1">
-        
-      </div>
-      <div class="product product2">
-        
-      </div>
-      <div class="prodcut prodcut3">
-        
-      </div>
-      <div class="product prodcut4">
-        
-      </div>
+
     </div>
    </section>
 
@@ -196,38 +192,44 @@
     Benefit -  Previously for dynamic content we are creating Html content in javascript , but now to make it less complex this way we can create directly in html
     -->
 
-<template class="product-template-container">
+<template id="product-template-container">
 <div id="card-value" class="card">
   <div class="article">
-    <div class="category"></div>
-    <div class="img-container"><img class="productimage" src="" alt=""></div>
-    <h2 class="prodcut-heaading"></h2>
-    <div class="rating">
-      <i class="fa-solid fa-star"></i>
-      <i class="fa-solid fa-star"></i>
-      <i class="fa-solid fa-star"></i>
-      <i class="fa-solid fa-star"></i>
+    <div class="inner-box">
+      <div class="category"></div>
+      <div class="img-container"><img class="product_image" src="" alt=""></div>
+      <h2 class="product_name"></h2>
+      <div class="rating">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+      </div>
+      <p class="product-description"></p>
     </div>
-    <p class="product-description"></p>
+    
     <div class="price">
       <p class="DiscountPrice"></p>
       <p class="ActualPrice"></p>
     </div>
     <div class="stock-details">
-      <p class="product-stocks">Total Stocks Available</p>
+      <p class="product-stocks">Total Stocks Available :</p>
       <p class="stock-remaining"></p>
     </div>
     <div class="productQuantityElement">
-      <p class="productProperty">Quantity(Pieces)</p>
+      <p class="productProperty">Quantity(Pieces) :</p>
       <div class="stockElement">
         <button class="cartIncrement">+</button>
         <p class="productQuantity">1</p>
         <button class="cartDecrement">-</button>
       </div>
     </div>
-    <button class="add-to-cart-button">
-      <i class="fa-solid fa-cart-shopping"></i> Add To Cart
-    </button>
+    <div>
+      <button class="add-to-cart-button">
+        <i class="fa-solid fa-cart-shopping"></i> Add To Cart
+      </button>
+    </div>
+    
   </div>
 </div>
 
@@ -402,7 +404,7 @@
 <!-- ========== End Footer ========== -->
 
 
-    <!-- <script type="module" src="/main.js"></script> -->
+    <script type="module"  src="main.js"></script> <!-- type is the thing in vite which i sued to proper functioning of the modules which imported in js file -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init();
