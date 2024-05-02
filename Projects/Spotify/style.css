@@ -1,0 +1,388 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+:root{
+    --background-base: #121212;
+}
+
+body{
+    background-color: black;
+    /* color: white;  */
+}
+
+.container{
+    padding: 5px 5px;
+}
+
+
+
+/***** Left Box *****/ 
+.left-box{
+    width: 25vw;
+    color: white;
+    padding: 10px 5px;
+    
+}
+
+.home{
+    background-color: var(--background-base);
+    padding: 10px 10px;
+    padding-left: 20px;
+}
+ul{
+    /* margin-top: 10px; */
+}
+
+ul li{
+    list-style: none;
+    display: flex;
+    margin: 20px 0px;
+    & img{
+        width: 22px;
+        height: 22px;
+        padding-right: 1.3rem;
+    }
+}
+
+/***** Library section starts *****/ 
+.Your-library{
+    background-color: var(--background-base);
+    margin-top: 10px;
+    padding: 10px 10px;
+    padding-left: 20px;
+    min-height: 70vh;
+    & .lib-head{
+        font-family: CircularSp, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, "Helvetica Neue", helvetica, arial, "Hiragino Kaku Gothic ProN", Meiryo, "MS Gothic";
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    & .lib-p{
+        font-family: CircularSp, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, "Helvetica Neue", helvetica, arial, "Hiragino Kaku Gothic ProN", Meiryo, "MS Gothic";
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    & .lib-btn{
+        margin-top: 0.6rem;
+        font-family: CircularSp, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, "Helvetica Neue", helvetica, arial, "Hiragino Kaku Gothic ProN", Meiryo, "MS Gothic";
+        font-size: 14px;
+        font-weight: 400;
+        padding: 0.5rem 0.9rem;
+        border-radius: 12px;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        -ms-border-radius: 12px;
+        -o-border-radius: 12px;
+}
+}
+.library-headline{
+    margin: 10px 0px;
+    display: flex;
+    justify-content: space-between;
+    & img{
+        width: 22px;
+        height: 22px;
+        padding-right: 1.3rem; 
+    }
+
+    
+}
+
+.library-content{
+    margin: 1px 1px;
+    padding: 2px 0px;
+    height: 200px;
+    overflow-y: scroll;
+  
+    .playlist-creation{
+        background-color: rgb(45, 42, 42);
+        padding: 1.2rem 1.2rem;
+        line-height: 1.7rem;
+        margin: 10px 0px;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+}
+    .Browsing-podcast{
+        background-color: rgb(45, 42, 42);
+        padding: 1.2rem 1.2rem;
+        line-height: 1.7rem;
+        margin: 10px 0px;
+    }
+}
+
+/***** left-box footer *****/ 
+.left-box-footer{
+    padding: 30px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: CircularSp, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, "Helvetica Neue", helvetica, arial, "Hiragino Kaku Gothic ProN", Meiryo, "MS Gothic";
+    font-size: 11px;
+    font-weight: 400;
+    & a{
+        color: rgb(167, 167, 167);
+        text-decoration: none;
+    }
+    
+}
+
+.lng{
+    padding-left: 2px;
+    & .lng-box{
+        border: 2px solid white;
+        width: 90px;
+        padding: 5px 5px;
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+}
+    & img{
+        width: 20px;
+        height: 20px;
+    }
+
+    &.lng-box{
+     margin: 0px 10px;
+    }
+
+}
+/***** End left-box footer *****/
+
+
+/***** End Library section *****/
+
+
+/***** End Left Box *****/
+
+
+/***** Right-box *****/ 
+.right-box{
+    margin-top: 10px;
+    width: 75vw;
+    padding: 10px 5px;
+    border-radius: 20px;
+    color: white;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+header{
+    background-color: rgb(47, 44, 44);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    min-height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+}
+
+.navigation{
+    margin: 5px 5px;
+    & button{
+        background-color: var(--background-base);
+        border-style: none;
+    }
+    & i{
+        height: 15px;
+        width: 15px;
+        padding: 5px 6px;
+        background-color: black;
+        color: white;
+        border-radius: 100px;
+        -webkit-border-radius: 100px;
+        -moz-border-radius: 100px;
+        -ms-border-radius: 100px;
+        -o-border-radius: 100px;
+}
+
+}
+
+
+.log-sign-btn{
+    margin: 10px 15px;
+    & button{
+        font-family: CircularSp, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, "Helvetica Neue", helvetica, arial, "Hiragino Kaku Gothic ProN", Meiryo, "MS Gothic";
+        font-size: 16px;
+        font-weight: 700;
+        color: rgb(255, 255, 255);
+        background-color: var(--background-base);
+        padding: 10px 10px;
+        border-style: none;
+        border-radius: 15px;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        -ms-border-radius: 15px;
+        -o-border-radius: 15px;
+        transition: all 0.2;
+        -webkit-transition: all 0.2;
+        -moz-transition: all 0.2;
+        -ms-transition: all 0.2;
+        -o-transition: all 0.2;
+        &:hover
+{
+            transform: scale(1.1);
+            -webkit-transform: scale(1.1);
+            -moz-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+            -o-transform: scale(1.1);
+}
+}
+
+    & #log-in{
+        background-color: whitesmoke;
+        color: black;
+    }
+}
+
+/***** Spotify playlist *****/ 
+
+.spotifyPlaylist{
+   
+    padding: 10px 10px;
+    background-color: var(--background-base);
+    /* height: 71vh; */
+   
+}
+
+.card-container{
+    /* height: 40vh; */
+    display: flex;
+    overflow-x: scroll;
+    gap: 10px;
+    width: 72vw;
+}
+
+.card{
+    margin: 10px 0px;
+    padding: 10px 10px;
+    border-radius: 10%;
+    position: relative;
+    -webkit-border-radius: 10%;
+    -moz-border-radius: 10%;
+    -ms-border-radius: 10%;
+    -o-border-radius: 10%;
+    
+    & .img1{
+        width: 130px;
+        height: 130px;
+    }
+
+    &:hover{
+        background-color:rgba(40, 38, 38, 0.923);
+
+        & .play-btn{
+            opacity: 1;
+            
+        }
+    }
+}
+
+.img1{
+   width: 100%;
+   border-radius: 10%;
+   -webkit-border-radius: 10%;
+   -moz-border-radius: 10%;
+   -ms-border-radius: 10%;
+   -o-border-radius: 10%;
+}
+
+.play-btn {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: 82px;
+    right: 19px;
+    background-color: green;
+    border-radius: 50%;
+    display: flex;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s linear;
+    -webkit-transition: all 0.3s ;
+   
+    &:hover{
+        transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -o-transform: scale(1.2);
+
+        cursor: pointer;
+    }
+}
+
+.fa-play {
+    color: black; /* Set the color of the icon to black */
+}
+
+/***** End Spotify playlist *****/
+
+
+/***** Popular Artist playlist *****/ 
+
+.PopularPlaylist{
+   
+    padding: 10px 10px;
+    background-color: var(--background-base);
+    
+   
+}
+
+
+/***** Popular Artist playlist *****/
+
+/***** Playbar Buttons *****/ 
+
+.playbar{
+    display: flex;
+    background-color: greenyellow;
+    width: 100%;
+    height: 10vh;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+   align-items: center;
+   justify-content: center;
+}
+
+.songs-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    gap: 10px;
+    & img{
+        width: 30px;
+        height: 30px;
+        border: 2px solid black;
+        border-radius: 50%;
+        padding: 6px 6px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+
+       
+    }
+}
+
+
+
+/***** End Playbar Buttons *****/
+
+
+/***** End Right-box *****/
+
+

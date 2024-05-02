@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utility.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/x-icon" href="/spotify-ico.svg">
+</head>
+<body>
+    <div class="container flex">
+        
+        <div class="left-box ">
+            <div class="home red-border rounded">
+                <div>
+                    <img style="width: 110px;" class="invert-color"  src="spotify-logo.svg" alt="spotify-image">
+                </div>
+                <div>
+                    <ul>
+                        <li><img class="invert-color" src="home-logo.svg" alt="Home"><h3>Home</h3></li>
+                        <li><img class="invert-color" src="Search-box-logo.svg" alt="Search"><h3>Search</h3></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="Your-library red-border rounded">
+                <div class="library-headline">
+                    <div class="flex">
+                        <img class="invert-color" src="library-logo.svg" alt="">
+                        <h3>Your Library</h3>
+                    </div>
+                    <h2>+</h2>
+                </div>
+                <div class="library-content">
+                    <div class="playlist-creation">
+                        <h3 class="lib-head">Create your first playlist</h3>
+                        <p class="lib-p">It's easy, we'll help you.</p>
+                        <button class="lib-btn">Create Playlist</button>
+                    </div>
+                    <div class="Browsing-podcast">
+                        <h3 class="lib-head">Let's find some podcast to follow</h3>
+                        <p class="lib-p">We'll keep you updated in new episodes</p>
+                        <button class="lib-btn">Browse Podcasts</button>
+                    </div>
+                </div>
+                <div class="left-box-footer">
+                    <div  style="margin: 7px 7px;">
+                      <a href="https://www.spotify.com/in-en/legal/">
+                        <span>Legal</span>
+                      </a>
+                    </div>
+                    <div style="margin: 7px 7px;">
+                      <a href="https://www.spotify.com/in-en/safetyandprivacy/">
+                        <span>Safety &amp; Privacy Center</span>
+                      </a>
+                    </div>
+                    <div style="margin: 7px 7px;">
+                      <a href="https://www.spotify.com/in-en/legal/privacy-policy/">
+                        <span>Privacy Policy</span>
+                      </a>
+                    </div>
+                    <div style="margin: 7px 7px;">
+                      <a href="https://www.spotify.com/in-en/legal/cookies-policy/">
+                        <span>Cookies</span>
+                      </a>
+                    </div>
+                    <div style="margin: 7px 7px;">
+                      <a href="https://www.spotify.com/in-en/legal/privacy-policy/#s3">
+                        <span>About Ads</span>
+                      </a>
+                    </div>
+                    <div style="margin: 7px 7px;">
+                      <a href="https://www.spotify.com/in-en/accessibility/">
+                        <span>Accessibility</span>
+                      </a>
+                    </div>
+                </div>
+                 <div class="lng">
+                    <div class="flex lng-box">
+                        <img class="invert-color" src="earth-log.svg"  alt="English">&nbsp; English
+                    </div>
+                 </div> 
+            </div>
+        </div>
+        <div class="right-box " style="position: relative;">
+          
+          <!-- ========== Start Header ========== -->
+          <header class="header ">
+            <div class="navigation">
+              <button class="move-back"><i class="fa-solid fa-angle-left"></i></button>
+              <button class="move-forward"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+            <div class="log-sign-btn">
+              <button>Sign up</button>
+              <button id="log-in">Log in</button>
+            </div>
+          </header>
+          
+          <!-- ========== End Header ========== -->
+         
+          <main class="genre">
+             <!-- ========== Start Spotify playlist ========== -->
+            <div class="spotifyPlaylist ">
+              <div class="flex " style="Align-items: center; justify-content: space-between;">
+                <h2 class="lib-head" style="margin-left: 10px; ">Spotify Playlists</h2>
+                <a href="#" class="lib-p" style=" margin-top: 7px; color: rgb(127, 125, 125); text-decoration: none; font-weight: 500;">Show all</a>
+              </div>
+              
+              <div class="card-container ">
+                <div class="card">
+                  <img class="img1" src="https://i.scdn.co/image/ab67706f00000002b61a30283be1ef6e1f734605" alt="">
+                  <h3 class="lib-head" style="margin: 2px 2px;">Wake up Gently</h3>
+                  <p class="lib-p" style="font-size: 14px;">Just go with the Reythm Play the Song!</p>
+                  <div class="play-btn">
+                    <button style="border-style: none; background-color: transparent;"><i class="fa-solid fa-play"></i></button>
+                </div>
+                </div>
+                <div class="card ">
+                  <img class="img1" src="https://i.scdn.co/image/ab67706f000000028aa213d23c60645e2649a350" alt="">
+                  <h3 class="lib-head" style="margin: 2px 2px;">Wake up Gently</h3>
+                  <p class="lib-p" style="font-size: 14px;">Just go with the Reythm Play the Song!</p>
+                  <div class="play-btn">
+                    <button style="border-style: none; background-color: transparent;"><i class="fa-solid fa-play"></i></button>
+                </div>
+                </div>
+                <div class="card ">
+                  <img class="img1" src="https://i.scdn.co/image/ab67706f00000002fe40f28bee10a88c682f4cfa" alt="">
+                  <h3 class="lib-head" style="margin: 2px 2px;">Wake up Gently</h3>
+                  <p class="lib-p" style="font-size: 14px;">Just go with the Reythm Play the Song!</p>
+                  <div class="play-btn">
+                    <button style="border-style: none; background-color: transparent;"><i class="fa-solid fa-play"></i></button>
+                </div>
+                </div>
+                <div class="card ">
+                  <img class="img1" src="https://i.scdn.co/image/ab67616d00001e025f3ede47954a93aa03efe5f9" alt="">
+                  <h3 class="lib-head" style="margin: 2px 2px;">Wake up Gently</h3>
+                  <p class="lib-p" style="font-size: 14px;">Just go with the Reythm Play the Song!</p>
+                  <div class="play-btn">
+                    <button style="border-style: none; background-color: transparent;"><i class="fa-solid fa-play"></i></button>
+                </div>
+                </div>
+                <div class="card ">
+                  <img class="img1" src="https://i.scdn.co/image/ab67616d00001e021a8c4618eda885a406958dd0" alt="">
+                  <h3 class="lib-head" style="margin: 2px 2px;">Wake up Gently</h3>
+                  <p class="lib-p" style="font-size: 14px;">Just go with the Reythm Play the Song!</p>
+                  <div class="play-btn">
+                    <button style="border-style: none; background-color: transparent;"><i class="fa-solid fa-play"></i></button>
+                </div>
+                </div>
+                <div class="card ">
+                  <img class="img1" src="https://i.scdn.co/image/ab67616d00001e021d1cc2e40d533d7bcebf5dae" alt="">
+                  <h3 class="lib-head" style="margin: 2px 2px;">Wake up Gently</h3>
+                  <p class="lib-p" style="font-size: 14px;">Just go with the Reythm Play the Song!</p>
+                  <div class="play-btn">
+                    <button style="border-style: none; background-color: transparent;"><i class="fa-solid fa-play"></i></button>
+                </div>
+                </div>
+                <div class="card ">
+                  <img class="img1" src="https://i.scdn.co/image/ab67616d00001e026404721c1943d5069f0805f3" alt="">
+                  <h3 class="lib-head" style="margin: 2px 2px;">Wake up Gently</h3>
+                  <p class="lib-p" style="font-size: 14px;">Just go with the Reythm Play the Song!</p>
+                  <div class="play-btn">
+                    <button style="border-style: none; background-color: transparent;"><i class="fa-solid fa-play"></i></button>
+                </div>
+                </div>
+                <div class="card ">
+                  <img class="img1" src="https://i.scdn.co/image/ab67616d00001e02cb2f9520171129a3df7a241a" alt="">
+                  <h3 class="lib-head" style="margin: 2px 2px;">Wake up Gently</h3>
+                  <p class="lib-p" style="font-size: 14px;">Just go with the Reythm Play the Song!</p>
+                  <div class="play-btn">
+                    <button style="border-style: none; background-color: transparent;"><i class="fa-solid fa-play"></i></button>
+                </div>
+                </div>
+              </div>
+            </div>
+            <!-- ========== End Spotify playlist ========== -->
+
+            <!-- ========== Start Popular artist ========== -->
+            <div class="PopularPlaylist ">
+              <div class="flex " style="Align-items: center; justify-content: space-between;">
+                <h2 class="lib-head" style="margin-left: 10px; ">Popular Artists</h2>
+                <a href="#" class="lib-p" style=" margin-top: 7px; color: rgb(127, 125, 125); text-decoration: none; font-weight: 500;">Show all</a>
+              </div>
+              
+              <div class="card-container ">
+                <div class="card" >
+                  <img class="img1" style="border-radius: 50%;" src="https://i.scdn.co/image/ab67616100005174cb6926f44f620555ba444fca" alt="">
+                  <h3 class="lib-head" style="margin: 2px 2px;">Pritam</h3>
+                  <p class="lib-p" style="font-size: 14px;">Artist</p>
+                  <div class="play-btn">
+                    <button style="border-style: none; background-color: transparent;"><i class="fa-solid fa-play"></i></button>
+                </div>
+                </div>
+                <div class="card ">
+                  <img class="img1" style="border-radius: 50%;" src="https://i.scdn.co/image/ab67706f000000028aa213d23c60645e2649a350" alt="">
+                  <h3 class="lib-head" style="margin: 2px 2px;">Arjit Singh</h3>
+                  <p class="lib-p" style="font-size: 14px;">Artist</p>
+                  <div class="play-btn">
+                    <button style="border-style: none; background-color: transparent;"><i class="fa-solid fa-play"></i></button>
+                </div>
+                </div>
+                <div class="card ">
+                  <img class="img1" style="border-radius: 50%;" src="https://i.scdn.co/image/ab67616100005174b19af0ea736c6228d6eb539c" alt="">
+                  <h3 class="lib-head" style="margin: 2px 2px;">A.R Rahman</h3>
+                  <p class="lib-p" style="font-size: 14px;">Artist</p>
+                  <div class="play-btn">
+                    <button style="border-style: none; background-color: transparent;"><i class="fa-solid fa-play"></i></button>
+                </div>
+                </div>
+                <div class="card ">
+                  <img class="img1" style="border-radius: 50%;" src="https://i.scdn.co/image/ab67616100005174269986435521e05d9fd9d898" alt="">
+                  <h3 class="lib-head" style="margin: 2px 2px;">Vishal Mishra</h3>
+                  <p class="lib-p" style="font-size: 14px;">Artist</p>
+                  <div class="play-btn">
+                    <button style="border-style: none; background-color: transparent;"><i class="fa-solid fa-play"></i></button>
+                </div>
+                </div>
+                <div class="card ">
+                  <img class="img1" style="border-radius: 50%;" src="https://i.scdn.co/image/ab67616100005174fc7c542c04b5f7dc8f1b1c16" alt="">
+                  <h3 class="lib-head" style="margin: 2px 2px;">Anirudh Ravichander</h3>
+                  <p class="lib-p" style="font-size: 14px;">Artist</p>
+                  <div class="play-btn">
+                    <button style="border-style: none; background-color: transparent;"><i class="fa-solid fa-play"></i></button>
+                </div>
+                </div>
+                <div class="card ">
+                  <img class="img1" style="border-radius: 50%;" src="https://i.scdn.co/image/ab67616100005174b19af0ea736c6228d6eb539c" alt="">
+                  <h3 class="lib-head" style="margin: 2px 2px;">Vishal Shekhar</h3>
+                  <p class="lib-p" style="font-size: 14px;">Artist</p>
+                  <div class="play-btn">
+                    <button style="border-style: none; background-color: transparent;"><i class="fa-solid fa-play"></i></button>
+                </div>
+                </div>
+                <div class="card ">
+                  <img class="img1" style="border-radius: 50%;" src="https://i.scdn.co/image/ab67706f000000028aa213d23c60645e2649a350" alt="">
+                  <h3 class="lib-head" style="margin: 2px 2px;">Vishal Mishra</h3>
+                  <p class="lib-p" style="font-size: 14px;">Artist</p>
+                  <div class="play-btn">
+                    <button style="border-style: none; background-color: transparent;"><i class="fa-solid fa-play"></i></button>
+                </div>
+                </div>
+                <div class="card ">
+                  <img class="img1" style="border-radius: 50%;" src="https://i.scdn.co/image/ab67616100005174b19af0ea736c6228d6eb539c" alt="">
+                  <h3 class="lib-head" style="margin: 2px 2px;">A.R Rahman</h3>
+                  <p class="lib-p" style="font-size: 14px;">Artist</p>
+                  <div class="play-btn">
+                    <button style="border-style: none; background-color: transparent;"><i class="fa-solid fa-play"></i></button>
+                </div>
+                </div>
+              </div>
+            </div>
+            <!-- ========== End Popular artist ========== -->
+            
+          </main>
+          
+          <!-- ========== Start Song Play button section ========== -->
+          <div class="playbar">
+            <div class="songinfor"></div>
+            <div class="songinfo"></div>
+            <div class="songs-button">
+              <img src="prev-play.svg" alt="">
+              <img src="play-btn.svg" alt="">
+              <img src="forward-play.svg" alt="">
+              
+            </div>
+          </div>
+          <!-- ========== End Song Play button section ========== -->
+          
+
+        </div>
+    </div>
+</body>
+</html>

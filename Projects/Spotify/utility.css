@@ -1,0 +1,59 @@
+
+.flex{
+    display: flex;
+}
+
+.red-border{
+    border: 2px solid red;
+}
+
+.justify-content{
+    justify-content: center;
+}
+
+.align-items{
+    align-items: center;
+}
+
+.bg-black{
+    background-color: black;
+    color: white;
+}
+
+.invert-color{
+    filter: invert(1);
+    -webkit-filter: invert(1);
+}
+
+.rounded{
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+/***** Scroll customization *****/ 
+/* Define scrollbar styles */
+::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+  }
+  
+  /* Track (the area behind the scrollbar) */
+  ::-webkit-scrollbar-track {
+    background:none;  /* Color of the track */
+    
+  }
+  
+  /* Handle (the draggable part of the scrollbar) */
+  ::-webkit-scrollbar-thumb {
+    background: #8888887c; /* Color of the handle */
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555555ab; /* Color of the handle when hovered */
+  }
+/***** End Scroll customization *****/
+
+
