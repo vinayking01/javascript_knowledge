@@ -32,8 +32,15 @@
                     </div>
                     <h2>+</h2>
                 </div>
-                <div class="library-content">
-                    <div class="playlist-creation">
+                <!-- ========== Start songs list in left box ========== -->
+                <div class="songs-container rounded">
+              
+                </div>
+
+                <!-- ========== End songs list in left box ========== -->
+                
+                <div class="library-content ">
+                    <div class="playlist-creation ">
                         <h3 class="lib-head">Create your first playlist</h3>
                         <p class="lib-p">It's easy, we'll help you.</p>
                         <button class="lib-btn">Create Playlist</button>
@@ -256,12 +263,14 @@
           
           <!-- ========== Start Song Play button section ========== -->
           <div class="playbar">
-            <div class="songinfor"></div>
+            <div class="seekbar">
+              <div class="circle"></div>
+            </div>
             <div class="songinfo"></div>
             <div class="songs-button">
-              <img src="prev-play.svg" alt="">
-              <img src="play-btn.svg" alt="">
-              <img src="forward-play.svg" alt="">
+              <img class="prevsong" src="prev-play.svg" alt="">
+              <img class="playsong" src="play-btn.svg" alt="">
+              <img class="forwardsong" src="forward-play.svg" alt="">
               
             </div>
           </div>
@@ -270,5 +279,6 @@
 
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

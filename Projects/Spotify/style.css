@@ -95,8 +95,8 @@ ul li{
 .library-content{
     margin: 1px 1px;
     padding: 2px 0px;
-    height: 200px;
-    overflow-y: scroll;
+    /* height: 200px; */
+    /* overflow-y: scroll; */
   
     .playlist-creation{
         background-color: rgb(45, 42, 42);
@@ -114,8 +114,49 @@ ul li{
         padding: 1.2rem 1.2rem;
         line-height: 1.7rem;
         margin: 10px 0px;
+        border-radius: 10px;
     }
 }
+
+/***** Song container *****/ 
+
+.songs-container{
+    background-color: var(--background-base);
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 25vh;
+    margin-bottom: 30px;
+    overflow-y: scroll;
+}
+
+.songs-card{
+    padding: 10px 10px;
+    border:2px solid white;
+    background-color: rgb(45, 42, 42);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    & i{
+        font-size:x-large;
+    }
+    & ul{
+        list-style: none;
+        
+        & li{
+            margin: -2px 0px;
+        }
+    
+    }
+    & img{
+        width: 23px ;
+        height: 23px;
+    }
+}
+
+/***** End Song container *****/
 
 /***** left-box footer *****/ 
 .left-box-footer{
@@ -303,7 +344,7 @@ header{
     position: absolute;
     bottom: 82px;
     right: 19px;
-    background-color: green;
+    background-color: rgb(0, 216, 40);
     border-radius: 50%;
     display: flex;
     opacity: 0;
@@ -345,27 +386,54 @@ header{
 
 /***** Playbar Buttons *****/ 
 
+
+
 .playbar{
     display: flex;
-    background-color: greenyellow;
-    width: 100%;
-    height: 10vh;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
+    background-color: rgba(94, 94, 94, 0.911);
+    width: 75%;
+    height: 100px;
+    position: fixed;
+    bottom: 0vh;
+    right: 0vw;
    align-items: center;
    justify-content: center;
+   flex-direction: column;
+}
+
+.seekbar{
+    background-color: white;
+    width: 100%;
+    margin:10px 0px;
+    /* padding-top: 5px; */
+    height: 5px;
+
+    & .circle{
+        width: 25px;
+        height: 25px;
+        position: relative;
+        top: -10px;
+        left: 0px;
+        background-color: var(--background-base);
+        border-radius: 100%;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        -ms-border-radius: 100%;
+        -o-border-radius: 100%;
+}
+
 }
 
 .songs-button{
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    margin-bottom: 15px;
+    margin-top: 10px;
     gap: 10px;
     & img{
-        width: 30px;
-        height: 30px;
+        width: 20px;
+        height: 20px;
         border: 2px solid black;
         border-radius: 50%;
         padding: 6px 6px;
