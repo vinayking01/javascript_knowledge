@@ -389,7 +389,7 @@ header{
 
 
 .playbar{
-    display: flex;
+    
     background-color: rgba(94, 94, 94, 0.911);
     width: 75%;
     height: 100px;
@@ -398,9 +398,20 @@ header{
     right: 0vw;
    align-items: center;
    justify-content: center;
-   flex-direction: column;
+   /* flex-direction: column; */
+}
+.songinfo{
+    position: relative;
+    top: 14px;
+    left: 24px;
+
 }
 
+.songtime{
+    position: relative;
+    top: -79px;
+    right: -66vw;
+}
 .seekbar{
     background-color: white;
     width: 100%;
@@ -426,6 +437,7 @@ header{
 
 .songs-button{
     display: flex;
+    width: 75vw;
     justify-content: center;
     align-items: center;
     margin-bottom: 15px;
