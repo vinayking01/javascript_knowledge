@@ -1,0 +1,6 @@
+1. AOS animations - website for effect of cards moving , fading etc.
+2. font awesome - for icons and their CDN stylesheet must be added in the css.
+3. custom Shape divider background effect for backgrounds.(website)
+4. Netlify  - for hosting website online. (website)
+5. Form SPree you can just for debugging purpose you can use the functionality of form submission without hosting and that mail will be received on the you personal mailbox. ( website )
+6. 
