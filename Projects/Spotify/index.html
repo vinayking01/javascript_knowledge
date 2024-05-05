@@ -17,7 +17,8 @@
   <div class="container flex">
 
     <div class="left-box ">
-      <div class="home red-border rounded">
+      <div><img src="close_x_button.svg" width="20px;" height="20px;"  alt="" class="invert-color close-hamburger " ></div>
+      <div class="home  rounded">
         <div>
           <img style="width: 110px;" class="invert-color" src="spotify-logo.svg" alt="spotify-image">
         </div>
@@ -32,7 +33,7 @@
           </ul>
         </div>
       </div>
-      <div class="Your-library red-border rounded">
+      <div class="Your-library rounded">
         <div class="library-headline">
           <div class="flex">
             <img class="invert-color" src="library-logo.svg" alt="">
@@ -102,9 +103,14 @@
 
       <!-- ========== Start Header ========== -->
       <header class="header ">
+        
         <div class="navigation">
-          <button class="move-back"><i class="fa-solid fa-angle-left"></i></button>
-          <button class="move-forward"><i class="fa-solid fa-chevron-right"></i></button>
+          <img src="hamburger.svg" width="30px;" height="30px;"  alt="" class="invert-color hamburger " >
+          <div>
+            <button class="move-back   "><i class="fa-solid fa-angle-left"></i></button>
+            <button class="move-forward"><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+          
         </div>
         <div class="log-sign-btn">
           <button>Sign up</button>
@@ -297,23 +303,26 @@
 
       <!-- ========== Start Song Play button section ========== -->
       <div class="playbar">
-        <div style="position: absolute;">
+        <div class="flex" style="margin-bottom: 15px; margin-top: 10px; padding: 0.6rem 0.7rem;">
           <div class="songinfo"></div>
           <div class="songs-button">
             <img class="prevsong" src="prev-play.svg" style="cursor: pointer;" alt="">
             <img class="playsong" src="play-btn.svg" style="cursor: pointer;" alt="">
             <img class="forwardsong" src="forward-play.svg" style="cursor: pointer;" alt="">
           </div>
-          <div class="seekbar">
-            <div class="circle"></div>
-          </div>
-          <div class="time-vol-btn flex">
+          <div class="time-vol-btn ">
             <div class="songtime"></div>
-            <div class="volume" style="position: absolute;"><img class="invert-color" style="width: 17px; height:17px;" alt="">
-              <div ><input type="range" min="0" max="100" value="50" class="volume-slider" style="display:none;"></div>
+            <div class="volume">
+              <div class="volume-sign" style="width: 30px; height: 30px; cursor: pointer; display: flex; justify-content: center; align-items: center;">
+                <img class="invert-color" style="width: 17px; height:17px;" alt="">
+              </div>
+              <div style="width:0px">
+               <input  type="range" min="0" max="100" value="50" class="volume-slider" style="display:none; width: 100px; "></div>
             </div>
           </div>
-
+        </div>
+        <div class="seekbar">
+          <div class="circle"></div>
         </div>
 
       </div>

@@ -14,7 +14,7 @@ let currentVolume = 50;
 function play_track(store_link) {
     
     // showing volume button
-    document.querySelector(".volume > img").src="volume.svg";
+    document.querySelector(".volume-sign > img").src="volume.svg";
 
     // showing volume slider
     document.querySelector(".volume-slider").style.display  = "block";
@@ -164,7 +164,7 @@ async function main(songs_folder_from_playlist) {
     playsong.addEventListener('click', () => {
 
         // showing volume button
-        document.querySelector(".volume > img").src="volume.svg";
+        document.querySelector(".volume-sign > img").src="volume.svg";
 
         // showing volume slider
         document.querySelector(".volume-slider").style.display  = "block";
@@ -225,24 +225,35 @@ async function main(songs_folder_from_playlist) {
    
     // changing the audio 
     document.querySelector(".volume-slider").addEventListener('change',(e)=>{
-        console.log(audio.volume);
+        console.log(e.target.value);
         audio.volume = e.target.value/100;
+
+        // changing the icon of audio btn on 0 to 100 volume
+        if((e.target.value) >= 1)
+        {
+            document.querySelector(".volume-sign > img").src="volume.svg";
+        }
+        else
+        {
+            document.querySelector(".volume-sign > img ").src="volume-off.svg";
+        }
     }) ;
 
     // mute function on clicking audio button
-    document.querySelector(".volume > img").addEventListener('click',()=>{
+    document.querySelector(".volume-sign").addEventListener('click',()=>{
+       
         if((audio.volume*100) == 0)
         {
             audio.volume = 1;
             document.querySelector(".volume-slider").value = 100;
             //change the image from mute to play speaker
-            document.querySelector(".volume > img").src="volume.svg";
+            document.querySelector(".volume-sign > img").src="volume.svg";
         }
         else
         {
             audio.volume = 0;
             document.querySelector(".volume-slider").value = 0;
-            document.querySelector(".volume > img").src="volume-off.svg";
+            document.querySelector(".volume-sign > img ").src="volume-off.svg";
         }
     })
 }
@@ -252,3 +263,18 @@ main(songs_folder_from_playlist);
 
 // code for changing the playlist , which changes the songs list visible in left side bar.
 
+
+
+
+
+// hamburger code for mobile
+
+document.querySelector(".hamburger").addEventListener('click',()=>{
+    console.log("clicked")
+    document.querySelector(".left-box").style.left = "0%";
+})
+
+document.querySelector(".close-hamburger").addEventListener('click',()=>{
+    console.log("closing")
+    document.querySelector(".left-box").style.left = "-100%";
+})
