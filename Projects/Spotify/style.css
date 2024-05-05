@@ -407,32 +407,55 @@ header{
 
 }
 
-.songtime{
+.time-vol-btn{
     position: relative;
     top: -79px;
-    right: -66vw;
+    right: -67vw;
+    gap: 10px;
+}
+
+.volume > img{
+    position: relative;
+    top: 0px;
+    right: -74px;
+    cursor:pointer;
+
+}
+.volume-slider{
+    width: 100px;
+    position: relative;
+    top: 5px;
+    right: 0px;
+
 }
 .seekbar{
     background-color: white;
-    width: 100%;
+    width: 100%; 
+    cursor: pointer;
     margin:10px 0px;
     /* padding-top: 5px; */
     height: 5px;
+  
 
     & .circle{
         width: 25px;
         height: 25px;
         position: relative;
         top: -10px;
-        left: 0px;
+        left: 0%;
         background-color: var(--background-base);
         border-radius: 100%;
         -webkit-border-radius: 100%;
         -moz-border-radius: 100%;
         -ms-border-radius: 100%;
         -o-border-radius: 100%;
+        transition: all 0.2s linear;
+        -webkit-transition: all 0.2s linear;
+        -moz-transition: all 0.2s linear;
+        -ms-transition: all 0.2s linear;
+        -o-transition: all 0.2s linear;
 }
-
+       
 }
 
 .songs-button{
