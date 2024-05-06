@@ -336,7 +336,7 @@ header{
     -moz-border-radius: 10%;
     -ms-border-radius: 10%;
     -o-border-radius: 10%;
-    
+    cursor: pointer;
     & .img1{
         width: 130px;
         height: 130px;
@@ -415,8 +415,9 @@ header{
     
     background-color: rgba(94, 94, 94, 0.911);
     width: 75%;
-    height: 100px;
+    height: auto;  
     position: fixed;
+    
     bottom: 0vh;
     right: 0vw;
    align-items: center;
@@ -425,7 +426,7 @@ header{
 }
 .songinfo{
     display: flex;
-    width: 30%;
+    /* width: 30%; */
     justify-content: start;
     align-items: center;
 
@@ -433,13 +434,13 @@ header{
 
 .songs-button{
     display: flex;
-    width: 40%;
     justify-content: center;
     align-items: center;
     gap: 10px;
+        margin-bottom: 46px;
     & img{
-        width: 20px;
-        height: 20px;
+        width: 22px;
+        height: 22px;
         border: 2px solid black;
         border-radius: 50%;
         padding: 6px 6px;
@@ -451,11 +452,20 @@ header{
        
     }
 }
+.temp1-songbtn{
+    height: 30px;
+    /* margin-bottom: 46px; */
+}
+.temp2-songbtn{
+    top: -1vw;
+    height: 17px;
+    left: 36.5vw; 
+        margin-bottom: 46px;
+}
 
 
 .time-vol-btn{
     display: flex;
-    width: 30%;
     justify-content: end;
     align-items: center;
     gap: 10px;
@@ -533,21 +543,31 @@ header{
             display: block;
         }
     
-}
+        }
 
     .right-box{
         width: 95vw;
     }
 
     .playbar{
-        background-color: rgb(71 134 85 / 77%);
+        background-color: rgb(4 126 31 / 98%);
         margin: 0px 3vw;
         width: 94vw;
-        height: 134px;
+        height: auto;
         bottom: 1vh;
         border-radius: 15px;
         &> div{
-             padding: 1px 15px;
+            margin: 8px 0px;
+
+        }
+
+        & .temp1-songbtn{
+            height: 35px;
+        }
+        
+        & .temp2-songbtn{
+            top: -1vw;
+            left: 48%; 
         }
     }
     .Your-library{
@@ -583,7 +603,8 @@ header{
     }
 
     .seekbar {
-        width: 91%;
+        width: 100%;
+        margin-bottom: 4px;
         & .circle {
             width: 15px;
             height: 15px;
@@ -591,6 +612,9 @@ header{
             
 
         }
-}
 
+   
+    
+}
 /***** End Media Queries *****/
+}
