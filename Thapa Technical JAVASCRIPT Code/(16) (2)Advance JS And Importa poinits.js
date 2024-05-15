@@ -93,7 +93,8 @@ There are two phases or order in which it works
     // // 5️⃣ Hoisting in JavaScript 
 
     /* we have a creation phase and execution phase.
-    Hoisting in Javascript is a mechanism where variables and functions . declarations are moved to the top of their scope before the code execute.
+    Hoisting in Javascript is a mechanism where variables and functions . declarations are moved to the top of their scope before the code execute but not work for function expression. var is hoisted but not with setting vlaues (automatic intialized with undefined), let and var does not support .
+
 
         For Example 👇
         console.log(myName);
