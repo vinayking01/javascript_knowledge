@@ -1,6 +1,6 @@
 
 var myName = "Vinay Singh"
-// var 1myName =  "Viany Singh" give you error Invalid variable name
+// var 1myName =  "Vinay Singh" give you error Invalid variable name
 var $Name = "Vianay Si gh"
 var __Name =  "ViinaySIngh"
 console.log(myName)
@@ -41,7 +41,7 @@ console.log(typeof(false + true)) // number
 console.log(typeof(false -1)); // number
 
 //Question  - Null vs Undefined ?
-   // Undefined is simply means we  have not intialized yet . whereas in NULL it means we have not the data so we put there null but we later set the value.
+   // Undefined is simply means we  have not intialized yet . whereas in NULL it means we have not the data so we put there null .
 var iAmUseless =  null
 console.log(typeof(iAmUseless)) // 2nd bug- it is bug because it is data type showing oject
 
