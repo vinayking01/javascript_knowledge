@@ -134,7 +134,7 @@ Common BOM objects include window (global object), navigator (information about 
     console.log(item); // Output which is still not attached with HTML doc- <h3> This is heading 3 </h3>
 
   // 3. Append in HTML- Two ways
-  // document.getElementById("parent").appendChild(item) // it add the item at the last after all elements where it is attached.
+  // document.getElementById("parent").appendChild(item) // it end the item at the last after all elements where it is attached.
 
   //(b) insertBefore - it insert the item in HTML before any item . It take two argument insrtBefore(appending_item, target_element before which you want to append)
   var target = document.getElementById("box1");

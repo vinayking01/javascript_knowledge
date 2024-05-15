@@ -2,7 +2,7 @@
     1. there is a special syntax to work with promise in javascript which is known as async Await . You will get more control on asynchronous programming .
     2. A function can be made async by using Asycnc keyword.
 
-    3. async function always returns a promise that resolves with the value that the function returns.  it automatically wrap the other values as a promise.
+    3. async function always retuns a promise. it automatically wrap the other values as a promise.
 
     4. The Await Keyword.
     this keywords always works inside the async function .
@@ -41,7 +41,7 @@
         var v2 =  await banglore;
         console.log("DATA Fetched of Banglore ", v2);
  
-        return (v1);
+        return (v1,v2);
     }
 
     harry().then((x)=>{
@@ -61,47 +61,6 @@
     // when you run this code the program doesn't stop in a paticular function if there is async function it will run parllely and also wait if there is some await statement but parllely runs the code along with async function .
     //On the other hand, code that is not inside an async function or is outside the scope of await will run in parallel or concurrently. 
     
-
-//         async function harry2()
-// {
-//             var delhi = new Promise((resolve,reject)=>{
-//                 setTimeout(()=>{
-//                     resolve("23 Degree");
-//                 },7000)
-//             });
-
-//             console.log("Fetching the Delhi temeprature " )
-//             var v1  = await delhi;
-
-//             return v1;
-//         }
-
-//         async function harry3()
-//         {
-//             var banglore= new Promise((resolve,reject)=>{
-//                 setTimeout(()=>{
-//                     resolve("67 Degree");
-//                 },3000)
-//             });
-
-//             console.log("Fetching the Delhi temeprature " )
-//             var v1  = await banglore;
-
-//             return v1;
-//         }
-
-//         harry2().then((x)=>{
-//             console.log(" DATA Fetched of Delhi ",x);
-
-//             harry3().then((y)=>{
-//                 console.log("sdssdds")
-//                 console.log("Fetching the Banglore temperature ");
-//                 console.log("DATA Fetched of Banglore ", y);
-//             })
-//         })
-
-
-
     </script>
 </body>
 </html>

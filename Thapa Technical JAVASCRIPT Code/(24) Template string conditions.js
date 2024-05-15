@@ -14,4 +14,3 @@ const userInfo = `
 `;
 
 console.log(userInfo);
-console.log(typeof(userInfo));

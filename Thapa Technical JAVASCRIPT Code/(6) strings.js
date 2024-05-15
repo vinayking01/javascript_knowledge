@@ -17,7 +17,7 @@ let myName  = 'Vinode thapa Vinode javascript course is good u'
 let myChannelName = "Vinod "
 
 let myname  = new String("Vinay Singh") // using constructor
-
+/*
 console.log(myname,myChannelName);
 
 // 1. Length() - used to find the length of the fucntion
@@ -29,7 +29,7 @@ console.log("the length is " +myName.length);
 console.log(myName.indexOf('Vinod'));
 console.log(myName.indexOf('Vinod',2)); // search forward from that index 
 
-// 3. LastIndexof() - same method as in as array, start searches from end.
+// 3. LastIndexof() - same method as in as array
 
 console.log(myName.lastIndexOf('Vinode',14));
 
@@ -38,7 +38,7 @@ var t = myName.search('Vinode');
 console.log(t);
 
 
-
+*/
 
  //5. Extracting String Parts - there are three ways to do that
 //  (a) Slice( start,end) - it will give you the substring which start from given index but end at before the given endindex. It support negative indices.
@@ -47,10 +47,10 @@ console.log(myName.slice(2,8));
 console.log(myName.slice(-8));
 //  (b) substring ( start,end) - it support negative indices
 console.log(myName.substring(2,8));
-// (c) substr(start,end) - it only difference it uses length not end index .it start counting from start index.
+// (c) substr(start,end) - it only differnce it uses length not end index .it start counting from start index.
 console.log(myName.substr(2,8));
 
-// 6. Replace() - it replace the string. It does not change the original array instead it create new by replacing that string and returns. 
+// 6. Replace() - it replace the string. It does not change the orignal array instead it create new by replacing that string. 
 console.log(myName);
 var Replace_result = myName.replace('Vinode','de');
 console.log(Replace_result);

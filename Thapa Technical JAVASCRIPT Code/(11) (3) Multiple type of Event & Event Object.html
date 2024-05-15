@@ -1,151 +1,152 @@
 <!-- 
-section 2️⃣: What is Event Object?
- Event object is the parent object of the event object. It has multiple properties which can be seen when event is triggered.
 
-for Example 
-MouseEvent, focusEvent, KeyboardEvent etc 
+// section 2️⃣: What is Event Object?
+// Event object is the parent object of the event object. It has multiple properties which can be seen when event is triggered.
+
+// for Example 
+// MouseEvent, focusEvent, KeyboardEvent etc 
  -->
 
- <!DOCTYPE html>
- <html lang="en">
- <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Document</title>
- </head>
- <body>
-     <div>
-         <h1 id="head1">My heading</h1>
-     </div>
-     <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat facere provident obcaecati aliquid perferendis culpa accusamus quod expedita optio fuga.</p>
-     <div>
-         <h2>The end </h2>
-     </div>
-     <div>
-         <button id="btn1">Click Me</button>
-     </div>
-     <div>
-         Please enter the Name  : <input type="text" id="effect" >
-         <p id="KeyPressed"> Wait</p>
-     </div>
- 
-     <div style="border: 2px solid rgb(0, 0, 0); background-color: rgb(148, 253, 116); height: 300px; width:40%; margin:auto;" id="effect2">
-         <div>
-             Enter your name  🙂: <input type="text" id="myname" >
-         </div>
-         <div>
-             Select Your Icecream 👉:
-             <select name="cream" id="ice-cream" onchange="taste()">
-                 <option value="Vanilla">Vanilla</option>
-                 <option value="Banana">Banana</option>
-                 <option value="strawberry">strawberry</option>
-             </select>
-         </div>
-         <div style="border:2px solid red; margin: auto;">
-             <p id="result"></p>
-         </div>
-     </div>
-     <script>
-         document.getElementById("btn1").onclick = ()=>{ 
-             alert("Hello");
-             console.log(event); // Event argument is automatially passed .it will give you all the details about the event , source, function etc.
-             console.log(event.target); //these kind of various properties we can see in above line of code.
-          }
- 
-          // section ️3️⃣ MouseEvent in JavaScript
-         // The MouseEvent Object
-         // Events that occur when the mouse interacts with the HTML 
-         // document belongs to the MouseEvent Object.
- 
-         document.getElementById("para").addEventListener("mousemove",()=>{
-             document.getElementById('para').style.backgroundColor = "red";
-             console.log("mouse enter")
-         })
-         document.getElementById("para").addEventListener("mousedown",()=>{
-             document.getElementById('para').style.backgroundColor = "Green";
-             console.log("mouse Down");
-         })
- 
- 
-         // section ️4️⃣ KeyboardEvent  in JavaScript
-         // Events that occur when user presses a key on the keyboard, 
-         // belongs to the KeyboardEvent Object.
-         // https://www.w3schools.com/jsref/obj_keyboardevent.asp
- 
-         function func2()  // or function func2(event)
-         {
-             this.style.backgroundColor = "yellow";
-             document.getElementById("KeyPressed").innerHTML= `Key pressed ${event.key}`;   // i told you previuosly event is automatically passed
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1 id="head1">My heading</h1>
+    </div>
+    <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat facere provident obcaecati aliquid perferendis culpa accusamus quod expedita optio fuga.</p>
+    <div>
+        <h2>The end </h2>
+    </div>
+    <div>
+        <button id="btn1">Click Me</button>
+    </div>
+    <div>
+        Please enter the Name  : <input type="text" id="effect" >
+        <p id="KeyPressed"> Wait</p>
+    </div>
+
+    <div style="border: 2px solid rgb(0, 0, 0); background-color: rgb(148, 253, 116); height: 300px; width:40%; margin:auto;" id="effect2">
+        <div>
+            Enter your name  🙂: <input type="text" id="myname" >
+        </div>
+        <div>
+            Select Your Icecream 👉:
+            <select name="cream" id="ice-cream" onchange="taste()">
+                <option value="Vanilla">Vanilla</option>
+                <option value="Banana">Banana</option>
+                <option value="strawberry">strawberry</option>
+            </select>
+        </div>
+        <div style="border:2px solid red; margin: auto;">
+            <p id="result"></p>
+        </div>
+    </div>
+    <script>
+        document.getElementById("btn1").onclick = ()=>{ 
+            alert("Hello");
+            console.log(event); // Event argument is automatially passed .it will give you all the details about the event , source, function etc.
+            console.log(event.target); //these kind of various properties we can see in above line of code.
          }
-         function func3()  // or function func2(event)
-         {
-             this.style.backgroundColor = "purple";
-         }
-         document.getElementById("effect").onkeypress = func2;
-         document.getElementById("effect").onkeydown = func3;
-             
- 
-         // Section 5️⃣ InputEvents in JavaScript 
-         // The onchange event occurs when the value of an element has been changed.
-         // Important point use of "Value"- like input , selection, checkbox type of HTML element its value can be accessed by using 'value' of insteaf innerText or innertHTML .
- 
-         function taste()
-         {
-             const name_f = document.getElementById("myname").value;
-             // console.log(name_f);
-             const ice_cream = document.getElementById("ice-cream").value;
-             document.getElementById("result").innerHTML = `${name_f} Choosed the ${ice_cream} chocolate`;
-         }
- 
-         // 2️⃣ What is this Object?
- 
-         // The definition  of "this" object is that it contain the current context. 
-         // 'this ' doesn't work with Arrow fat function. IN ECMA script update of 2015 .
-         // The this object can have different values depending on where it is placed.  
- 
- 
-         // For Example 1 
-         console.log(this.alert('Awesome'));
-         // it refers to the current context and that is window global object 
- 
- 
-         // ex 2 
-         function myName() {
-             console.log(this); // this refernce to gblobal object which is window
-         }
-         myName();
- 
-         // ex 3 
- 
-         var myNames = 'vinod';
-         function myName() {
-             console.log(this.myNames);  // it will work because still this is referencing global object
-         }
-         myName();
- 
- 
-         // ex 4 
-         // const obj = {
-         //     myAge : 26,
-         //     myName() {
-         //       console.log(this.myAge);  // using with object it refer to the object scope.
-         //     }
-         // }
-         // obj.myName();
- 
-         // ex 5 
-         // this object will not work with arrow function bcz arrow function is bound to class.
- 
-         // const obj = {
-         //     myAge : 26,
-         //     myName : () => {
-         //       console.log(this);
-         //     }
-         // }
-         // obj.myName();
- 
- 
- 
-     </script>
- </body>
- </html>
+
+         // section ️3️⃣ MouseEvent in JavaScript
+        // The MouseEvent Object
+        // Events that occur when the mouse interacts with the HTML 
+        // document belongs to the MouseEvent Object.
+
+        document.getElementById("para").addEventListener("mousemove",()=>{
+            document.getElementById('para').style.backgroundColor = "red";
+            console.log("mouse enter")
+        })
+        document.getElementById("para").addEventListener("mousedown",()=>{
+            document.getElementById('para').style.backgroundColor = "Green";
+            console.log("mouse Down");
+        })
+
+
+        // section ️4️⃣ KeyboardEvent  in JavaScript
+        // Events that occur when user presses a key on the keyboard, 
+        // belongs to the KeyboardEvent Object.
+        // https://www.w3schools.com/jsref/obj_keyboardevent.asp
+
+        function func2()  // or function func2(event)
+        {
+            this.style.backgroundColor = "yellow";
+            document.getElementById("KeyPressed").innerHTML= `Key pressed ${event.key}`;   // i told you previuosly event is automatically passed
+        }
+        function func3()  // or function func2(event)
+        {
+            this.style.backgroundColor = "purple";
+        }
+        document.getElementById("effect").onkeypress = func2;
+        document.getElementById("effect").onkeydown = func3;
+            
+
+        // Section 5️⃣ InputEvents in JavaScript 
+        // The onchange event occurs when the value of an element has been changed.
+        // Important point use of "Value"- like input , selection, checkbox type of HTML element its value can be accessed by using 'value' of insteaf innerText or innertHTML .
+
+        function taste()
+        {
+            const name_f = document.getElementById("myname").value;
+            // console.log(name_f);
+            const ice_cream = document.getElementById("ice-cream").value;
+            document.getElementById("result").innerHTML = `${name_f} Choosed the ${ice_cream} chocolate`;
+        }
+
+        // 2️⃣ What is this Object?
+
+        // The definition  of "this" object is that it contain the current context. 
+        // 'this ' doesn't work with Arrow fat function. IN ECMA script update of 2015 .
+        // The this object can have different values depending on where it is placed.  
+
+
+        // For Example 1 
+        console.log(this.alert('Awesome'));
+        // it refers to the current context and that is window global object 
+
+
+        // ex 2 
+        function myName() {
+            console.log(this); // this refernce to gblobal object which is window
+        }
+        myName();
+
+        // ex 3 
+
+        var myNames = 'vinod';
+        function myName() {
+            console.log(this.myNames);  // it will work because still this is referencing global object
+        }
+        myName();
+
+
+        // ex 4 
+        // const obj = {
+        //     myAge : 26,
+        //     myName() {
+        //       console.log(this.myAge);  // using with object it refer to the object scope.
+        //     }
+        // }
+        // obj.myName();
+
+        // ex 5 
+        // this object will not work with arrow function bcz arrow function is bound to class.
+
+        // const obj = {
+        //     myAge : 26,
+        //     myName : () => {
+        //       console.log(this);
+        //     }
+        // }
+        // obj.myName();
+
+
+
+    </script>
+</body>
+</html>

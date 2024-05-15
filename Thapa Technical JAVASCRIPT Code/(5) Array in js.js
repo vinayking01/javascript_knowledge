@@ -52,27 +52,26 @@
  console.log(names.indexOf('thapa',3)); // it will start search from index 3 rd
  
  
- //2. lastIndexof() - It searches from left to right & returns the first encountered element. if element not found then returns -1
+ //2. lastIndexof() - It gives the last occurence of the item in the array. if element not found then returns -1
  
- var nums = [2,2,3,4,3,7,6,3];
-   console.log(nums.lastIndexOf(3)) //7 - by default value is always (length - 1) but search from right to left and return the first encountered item.
-   console.log(nums.lastIndexOf(3,4))//4 - it start searches from right to left from index 4.
-   console.log(nums.lastIndexOf(3,-1))//7 - searches the string from right to left.
+ const nums = [2,2,3,4,3,7,6,3];
+   console.log(nums.lastIndexOf(3)) //7 - by default value is always (length - 1) but search from left to right
+   console.log(nums.lastIndexOf(3,4))//4 - searches the string from left to right in 1st substring.
+   console.log(nums.lastIndexOf(3,-1))//7 searches the string from left to right in 1st substring.
  
  //3. Includes()  - this function return the boolean value whether the item present in array (true) or false if not.
  console.log(names.includes('technical'));
  
  //4 . find() - find() function is used to search for an element in an array that satisfies a provided testing function. It returns the first element in the array that meets the specified criteria, or 'undefined' if no matching element is found.
  
- console.log("Break point 1")
+ 
  prices  = [2,3,52,123,4534,334,54,32,644]
  
   console.log(prices.find((currVlaue) => {
-    //  console.log(currVlaue);
+     console.log(currVlaue);
      return currVlaue > 4000; //it actually return true for that value which is already stored in currValue variable which is later on returned back automatically.
   }))
  
-  console.log("Break point 2")
   item_price_check =  prices.find((current_value) =>{
      return current_value < 40;
   });
@@ -80,8 +79,7 @@
   console.log(item_price_check);
  
   // 5. findIndex -  this method return the index of the element which passes the test . It executes for every element like find method and returns -1 if no match found.
-  console.log("Break point 3")
-
+ 
   console.log(prices.findIndex((elemt)=>{
      // console.log(elemt);
      return elemt >3000
@@ -93,8 +91,6 @@
  //8. filter - method creates a new array filled with elements that pass a test provided by a function.method does not execute the function for empty elements. method does not change the original array.
  
  // ((a) example with arrow function
- prices  = [2,3,52,123,4534,334,54,32,644]
- 
  var newarray = prices.filter((current_val2,index2)=>{
      return current_val2 >100;
  })
@@ -163,7 +159,7 @@
      
      const months2 = ['jan','feb','march'];
  
-     const new_months = months2.splice(0,1,'april','may') // splice(position_of_array_element_add, count_of_elements_want_to_remove, data you want to enter);
+     const new_months = months2.splice(months.lenght-1,0,'april','may') // splice(index, count_of_elements_want_to_remove, data want to enter);
  
      console.log(months2);
      console.log(new_months); 
@@ -183,7 +179,7 @@
  
  var result1  = num1.reduce((accumulator1,elem1,index1,array)=>{
      debugger;
-    //  console.log(accumulator1, elem1, index1); // initially - accumulator1 - 3, elem1 - 2, index1 - 1
+     // console.log(accumulator1, elem1, index1); // initially - accumulator1 - 3, elem1 - 2, index1 - 1
      return accumulator1 + elem1;
  })
  console.log(result1);
