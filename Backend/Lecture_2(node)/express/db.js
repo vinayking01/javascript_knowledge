@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 
 
 //define the MongoDB connection URL
-// var connectUrl  = 'process.env.Local_Db_Url'; // local database URL of your computer
+// var connectUrl  = process.env.Local_Db_Url; // local database URL of your computer
 var connectUrl = process.env.Online_DB_Url // changed the local ('mongodb://localhost:27017/mydatabase') database it with mongodb atlas host link
 mongoose.connect(connectUrl, {   
   useNewUrlParser: true,
