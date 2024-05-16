@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
-
 const Person = require('../Model/person');
+
+
 
 // post route to add person
 router.post('/', async (req, res) => {   // converting this simple function into async so that we will wait till our data we get or till any error, for error handling we will be using the try and catch block
