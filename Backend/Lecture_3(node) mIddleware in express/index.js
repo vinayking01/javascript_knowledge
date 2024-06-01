@@ -45,7 +45,7 @@ app.use((req,res,next)=>{
   })
  */
  
-  // B) Second Example -- if you have send the response to the client first than you are attaching middleware after that, it won't work gor the that type of route in between you want to attach the middleware.
+  // B) Second Example -- if you have send the response to the client first than you are attaching middleware after that, it won't work for the that type of route in between you want to attach the middleware.
   
  /* app.get('/', function (req, res) {   
     res.send('hello world')

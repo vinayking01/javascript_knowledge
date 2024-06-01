@@ -5,13 +5,34 @@ require('dotenv').config(); // .env file added for keeping you API password secu
 
 const  Port  = process.env.PORT || 8000;
 
-const BodyParser = require('body-parser') //it is middleware library for express.js,When a request is made to your Express application, body-parser intercepts the request before it reaches your route handlers. this we are using jisse hame khud se http request se data na nikalan pade.
+const BodyParser = require('body-parser') //it is middleware library for express.js,When a request is made to your Express application, body-parser intercepts the request before it reaches your route handlers. this we are using jisse hame khud se http request se data na nikala pade.
 app.use(BodyParser.json())  // it intercepts the data sent by client, if it is in jSON format then it will parse into javascript object and store it into req.body. for other type of data require other middleware req.link etc.
+
+var f = "Vionay SIngh"
 
 
 app.get('/login', (req, res) => {
-  res.send(`${req.hostname} Your login page working`)
+  // res.json(f)
+  console.log(req.headers);
+  
+  // Access a specific header (e.g., User-Agent)
+  const userAgent = req.get('User-Agent');
+  console.log(`User-Agent: ${userAgent}`);
+  
 })
+
+//  ************************************* Redirect Operation performed using redirect function of response  ****************************
+// Route that performs a redirection
+app.get('/go-there', (req, res) => {        
+  res.send('You have been redirected here!');
+});
+
+// Route that triggers the redirection+
+app.get('/redirect-me', (req, res) => {
+  res.redirect('/go-there');
+});
+
+//  ************************************* End of  Redirect Operation performed using redirect function of response  ****************************
 
 
 const PersonRoutes = require('./Routes/PersonRoutes');

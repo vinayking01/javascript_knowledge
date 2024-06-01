@@ -8,21 +8,16 @@ const port = 3000
 const path = require('path');
 
 
+// app.use(express.static('Public')) 
+// Now, you can load the files that are in the public directory:  http://localhost:3000/Home.html , http://localhost:3000/style.css
 
+//2nd way to provide path -  However, the path that you provide to the express.static function is relative to the directory from where you launch your node process. If you run the express app from another directory, it’s safer to use the absolute path of the directory that you want to serve:
+const StaticPath  = path.join(__dirname,"../Public"); // this is the absolute path 
+app.use(express.static(StaticPath)) 
 
-app.use(express.static('Public')) 
-// Now, you can load the files that are in the public directory:  http://localhost:3000/Public/kitten.jpg , http://localhost:3000/Public/style.css
-
-// However, the path that you provide to the express.static function is relative to the directory from where you launch your node process. If you run the express app from another directory, it’s safer to use the absolute path of the directory that you want to serve:
-const StaticPath  = path.join(__dirname,"Public"); // this is the absolute path 
-// app.use(express.static(StaticPath)) 
-// console.log(StaticPath);
-
-
-
-app.get('/', (req, res) => {
-  res.send('Hello World! s')
-})
+// app.get('/', (req, res) => {
+//   res.sendFile(StaticPath +"/Home.html");
+// })
 
 
 app.listen(port, () => {
