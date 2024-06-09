@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Application</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 style="text-align: center;"> TODO APP </h1>
+            <br>
+        <div class="outer-border">
+            <div>
+                <form action="/Added_action" method="post" class="form">
+                    <div style="border-bottom: 1px solid rgb(34, 33, 33);">
+                        <h2>Description</h2>
+                        <input type="text" id="description" name="description" placeholder="Write your text" required>
+                    </div>
+                    <div class="box2">
+                        <div class="category">
+                            <h2>Category</h2>
+                            <select name="category" id="" required>
+                                <option value="Personal">Personal</option>
+                                <option value="School">School</option>
+                                <option value="Cleaning">Cleaning</option>
+                                <option value="Work">Work</option>
+                                <option value="Others">Others</option>
+                            </select>
+                        </div>
+                        <div class="date">
+                            <h2>Due Date</h2>
+                            <input type="date" value="2024-06-08" name="date">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="btns">
+                            <button type="submit" class="submit">
+                                Add Task 
+                            </button>
+                            <button class="delete"  onclick="deleteSelected()">Delete Task</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="Mylist">
+                <% data.forEach(function(work) { %>
+                <div class="delete-task" style="border-bottom: 1px solid rgb(110, 108, 108);" >
+                    <div id="checkbox">
+                        <input type="checkbox" name="selectedTasks" style="height:25px; width:25px" id="<%= work._id %>">
+                    </div>
+                    <div class="my_todo_list">
+                        <div class="notes-container"><%= work.description %></div> 
+                        <div><%= work.date %></div>
+                    </div>                   
+                    <div class="mycatgry">
+                        <div><%= work.category %></div>
+                    </div>
+                </div>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
