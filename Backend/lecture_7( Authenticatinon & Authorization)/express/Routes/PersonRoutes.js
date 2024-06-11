@@ -8,7 +8,7 @@ const Person = require('../Model/person');
 router.post('/', async (req, res) => {   // converting this simple function into async so that we will wait till our data we get or till any error, for error handling we will be using the try and catch block
     try {
         const data = req.body // Assuming the re.body contains the person data
-
+        console.log(data)
         const NewPerson = new Person(data);  // either we can pass the data directly int the object or we can use NewPerson.name  = data.name
         // NewPerson.name = data.name;
         // NewPerson.mobile = data.mobile;
