@@ -1,4 +1,11 @@
-# Important Points
+## Test Cases  - 
+    1. http://localhost:3000/user/sign-in
+    2. http://localhost:3000/user/sign-up
+    3. http://localhost:3000/user/profile
+    4. http://localhost:3000/posts/create-post
+
+
+# Important Topic learned
 
 1. timestamp in schema 
     ```
@@ -51,3 +58,29 @@
     };
 
     ```
+
+
+3.  Cookie parser Middleware - Definition: Small pieces of data stored on the client-side (browser).Stored in the browser and sent to the server with each request.Typically limited to 4KB per cookie.
+
+    (A) import this after installation
+    ```
+        const cookieParser = require('cookie-parser');
+        app.use(cookieParser());
+        
+    ```
+    (b) Storing in the chrome cookie under Application
+    ```
+        res.cookie('Userid',data);
+    ```
+    (c) Accessing the Cookie
+    ```
+        req.cookies('Userid)
+
+    ```
+    (D) Deleting Cookies: 
+    ```
+        Use res.clearCookie(name) to delete cookies.
+    ```
+    
+    
+    

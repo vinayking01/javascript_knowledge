@@ -16,9 +16,19 @@ const PORT = 3000;
 
 app.use('/user', userRoutes);
 
+const postRoutes =require('./routes/post');
+
+app.use('/posts',postRoutes);
+
+
 app.get('/',(req,res)=>{
     res.send("Hi");
 })
+
+app.get('/logout' , (req,res)=>{
+    res.clearCookie('user_id');
+    res.redirect('user/sign-in')
+});
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

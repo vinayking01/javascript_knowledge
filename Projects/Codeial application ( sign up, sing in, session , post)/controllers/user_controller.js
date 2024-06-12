@@ -3,17 +3,18 @@ const User = require("../models/user_model");
 
 module.exports.profile = async function(req,res){
     const sessionId = req.cookies['user_id']; // taking cookie stored in client browser
-    console.log(sessionId)
+    // console.log(sessionId)
     if(sessionId)
     {
         const userFound = await User.findById(sessionId);
-        console.log(userFound.name)
+        // console.log(userFound.name)
         if(userFound)
         {
             const name  = userFound.name;
             const email = userFound.email;
-            return res.render('user_profile',{
+            return res.render('home_post',{
                 title: 'User Profile',
+                from : "user_page",
                 name : name,
                 email : email
             });
@@ -31,7 +32,7 @@ module.exports.profile = async function(req,res){
 module.exports.sign_up = function(req,res)
 {
     return res.render('user_sign_up',{
-        title : "User sing  up page"
+        title : "User signup page"
     })
 }
 

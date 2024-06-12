@@ -57,27 +57,24 @@ nav ul li:last-child {
         </li>
     </ul>
 </nav>
-<h1> Profile Page </h1>
 
-<h1> Hello, Welcome <%= name %> </h1>
+<h1> Codial Application </h1>
 
-<p>Your Email id -  <%= email %></p>
 
-<h2> Your total Posts </h2>
+<section id="feed-posts">
+    <h1> Hello, Welcome <%= name %> </h1>
 
-<% const k = form %>
-<% if (k === "post_page") { %>
-    <ul>
-        <% post.forEach(post => { %>
-            <li>
-                <p>Content - <%= post.content %></p> 
-                <p>Time of Creation - <%= post.createdAt %></p>
-            </li>
-        <% }); %>
-    </ul>
-<% } %>
+    <p>Your Email id -  <%= email %></p>
 
+<h4>Let's create some Posts</h4>
+
+<form action="/posts/submitted" id="new-post-form" method="POST">
+<textarea name="content" cols="10" rows="10" placeholder="Type here ..."></textarea>
+
+<input type="submit" value="post">
+</form>
+
+</section>
 </body>
 </html>
-
 
