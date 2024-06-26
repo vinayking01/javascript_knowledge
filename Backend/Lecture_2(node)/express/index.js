@@ -5,10 +5,11 @@ require('dotenv').config(); // .env file added for keeping you API password secu
 
 const  Port  = process.env.PORT || 8000;
 
-const BodyParser = require('body-parser') //it is middleware library for express.js,When a request is made to your Express application, body-parser intercepts the request before it reaches your route handlers. this we are using jisse hame khud se http request se data na nikala pade.
+const BodyParser = require('body-parser') //body-parser was a third-party middleware package that allowed Express applications to parse different types of request bodies. It provided parsers for handling URL-encoded form data, JSON data, raw data, and more . Note  -IN new update express provides Alternative which is "urlencoded" Middleware inbuilt in Express itself.
+
 app.use(BodyParser.json())  // it intercepts the data sent by client, if it is in jSON format then it will parse into javascript object and store it into req.body. for other type of data require other middleware req.link etc.
 
-var f = "Vionay SIngh"
+var f = "Vinay SIngh"
 
 
 app.get('/login', (req, res) => {
