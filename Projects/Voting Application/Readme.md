@@ -1,4 +1,4 @@
-Voting Application - User can vote
+# Voting Application - User can vote
 
 //Technologies Used
 Node.js

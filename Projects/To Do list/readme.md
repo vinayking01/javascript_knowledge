@@ -1,7 +1,7 @@
 ## General QA 
 
 
-### 1. When to use urlencoded/bodyParse.urlencoded and BodyParser.json()?
+### 1. When to use express.urlencoded/bodyParse.urlencoded and BodyParser.json()?
 
     ```
     1. When to Use body-parser.json()
