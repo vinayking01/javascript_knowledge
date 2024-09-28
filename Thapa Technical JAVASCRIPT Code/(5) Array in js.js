@@ -7,6 +7,19 @@
  console.log(myfriends[0]); // accessing the data individually
  console.log(myfriends[4]);
  
+
+// Checking any array - return true or false
+console.log(Array.isArray(myfriends));
+
+// Creating array from Strings
+console.log(Array.from("Ritesh"))
+
+// Flat the array in single Dimension
+var Items = ['apple', 'grapes',['Redmi', 'iphone',[3,4]]] ;
+console.log(Items)
+console.log(Items.flat(Infinity)); // give the depth inside flat function which denotes ki kitni depth tak solve krna hoga
+
+
  //1.  property of array 
  console.log(myfriends.length); // gives the length of the array 
  
@@ -190,8 +203,7 @@
  
  var result2 = num1.reduce((accumlator2, elem2)=>{
      console.log(accumlator2);
-     return accumlator2 +elem2
- },-100) // second argument passed as accumulator value 
+     return accumlator2 +elem2},-100) // second argument passed as accumulator value 
  console.log(result2);
  
  
