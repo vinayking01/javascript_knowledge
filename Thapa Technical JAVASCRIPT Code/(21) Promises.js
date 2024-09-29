@@ -5,7 +5,9 @@ var promise = new Promise(function (myResolve, myReject){ // 1. the promise cont
 
     console.log("I am inside the promises");
     if (x === 0) {
-        myResolve(56);  // Resolve the promise with a value of 56 if successful
+        setTimeout(function() {
+            myResolve(56);  // Resolve the promise with 56 after 3 seconds
+        },3000);  // Resolve the promise with a value of 56 if successful
     } else {
         myReject(23);   // Reject the promise with a value of 23 if failed
     }
@@ -23,9 +25,10 @@ promise.then(
     function (error){ console.log("Code giving error "+ error);}
 );
 
+console.log("k2")
 // another way to catch the error  
 promise.catch((error)=>{
-    console.log("Code giving error "+ error);
+    console.log("Code giving error in catch box"+ error);
 })
 
 //4. you can also do promise chaining using then when one promise fulfilled the result either it is rejected or successful result it is passed to other promise and then to other promise if fulfiled and so on.
