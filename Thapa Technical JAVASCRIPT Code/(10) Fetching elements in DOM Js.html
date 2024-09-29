@@ -40,6 +40,12 @@
         <h1 id="clock"></h1>
         <h2 id="close"> The Closing interval is comming </h2>
     </div>
+    <div id="outer-box1" style=" padding: 10px 10px; border: 2px solid rgb(1, 1, 1); background-color: yellow;">
+        <div id="remove-box" style="border: 2px solid black; background-color: red; width: 100px; height: 100px; margin: auto;">
+            This element will be removed when you click
+        </div>
+    </div>
+    
     <script>
     var p = document.getElementById("Schild1").innerHTML = " This is the First accesing the element.";
     console.log(p);
@@ -98,6 +104,16 @@
 
 
 
+    //4. removing the elements/ nodes from DOM.
+
+        var remove_box = document.getElementById("remove-box");
+        remove_box.onclick = remove_function;
+        function remove_function(e) {
+            alert(e.target);
+            // console.log(e.target.parentNode);
+            remove_box.remove(); // Correctly references the element
+        }
+    
     </script>
 </body>
 </html>
