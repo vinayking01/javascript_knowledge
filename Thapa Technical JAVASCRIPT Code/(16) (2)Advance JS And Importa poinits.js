@@ -37,16 +37,16 @@ There are two phases or order in which it works
     // document.getElementById("box1").onclick = box3;
     // document.getElementById("box3").onclick = box1;
 
-    // // 2️⃣: Higher Order Function
-    // // function which takes another function as an arguments is called HOF 
-    // // wo function jo dusre function ko as an argument accept krta hai use HOF 
+    // 2️⃣: Higher Order Function
+    // function which takes another function as an arguments is called HOF 
+    // wo function jo dusre function ko as an argument accept krta hai use HOF 
     
     
-    // // 3️⃣: Callback Function
-        // // function which get passed as an argument to another function is called CBF 
-        // // A callback function is a function that is passed as an argument to  another function, to be “called back” at a later time. 
+    // 3️⃣: Callback Function
+        // function which get passed as an argument to another function is called CBF 
+        // A callback function is a function that is passed as an argument to  another function, to be “called back” at a later time. 
 
-        // // Jis bhi function ko hum kisi or function ke under as an arguments passed krte hai then usko hum CallBack fun bolte hai 
+        // Jis bhi function ko hum kisi or function ke under as an arguments passed krte hai then usko hum CallBack fun bolte hai 
 
 
         // // // we need to create a calculator 
@@ -71,26 +71,26 @@ There are two phases or order in which it works
 
             console.log(calculator(5,2,subs));
 
-        // // // I have to do the hardcoded for each operation which is bad
-        // // // we will use the callback and the HOF to make it simple to use 
+        // I have to do the hardcoded for each operation which is bad
+        // we will use the callback and the HOF to make it simple to use 
         
-        // // // Now instead of calling each function indivisually we can call it
-        // // // by simply using one function that is calculator 
+        // Now instead of calling each function indivisually we can call it
+        // by simply using one function that is calculator 
 
             console.log(calculator(5,6,add));
             console.log(calculator(5,6,subs));
             console.log(calculator(5,6,mult));
 
-    // // In the above example, calculator is the higher-order function, 
-    // // which accepts three arguments, the third one being the callback.
-    // // Here the calculator is called the Higher Order Function because it takes
-    // // another function as an argument and add, sub and mult are called the callback function bcz they are passed  as an argument to another fucntion 
+    // In the above example, calculator is the higher-order function, 
+    // which accepts three arguments, the third one being the callback.
+    // Here the calculator is called the Higher Order Function because it takes
+    // another function as an argument and add, sub and mult are called the callback function bcz they are passed  as an argument to another fucntion 
 
 
-    // // 1️⃣ 👉👉 InterView Question 
-    // // Difference Between Higher Order Function and Callback Function ?
+    // 1️⃣ 👉👉 InterView Question 
+    // Difference Between Higher Order Function and Callback Function ?
 
-    // // 5️⃣ Hoisting in JavaScript 
+    // 5️⃣ Hoisting in JavaScript 
 
     /* we have a creation phase and execution phase.
     Hoisting in Javascript is a mechanism where variables and functions . declarations are moved to the top of their scope before the code execute but not work for function expression. var is hoisted but not with setting vlaues (automatic intialized with undefined), let and var does not support .
@@ -101,12 +101,12 @@ There are two phases or order in which it works
         let myName;
         myName = "thapa";
 
-    //   How it will be in output during creation phase 
+      How it will be in output during creation phase 
 
         1: var myName = undefined;
         2: console.log(myName);
         3: myName = "thapa";
-    // //😲 In ES2015 (a.k.a. ES6), hoisting is avoided by using the let keyword 
+    😲 In ES2015 (a.k.a. ES6), hoisting is avoided by using the let keyword 
     */
         
     // 6️⃣ What is Scope Chain and Lexical Scoping in JavaScript? 

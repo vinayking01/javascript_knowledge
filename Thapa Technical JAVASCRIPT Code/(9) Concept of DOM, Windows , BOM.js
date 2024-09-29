@@ -138,7 +138,8 @@ Common BOM objects include window (global object), navigator (information about 
 
   //(b) insertBefore - it insert the item in HTML before any item . It take two argument insrtBefore(appending_item, target_element before which you want to append)
   var target = document.getElementById("box1");
-  target.insertBefore(item,target.childNodes[0]);
+  // console.log(target.childNodes[0])
+  target.insertBefore(item,target.childNodes[1]);
 
 
   // 4. Methods which directly append in HTML with Tags.

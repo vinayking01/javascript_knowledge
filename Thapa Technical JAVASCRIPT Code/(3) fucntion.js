@@ -1,40 +1,55 @@
   var a = 2;
   var b = 3;
 
-// Question - function Paramters vs function Arguments?
+// Question - function Parameters vs function Arguments?
 
-// Function parameters are those listed names in the fcuntion definition .
+// Function parameters are those listed names in the function definition .
 // function Arguments are the value we passed to the function.
 
-function hello(a,b) // function parameters & it is called function definiton and function declaration.
+function hello(a,b) // function parameters & it is called function definition and function declaration.
 {
     console.log(a+b);
-    console.log("How to handle the saitre in better way so that no one get offend")
+    console.log("How to handle the satire in better way so that no one get offend")
 }
 
 // hello();
-hello(30,50);  // function areguments
+hello(30,50);  // function arguments
 
-// Anonymous  fucntion - the function which don't have any name
+//1. Anonymous function - the function which don't have any name
 
 var answer = function(a, b){
     console.log("the sum is" + a+b);    // Anonymous expression
 }
-
-
 answer(342,2333);
 
-
-// arrowfat function
+//2. Arrow fat function
 
 var clip = (a)=> {
 console.log("thanks "+a )
 };
+clip(3); // you can't call function without parentheses.
 
-clip(3); // you can't call function without paranthese
+
+//3. Rest Operator (...)  - rest operator in JavaScript (...) allows you to collect multiple elements into an array or an object.
+
+function GiveMe(...num)
+{
+  console.log(num);
+  return num;
+  
+}
+console.log(GiveMe(32,54,64,23,75,64))
 
 
-//2 . Callback function  - it is function which is passed as argument to other function , and it is executed after the execution of the main function. Instead of immediately returning some results some like most functions, function that uses callbacks take some time to produce a result  eg - used when taking data, downloading files, reading the files, 
+//4. IIFE (Immediately Invoked Function Expression) - in JavaScript is a function that runs as soon as it is defined. It is used to create a private scope and avoid polluting the global namespace by encapsulating variables and logic inside the function. ex -
+
+    // (function() {
+    //   let message = "4. Hello, IIFE!";
+    //   console.log(message);
+    // })();
+
+
+//5 . Callback function  - it is function which is passed as argument to other function , and it is executed after the execution of the main function. Instead of immediately returning some results some like most functions, function that uses callbacks take some time to produce a result  eg - used when taking data, downloading files, reading the files, 
 
 
 //examples - (A)
@@ -117,3 +132,7 @@ stepOne(function() {
     });
   });
 });
+
+
+
+

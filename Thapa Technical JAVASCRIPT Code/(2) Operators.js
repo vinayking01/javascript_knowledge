@@ -27,3 +27,12 @@ for(var num =1; num<=10;num++)
     debugger;  // it is often used with function 
     console.log(num);
 }
+
+
+// Data types in js - Two types 
+
+// 1. Primitive Data Types - string , number, boolean, undefined , Null, symbol , Bigint.
+
+// 2. Non Primitive Data Types - Array, Object, map, set , functions 
+
+// Primitive data types are stored in Stack , and non - primitive are stored in Heap , ( reference look at the PDF)
