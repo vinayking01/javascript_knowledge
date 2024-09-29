@@ -22,7 +22,7 @@
         /***** End Child Selector *****/
         
         /***** Adjacent sibling *****/ 
-        inner1 + p{
+        .inner1 + p{
             background-color: rgb(0, 255, 115);   /*After parent ('.inner1') it searches for only immediate sibling ('.p'). means select only single sibling */
         } 
 
@@ -30,7 +30,7 @@
         
         /***** General Sibling selector *****/ 
         
-        inner1 ~ p{
+        .inner1 ~ p{
             background-color: pink;  /*It selects all the sibling , preceded by ('.inner1'). not only immediate sibling*/
         }
         
