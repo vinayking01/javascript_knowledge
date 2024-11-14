@@ -57,6 +57,10 @@
         i++;
     }
 
+    // Note  - 
+    // 1. Inside an async function, the code runs synchronously but the await keyword makes the execution pause until the Promise resolves.
+    // 2. Outside the async function, the function itself behaves asynchronously.
+    //3 . The await keyword can only be used with a Promise (or something that returns a Promise).
 
     // when you run this code the program doesn't stop in a paticular function if there is async function it will run parllely and also wait if there is some await statement but parllely runs the code along with async function .
     //On the other hand, code that is not inside an async function or is outside the scope of await will run in parallel or concurrently. 
