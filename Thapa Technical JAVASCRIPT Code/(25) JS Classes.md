@@ -70,3 +70,44 @@
 
 3. In JavaScript classes, when you extend a class and the child class does not define its own property with the same name as a property in the parent class, the child class instances will inherit and use the property from the parent class. However, if the child class does define its own property with the same name, it will override the parent class's property for instances of the child class.
 ```
+
+
+## Getter and Setter in jS
+```
+class User {
+    constructor(email, password){
+        this.email = email;
+        this.password = password
+    }
+
+    get email(){
+        return this._email.toUpperCase()
+    }
+    set email(value){
+        this._email = value
+    }
+
+    get password(){
+        return `${this._password}hitesh`
+    }
+
+    set password(value){
+        this._password = value
+    }
+}
+
+const hitesh = new User("h@hitesh.ai", "abc")
+console.log(hitesh.email);
+
+```
+```
+Getters and setters in JavaScript classes are special methods that allow you to define how properties of an object can be accessed and modified. They provide a way to control access to the properties and encapsulate logic for getting or setting values. Here’s a breakdown of how they work:
+
+Getters
+Definition: A getter is a method that gets the value of a specific property. It is defined using the get keyword.
+Usage: Getters allow you to execute code when a property is accessed, providing a way to define computed properties or to validate the value being retrieved.
+Setters
+Definition: A setter is a method that sets the value of a specific property. It is defined using the set keyword.
+Usage: Setters allow you to execute code when a property is assigned a value, providing a way to validate or transform the value before it is stored.
+```
+
