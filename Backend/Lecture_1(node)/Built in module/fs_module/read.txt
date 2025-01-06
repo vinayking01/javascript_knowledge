@@ -1,2 +1,0 @@
-Read1  -> Welcome! how are you?
-I am fine
