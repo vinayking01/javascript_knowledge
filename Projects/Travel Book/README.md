@@ -19,6 +19,7 @@ Welcome to the Travel clone UI project!. it utilizes Locomotive Scroll and GSAP 
 - GSAP: A powerful tool for implementing professional-grade animations.
 - Shery.js:  Simplifies the creation of scroll-based animations.
 
+## "Live Site" = https://travel-book2.netlify.app/ 
 
 ## Preview Result
 
