@@ -24,7 +24,7 @@ debugger
 function outerFunction() {
     let count = 0;  // count is initialized only once when outerFunction is called
   
-    return function innerFunction() {
+    return function innerFunction() { 
       count++;      // increment the same 'count' variable
       console.log(count);
     };
