@@ -3,7 +3,7 @@
 //1. Use strict Mode - when you use this statement before any code in js if it don't follow the standars then it will give error beacuse in some cases js provide flexiblity to use.
 
 
-        "use strict"
+        // "use strict"
         a = 9;
         console.log(a);  // it gives error in console beacuse we "use restrict " if we don't use it then it js provide flexibilty to use without any declaration
 

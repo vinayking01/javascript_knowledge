@@ -1,119 +1,100 @@
-<!-- There are many ways to access element  -->
-
-<!-- 1. By Id  -->
+<!-- Various ways to access elements in JavaScript DOM -->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DOM Manipulation</title>
 </head>
 <body id="body1">
-    <div class ="parent1" style="border : 2px solid red">
+    <div class="parent1" style="border: 2px solid red">
         <div id="Schild1">
-           <p>Child1</p> 
+           <p>Child 1</p> 
         </div>
         <div id="Schild2">
-           <p>Child2</p>
+           <p>Child 2</p>
         </div>
     </div>
-    <div class ="parent1" style="background-color: greenyellow;">
+    <div class="parent1" style="background-color: greenyellow;">
         <div id="Kchild1">
-            <p>child 3</p>
+            <p>Child 3</p>
             <p>Child 4</p>
         </div>
         <div id="Kchild2">
-            <p>child 5</p>
+            <p>Child 5</p>
         </div>
     </div>
     <div>
-        <h1 id="heading"> Don't forget to my channel </h1>
+        <h1 id="heading">Don't forget to subscribe to my channel</h1>
     </div>
-    <p class="parent"> HI Mai toh chali</p>
-    <!-- <form action=""> -->
-        <!-- <button onclick="clicked()" style="border:2px solid black; background-color: red;">
-            Cick Me Here -->
-        <!-- </button> -->
-    <!-- </form> -->
+    <p class="parent">Hi, I am leaving!</p>
     <div>
         <h1 id="clock"></h1>
-        <h2 id="close"> The Closing interval is comming </h2>
+        <h2 id="close">Closing interval is coming</h2>
     </div>
-    <div id="outer-box1" style=" padding: 10px 10px; border: 2px solid rgb(1, 1, 1); background-color: yellow;">
+    <div id="outer-box1" style="padding: 10px; border: 2px solid black; background-color: yellow;">
         <div id="remove-box" style="border: 2px solid black; background-color: red; width: 100px; height: 100px; margin: auto;">
-            This element will be removed when you click
+            Click to remove this box
         </div>
     </div>
     
     <script>
-    var p = document.getElementById("Schild1").innerHTML = " This is the First accesing the element.";
-    console.log(p);
-
-
-    //1. Targeting Methods in JS DOM - there are multiple methods but we mostly use ID, CLass , TaG .etc.
-
-    // 1.(a) BY ID - it return only the targeted item, not any collections which first encountered.
-        console.log(document.getElementById("Schild1"));
-    //  (B) By ClassName -- it creates the collection on the bases of class name . and that return its not collection of child.
-        console.log(document.getElementsByClassName("parent1")); // it returns the collection of all elements that matches that givesn class in Whole html. 
-
-    // (c) By Tag Name - it returns the collection of items.
-        // console.log(document.getElementsByTagName('div'));
-      
-    // (d) document.all - gives the array of all the items present in DOM. 
-        console.log(document.all); // You can use square backets with any Targeting method which is returning the items in array .
-
-    // (e) querySelector() - it target the given css selector.We can give here anything like tag name,id, class,etc. . It targets only the first enocuntered element in whole HTML and stop there never returns items in groups like css.
-        console.log(document.querySelector('.parent1'));
-        console.log(document.querySelector("#Kchild1 p:first-child")); // Acceessing the ony 1st child of the #Khcild which comes in p tag
+        // Changing the text of an element using getElementById
+        document.getElementById("Schild1").innerHTML = "This is the first accessed element.";
         
-        console.log(document.querySelector(".parent1 #Schild2 p").innerText);
-
-    // (f) QuerySelectorAll() - it target the given css selector. we can give here anything like tag name,id,class,etc. IT targets the all element which contains the target attribute. After collection it returns back.
-        console.log(document.querySelectorAll('.parent1'));    
-        console.log(document.querySelectorAll('div'));
-
-    // (g) document.images - It gives the array of Images present in whole array.
-        // console.log(document.images);
-
-
-    //2 DOM Get and Set Value Methods
-        //2.(a) Innertext - gives the only text 
-        console.log(document.getElementById('Schild1').innerText);
-        console.log(document.getElementById('body1').innerText);  // it return the any text which is present in anywhere in body inside their sub tags anywhere. and does not include any tags.
-
-        //2.(b)  InnerHtml  - gives the data in HTML formate and also when we want to change the value or text we alwyas use this not innertext.
-        // console.log(document.getElementById('body1').innerHTML);
-        document.getElementById('Schild1').innerHTML = "Bye BYE";
+        // 1. Accessing elements
         
-        //(c) AttributeNode - it returns the value of that attribute if exist int that target element. eg - style attribute in class parent1 
-        console.log(document.getElementsByClassName("parent1")[0].getAttribute("style")); // here it return the all styling value like anything border, color, font etc.
-
-        //(d) getAttributeNode - it return the attribute name along with value.This the only difference
-        console.log(document.getElementsByClassName("parent1")[0].getAttributeNode("class"));
-
-        //(e) Attributes - it creates the object which is refering to the collection of all attraibutes stored in formate of eky value pair.
-        console.log(document.getElementsByClassName("parent1")[0].attributes);
-
-        //(f) Remove Attribute  - it is used to remove the attribute.
-
-    //3. Styling in CSS USing DOM Manipulation
-        // (a) Style() Method - it can  be used to access along with set the value.
-        // document.querySelector('#Kchild1')
-
-
-
-    //4. removing the elements/ nodes from DOM.
-
+        // (a) By ID - Returns a single element that matches the given ID
+        console.log(document.getElementById("Schild1")); // Logs the <div id="Schild1"> element
+        
+        // (b) By Class Name - Returns an HTMLCollection (array-like structure) of elements with the specified class
+        console.log(document.getElementsByClassName("parent1")); // Logs all elements with class "parent1"
+        
+        // (c) By Tag Name - Returns a collection of all matching tag elements
+        console.log(document.getElementsByTagName("div")); // Logs all <div> elements in the document
+        
+        // (d) document.all - Returns a collection of all elements in the document
+        console.log(document.all); // Logs an array of all elements in the DOM
+        
+        // (e) querySelector() - Returns the first element that matches the CSS selector
+        console.log(document.querySelector(".parent1")); // Logs the first <div class="parent1">
+        console.log(document.querySelector("#Kchild1 p:first-child")); // Logs first <p> inside #Kchild1
+        console.log(document.querySelector(".parent1 #Schild2 p").innerText); // Logs "Child 2"
+        
+        // (f) querySelectorAll() - Returns all elements matching the CSS selector as a NodeList
+        console.log(document.querySelectorAll(".parent1")); // Logs NodeList of all .parent1 elements
+        console.log(document.querySelectorAll("div")); // Logs NodeList of all <div> elements
+        
+        // 2. Getting and Setting Values in DOM
+        
+        // (a) innerText - Returns only the visible text inside an element
+        console.log(document.getElementById("Schild1").innerText); // Logs "This is the first accessed element."
+        console.log(document.getElementById("body1").innerText); // Logs all visible text inside <body>
+        
+        // (b) innerHTML - Returns HTML content inside an element (including tags)
+        console.log(document.getElementById("body1").innerHTML); // Logs full HTML inside <body>
+        document.getElementById("Schild1").innerHTML = "Bye Bye"; // Changes text to "Bye Bye"
+        
+        // (c) getAttribute - Returns the value of a specified attribute
+        console.log(document.getElementsByClassName("parent1")[0].getAttribute("style")); // Logs style attributes
+        
+        // (d) getAttributeNode - Returns the attribute node itself (with name & value)
+        console.log(document.getElementsByClassName("parent1")[0].getAttributeNode("class")); // Logs class attribute node
+        
+        // (e) attributes - Returns a NamedNodeMap of all attributes in an element
+        console.log(document.getElementsByClassName("parent1")[0].attributes); // Logs all attributes of first .parent1 element
+        
+        // 3. Modifying CSS Styles Using JavaScript
+        
+        document.querySelector("#Kchild1").style.color = "blue"; // Changes text color to blue
+        
+        // 4. Removing an element from the DOM
         var remove_box = document.getElementById("remove-box");
-        remove_box.onclick = remove_function;
-        function remove_function(e) {
-            alert(e.target);
-            // console.log(e.target.parentNode);
-            remove_box.remove(); // Correctly references the element
-        }
-    
+        remove_box.onclick = function (e) {
+            alert("Removing: " + e.target.innerText);
+            remove_box.remove(); // Removes the clicked element
+        };
     </script>
 </body>
 </html>

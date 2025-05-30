@@ -1,10 +1,19 @@
 
 // Object in java script are stored in the form of key value pair
 // In object key can be string or variable name .
+// In JavaScript, functions, arrays, and strings are all considered types of objects. They are just specialized forms of the general object type. The Object type acts as the parent or base for these different object types. All the other object type's like array's, functions and Strings are connected as a child to the Object through prototype.
+// Each and Every thing in JavaScript is converted into an Object at run time, that's why as soon as I added the method to the Object's prototype it became accessible to all the other hierarchical children to the Object which are function's, Array's and String's.
+//✅ 1. What is a Prototype?
+// A prototype is an object that other objects can inherit from.
+
+// Every object in JavaScript has a hidden property called [[Prototype]], which links it to another object.
+
+// This is used to share properties and methods between objects — a concept known as prototypal inheritance.
 
 
-// 1. Creation of Object - 2 ways
-    // (a) Using {}  braces
+
+// 1. Creation of Object - 5 ways
+    // (a) Using {}  braces/ Object literals
 
     var stud = {
         name : "vinay Singh",
@@ -16,15 +25,66 @@ console.log(stud); // give the whole object
 console.log(typeof(stud));  // object
 
 
-    // (B) using constructor - which creates empty object or we can also give the data there.
+    // (B) Using Constructor function - which is used to create the object. It is a function that creates an object and returns it.
+
+    function Students(name , age, school)
+    {
+        this.name = name ;
+        this.age = age;
+        this.school = school;
+
+        this.greet = function () {
+            console.log("Hello, I'm " + this.name);
+          };
+    }
+
+    var stud323 =  new Students("Anshul", 32, "Kendriya ");
+   stud323.greet()
+
+
+    // (C) using new Object() Constructor - which creates empty object or we can also give the data there.
     var stud2 = new Object() ; // empty object
     var stud2 = new Object({
         name : "Amit",
         age : 24,
     })
 
- console.log(typeof(stud2)); 
+    console.log(typeof(stud2)); 
 
+    // (D) Using Object.create() (Prototype Based)- which creates a new object, using an existing object as the prototype of the newly created object.
+    const personPrototype = {
+        greet() {
+          console.log("Hello from prototype!");
+        }
+      };
+      
+      const person = Object.create(personPrototype);
+      person.name = "John";
+      person.greet(); // Hello from prototype!
+
+    // (e) Using Class ( ES6) - which is a syntactical sugar over the constructor function. It provides a cleaner and more concise way to create objects and handle inheritance.
+    
+        class Person {
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+        greet() {
+          console.log("Hi, I'm " + this.name);
+        }
+      }
+      
+      const p1 = new Person("John", 30);
+      p1.greet(); // Hi, I'm John
+
+
+/*    ❓ Does JavaScript really have classes?
+      ➡️ Short Answer:
+      No, JavaScript does not have real classes like Java, C++, or Python.
+      It is a prototype-based language, and what you see as "classes" are just syntactic sugar introduced in ES6 (2015).
+      
+      🔍 What does "syntactic sugar" mean?
+      It means the class syntax in JavaScript is just a nicer-looking way to do what JavaScript already did under the hood — using prototypes. */
 
  // 2. Accessing & creation of the properties of the Object - 2 ways to do that
     // (a ) using dot Operator - we can only access the valid identifier. The property name only start with characters. And it also won't work when passing the object as argument in function.
@@ -79,6 +139,7 @@ var item3 ={
         Block : "232 Gali "
     }
 }
+
 // how to access the element in nested object
 console.log(item3.address.Block); // 232 Gali
 

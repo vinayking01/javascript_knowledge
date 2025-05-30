@@ -49,3 +49,41 @@ var iAmStandby;
 console.log(typeof(iAmStandby))   //type - undefined
 
 
+
+
+/*
+ # Whole Lecture Concepts #
+
+
+-------------------------------------------
+    JavaScript Variable Naming Rules
+-------------------------------------------
+- Valid Variable Names:
+  ✅ Can contain letters, digits, $, and _
+  ✅ Must start with a letter, _ , or $ (e.g., myName, $Name, __Name)
+  
+- Invalid Variable Names:
+  ❌ Cannot start with a number (e.g., 1myName)
+
+-------------------------------------------
+    JavaScript Type Coercion Rules
+-------------------------------------------
+Type coercion is JavaScript's way of automatically converting one data type into another when performing operations.
+
+-------------------------------------------
+    Key Takeaways on Type Coercion
+-------------------------------------------
+✅ '+' Operator: If one operand is a string, concatenation happens.
+✅ '-', '*', '/' Operators: Force type conversion to number if possible.
+✅ If conversion is not possible, result is NaN.
+✅ Boolean Coercion: true → 1, false → 0 in mathematical operations.
+
+-------------------------------------------
+    Null vs Undefined
+-------------------------------------------
+- Undefined: A variable is declared but has not been initialized.
+- Null: Explicitly assigned value representing no data.
+- Bug: typeof(null) returns "object" instead of "null".
+
+
+*/

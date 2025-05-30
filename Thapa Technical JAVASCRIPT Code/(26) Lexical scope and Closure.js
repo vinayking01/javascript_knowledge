@@ -1,5 +1,8 @@
-//1. Lexical Scoping: "Function outer ke andar ek inner function hai, aur us inner function ko outer function ke scope ke variables ka pura access hai. Is concept ko lexical scoping kehte hain."
-
+//1. Lexical Scoping/closure: "Function outer ke andar ek inner function hai, aur us inner function ko outer function ke scope ke variables ka pura access hai. Is concept ko lexical scoping kehte hain."
+/* 
+✅ Inner functions can access variables from their outer functions.
+✅ Outer functions cannot access variables from inner functions.
+✅ A function always looks for a variable in its own scope first, then moves outward (parent scope), up to the global scope. */
 // It means the inner function can access the variables of the outer function because of where it is defined.
 
 
@@ -19,7 +22,13 @@
     // outer()
 
 
-// Closure - A closure in JavaScript happens when a function is defined inside another function and the inner function "remembers" and can still access variables from the outer function, even after the outer function has finished running.
+// Closure - A closure in JavaScript happens when a function is defined inside another function and the inner function "remembers" and can still access variables from the outer function, even after the outer function has finished running. It is only possible because of lexical scope.
+
+/* 💡 In simple terms:
+✅ A function inside another function forms a closure.
+✅ The inner function "remembers" variables from the outer function even after it has returned.
+✅ Closures allow data encapsulation and state persistence. */
+
 debugger
 function outerFunction() {
     let count = 0;  // count is initialized only once when outerFunction is called

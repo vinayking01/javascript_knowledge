@@ -19,7 +19,7 @@ console.log("Hello");
 console.log(promise);
 
 // after promise fulfilled what happens you will do here if successful or fail . there is also other way to catch the error. 
-// the .then() method takes two callback functions as arguments:The first callback function is executed when the promise is successfully resolved (fulfilled). The second callback function is executed when the promise is rejected (failed). The order fixed but name is not fixed.
+// the .then() method takes two callback functions as arguments & second is optional:The first callback function is executed when the promise is successfully resolved (fulfilled). The second callback function is executed when the promise is rejected (failed). The order fixed but name is not fixed.
 promise.then(
     function (successvalue){ console.log("Code runs successful "+ successvalue);},
     function (error){ console.log("Code giving error "+ error);}
