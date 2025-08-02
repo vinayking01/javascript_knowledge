@@ -127,38 +127,11 @@ const tea = new User2("tea", "tea@gmail.com", "123")
 console.log(tea.encryptPassword());
 console.log(tea.changeUsername());
 
-// 4. Prototype in Object-  
-// Every object in javascript has inbuilt property called prototype, which is another object from which it can inherit properties and methods. It is like simple single template object that inherits by all objects.
-// If I make changes to an instance's prototype, such as adding user-defined functions  or modifying built-in functions in the prototype, these changes will be reflected in  every instance of that object, array, or function because that shares the same prototype or we can say that you are modifying the single property shared by all instances.
-
-console.log(car1.__proto__); // Accessing the prototype of an object instance (e.g., arrays, objects, or functions) using __proto__.
-console.log(Array.Prototype) // accessing the prototype of actual data type, we use 'Prototype' . If we perform change here then it will be reflected in every place where it relates.
-
-console.log("--------------------------------")
-
-function Car(model) {
-    this.model = model;
-  }
-  
-  const car3 = new Car("Tesla");
-  const car4 = new Car("BMW");
-  
-  // Adding a function to the shared prototype via car1's __proto__
-  car3.__proto__.add = function(n) {
-    console.log(`${this.model} adds ${n}`);
-  };
-  
-  // Now car1 and car2 both have access to the "add" method
-  car3.add(10); // Output: Tesla adds 10
-  car4.add(20); // Output: BMW adds 20
-
-  console.log("--------------------------------")
-
-//5. New Operator  - New operator lets developer creates new instance of used defined data type or one of the built in type object data type that has a constructor function.
+//4. New Operator  - New operator lets developer creates new instance of used defined data type or one of the built in type object data type that has a constructor function.
 
 
 
-/* 6. Inheritance - Similar to other languages, inheritance in JavaScript works such that:
+/* 5. Inheritance - Similar to other languages, inheritance in JavaScript works such that:
 - If a method or property is present in the child class, it overrides the one in the parent class.
 - If the method or property is not defined in the child class, it will use the one from the parent class.
 */
@@ -198,7 +171,7 @@ Small_car1.getDetails();
 
 console.log("--------------------------------")
 
-// 7. Super() Keyword - This is neccessary to use if you have defined the child class constructor Call the parent class's constructor
+// 6. Super() Keyword - This is neccessary to use if you have defined the child class constructor Call the parent class's constructor
 
 class SmallVehicle2 extends vehicle{   
 

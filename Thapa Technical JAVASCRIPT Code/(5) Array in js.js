@@ -26,7 +26,8 @@ console.log(evens);
 
 // 7. Reducing Arrays
 // Accepts a callback function with (accumulator, currentValue, index, array)
-let sum = arr1.reduce((acc, num) => acc + num, 0); // Sum of all elements
+// reduce(useCallback, initialValue)
+let sum = arr1.reduce((acc, num) => acc + num, 0); // Sum of all elements 
 console.log(sum);
 
 // 8. Finding Elements
@@ -35,7 +36,10 @@ console.log(arr1.indexOf(3)); // Returns index of 3 (or -1 if not found)
 console.log(arr1.find(num => num > 3)); // Finds first element greater than 3
 console.log(arr1.findIndex(num => num > 3)); // Finds index of first element greater than 3
 
-// 9. Sorting & Reversing
+// 9. Sorting & Reversing - under the hood uses merge sort algorithm. T.C  - O(nlogn). You can give your comparison function to sort the array in your own way.
+// If a - b < 0: a comes before b
+// If a - b > 0: b comes before a
+// If a - b == 0: order doesn’t change
 console.log("Before SOrting ",arr1);
 arr1.sort((a, b) => b- a); // Sort in ascending order
 console.log("After Sorting ",arr1);
@@ -73,7 +77,7 @@ console.log(charArray);
 
 // 14. Flattening Nested Arrays
 let nested = [1, [2, [3, 4]], 5];
-console.log(nested.flat(2)); // Flattens up to depth of 2
+console.log(nested.flat(1)); // Flattens up to depth of 2
 
 // 15. Removing Duplicates
 let unique = [...new Set([1, 2, 2, 3, 4, 4, 5])]; // Removes duplicates
@@ -85,7 +89,16 @@ console.log(arr1.some(num => num > 3)); // Checks if any element is greater than
 
 // 5. Transforming Arrays
 let doubled = arr1.map(num => num * 2); // Returns a new array with each element doubled
-console.log(doubled);
+console.log("doubled", doubled);
+const arr = [65, 44, 12, 4];
+const filterEvenNumbers = (arr) => arr.filter((num)=> {
+    if (num % 2 === 0) {
+        return true;
+    }
+    return false;
+});
+console.log(filterEvenNumbers(arr))
+
 
 // 17. for...of - Iterates over values of an iterable (arrays, strings, maps, etc.)
 for (const num of arr1) {

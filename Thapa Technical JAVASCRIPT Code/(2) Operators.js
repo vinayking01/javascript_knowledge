@@ -35,4 +35,13 @@ for(var num =1; num<=10;num++)
 
 // 2. Non Primitive Data Types - Array, Object, map, set , functions 
 
-// Primitive data types are stored in Stack , and non - primitive are stored in Heap , ( reference look at the PDF)
+// Primitive data types are stored in Stack and are immutable, and non - primitive are stored in Heap are mutable they are stored by reference, ( reference look at the PDF)
+
+
+let name = "John";
+name = "Don";  // You’re not changing "John". You're reassigning the variable name to point to a new string "Don", The original value "John" stays untouched
+
+
+let person = { name: "Alice" };
+person.name = "Bob"; // This changes the value inside the object
+console.log(person)

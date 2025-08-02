@@ -201,3 +201,8 @@ recursiveMicrotask();
 | Event Loop            | Moves completed tasks from Callback Queue to Call Stack. |
 | Microtasks vs Macrotasks | Microtasks (`Promises`) execute before Macrotasks (`setTimeout`, `fetch`). |
 | Starvation Problem    | If Microtasks keep running indefinitely, Macrotasks might never execute. |
+
+
+<!-- 1.https://www.youtube.com/watch?v=gPKzwAORly8  -->
+<!-- 2. https://www.youtube.com/watch?v=fFd8OhrHfIM -->
+<!-- To actually heck how works try in this website - https://www.jsv9000.app/  -->
