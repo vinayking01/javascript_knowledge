@@ -36,13 +36,16 @@ function outer() {
 
 */
 
-// Closure - A closure is created when a function is returned or passed and still remembers variables from its lexical environment, even after that outer function has finished executing.
+// Closure - A closure is created whenever a function is defined inside another function (or block not global or anything), and the inner function uses variables from that outer scope. Majorly concept is behind when inner function is returned or passed and still remembers variables from its lexical environment, even after that outer function has finished executing.
 //  A closure in JavaScript happens when a function is defined inside another function and the inner function "remembers" and can still access variables from the outer function, even after the outer function has finished running. It is only possible because of lexical scope.
 
 /* 💡 In simple terms:
-✅ A function inside another function forms a closure.
+✅ A function inside another function forms a closure. This closure is created at the time of creation of inner function not when it's called.
+✅ You don't need to return the inner function - closure still exist.
 ✅ The inner function "remembers" variables from the outer function even after it has returned.
-✅ Closures allow data encapsulation and state persistence. */
+✅ Closure forms when inner uses outer's local variable. 
+✅ Not every function inside another function forms a closure. It only happens if the inner function uses variables from the outer function.
+*/
 
 debugger
 function outerFunction() {
@@ -78,3 +81,61 @@ Each time you call counter(), you are invoking innerFunction, which has access t
 When innerFunction increments count (i.e., count++), it modifies the same variable that exists in memory. Thus, the value of count persists across calls to counter().
   
 */
+
+// Example 2:
+function outerFunction1() {
+    let count = 0; 
+  
+    function innerFunction1() { 
+      console.log("No use of Count"); // count is not used here so no closure is formed
+    };
+}
+
+// Example 3:
+
+let x = 43
+
+function outerFunction2() {
+    let count = 0; 
+  
+    function innerFunction2() { 
+      console.log("No use of Count",x); // x is global variable so no closure is formed
+    };
+}
+
+// Example 4:
+
+let x1 = 3;
+
+function outerFunction3() {
+
+  let y = 5;
+
+  function one()
+  {
+    let z = 3;
+    function two()
+    {
+      console.log("Hello",y);
+    }
+
+    return two;
+  }
+
+  return one;
+
+}
+
+let one = outerFunction3(); 
+let two = one(); 
+
+console.dir(outerFunction3); 
+console.dir(one); // in the closure of one function y is present.
+console.dir(two); // in the closure of two function y and z is present. in dev tools it won't show if not used but it is present.
+
+// A closure always exists if a function is defined inside another function.
+// DevTools is smart: it only shows the variables that are used inside the closure. If you don’t reference them, they won’t appear in the [[Scopes]] view. ( Only for view in dev Tools).
+
+
+// Question : What is the stale closure problem?
+// Ans - A stale closure happens when: You create a closure that captures a variable. Later, that variable changes. But the closure still uses the old snapshot of that variable.

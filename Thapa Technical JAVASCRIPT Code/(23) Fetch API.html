@@ -1,0 +1,106 @@
+<!-- 
+ 1️⃣ Fetch API
+    - The introduction of the Fetch API in 2015 marked a significant evolution in JavaScript’s approach to HTTP requests and asynchronous programming. Before Fetch, developers primarily relied on XMLHttpRequest (XHR), which was cumbersome, utilized callbacks, and had a less intuitive interface for handling responses 
+    
+    -  It was introduced to replace the older and less flexible XMLHttpRequest object, which is commonly associated with AJAX.
+
+    - The Fetch API represents a modern approach to making network requests in JavaScript, introduced with the advent of Service Workers and more lightweight XMLHttpRequest alternatives. It allows developers to interact with servers using Promises and provides a powerful interface for managing both requests and responses.
+
+
+ 2️⃣ Promises: The Foundation of Fetch
+    - The Fetch API leverages JavaScript’s Promise-based architecture, allowing for cleaner, more maintainable asynchronous code:
+
+            fetch(url)
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error('Error:', error));
+
+  3️⃣ Fetch API Syntax
+    Syntax  - fetch(url, options)
+
+        - url: The resource you wish to fetch.
+        - options: An optional object that can include method, headers, body, mode, credentials, cache, redirect, referrer, referrerPolicy, integrity, and keepalive.
+
+     ✅ Example of a Basic Fetch Request
+        fetch('https://api.example.com/data')
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .catch(err => console.error('Fetch error:', err));
+
+  4️⃣ Advanced Error Handling
+    - Handling errors in network requests goes beyond simply checking for the response's OK status. The Fetch API does not reject the Promise on HTTP error statuses (e.g., 404, 500), which requires explicit checks. Combine this with custom error handling logic to create robust applications.
+
+        ✅ Example of a Error handling 
+        async function fetchData(url) {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+        switch (response.status) {
+            case 404:
+            throw new Error('Resource not found');
+            case 500:
+            throw new Error('Internal Server Error');
+            default:
+            throw new Error('Unknown error occurred');
+        }
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Fetch error:', error);
+    }
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Fetch API</title>
+</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Fetch API</title>
+</head>
+<body>
+    <h1> Getting data using Fetch API Advance function Click Below to get the New Dog Pic</h1>
+    <button id="fetch"> Fetch Me</button>
+    <img id ="img1" src="" alt="" srcset="">
+
+    <script>
+    var details  = document.getElementById("fetch");
+    details.addEventListener('click', FetchDogImage);
+    var img1 = document.getElementById("img1");
+
+    function FetchDogImage()
+    {
+    // fetch function having the required api link and return as promise.
+    let p  = fetch('https://dog.ceo/api/breeds/image/random');
+        
+    p.then((response) => {
+        // Check if the response is successful
+        if (!response.ok) { // ok and status is inbuilt function in fetch api
+            throw new Error('Network response was not ok');
+        }
+
+        // 1.  Parse the response as JSON and return it as a promise. Since you got the response it means our request was responded with proper data and no error occurred. On expanding this object, you can see the body field. This field contains the data we require but right now its in ReadableStream format. So, we need to convert it into a readable format that is a JSON object.
+        console.log(response);
+        
+        return response.json(); // Note- Doing response.json() will convert the ReadableStream into json format. But since its not sure that the ReadableStream will definitely be downloaded and is convertible to JSON format, response.json() returns a promise, and if its resolved we get the data. The response.json() method is specifically designed to handle parsing JSON data from a fetch response, while JSON.parse() is a standalone JavaScript method used to parse JSON strings into JavaScript objects. 
+    })
+    .then((data) => {
+        // Handle the actual JSON data easy to use and Read.
+        console.log(data); 
+        img1.src = data.message;
+    })
+    .catch(error => {
+        // Handle any errors that occur during the fetch operation
+        console.error('There was a problem with the fetch operation:', error);
+    });
+    }
+    </script>
+</body>
+</html>

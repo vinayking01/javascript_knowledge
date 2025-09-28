@@ -167,15 +167,16 @@ function convertSecondsToMMSS(seconds) {
 async function songs(songs_folder_from_playlist) {
 
     var k = await fetch(songs_folder_from_playlist); // call the api
+    console.log(k)
     let response = await k.text();
 
     var data = response;
-    // console.log(data);
+    console.log(data);
     let div = document.createElement("div") // we cannot directly apply varous getelementBYid, class etc because it is text format not in json.
     div.innerHTML = response;
 
     let l = div.getElementsByTagName('a')
-    
+    console.log(l)
     // store those songs list into an array
     let newArray = new Array();
 
@@ -185,7 +186,7 @@ async function songs(songs_folder_from_playlist) {
             newArray.push(l[index].href);
         }
     }
-    // console.log(newArray)
+    console.log(newArray)
 
     return newArray;
 }

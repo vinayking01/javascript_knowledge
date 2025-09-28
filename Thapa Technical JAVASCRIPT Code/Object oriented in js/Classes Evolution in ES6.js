@@ -1,44 +1,13 @@
+/* Does js support classes ?
+Yes and No. Before ES6 JS doesn't had any concept of classes. JS is prototype based language which primarily focus on functional style of programming. With ES6 we got support of classes, which is syntactic sugar over existing functions.
 
-//two ways to create the object in js
-// 1. Using object literals 
- var student = {
-    name: "vinay singh",
-    'roll': 30,
-    dob : function()
-    {
-        return (`THe DOB is  of ${this.name}`);
-    }
- };
+Extension beyond syntactic sugar : But this is not just syntactic sugar, it's a whole new implementation that is added in js. It's extension beyond syntactic sugar. Syntactic sugar is 60%, 40% new features added form OOPs
 
- console.log(typeof(student));
- console.log(student['name']);
- console.log(student.dob());
- 
-
-var student2 = new Object({
-    name : "shila",
-});
-
-console.log("--------------------------------")
-
-// 2. Using function constructor
-// when function is called with new keyword , the function will be used as constructor 
-
-function Details(name, age)
-{
-    this.name = name;
-    this.age  = age;
-}
-
-var stud1 = new Details("vikas",23); // you have to use the new keyword with this to create as object using constructor method.
-
-console.log(typeof(stud1));
-console.log(stud1.name);
-console.log(stud1.age);
+*/
 
 // there was no concept earlier in js of classes there was only concept of object but in ES6 classes concept was introduced.
 
-// Example: Traditional Way of defining an Object and simulating them as classes. 
+// Example: Traditional Way of defining an Object using constructor function and simulating them as classes. 
 function transport_vehicle(name, maker, engine) {
     this.name = name,
     this.maker = maker,
@@ -55,12 +24,17 @@ console.log(transport_vehicle);
 
 console.log("--------------------------------")
 
-// 3.  Class - classes are template for creating objects. By default, all methods defined in a constructor function or a class are automatically added to the prototype. This is a built-in behavior of JavaScript to optimize memory usage.
+// 1.  Class - classes are template for creating objects. By default, all methods defined in a constructor function or a class are automatically added to the prototype. This is a built-in behavior of JavaScript to optimize memory usage.
 
 
 // ES6
 class vehicle{
-    constructor(name,color,weight)
+
+    name = 'Thar';   // class fields (declared, default undefined) , it is optional if you directly used in constructor not defined here still it work fine.
+    color = 'White';
+    weight = '2000kg';
+
+    constructor(name,color,weight)  // If you want to pass values dynamically then you have to use constructor (Optional)
     {
         this.name = name;
         this.color = color;
@@ -83,6 +57,7 @@ car1.getDetails() === car2.getDetails()  // Output- true.  Since getDetails is d
 
 console.log("--------------------------------")
 
+// Second Example : First using class and how it is converted into constructor function and prototype behind the scene.
 class User {
     constructor(username, email, password){
         this.username = username;
@@ -106,7 +81,7 @@ console.log(chai.changeUsername());
 
 console.log("--------------------------------")
 
-// behind the scene
+// 🤯 behind the scene Still js is converting it into constructor function and prototype to simulate the classes.
 
 function User2(username, email, password){
     this.username = username;
@@ -127,13 +102,13 @@ const tea = new User2("tea", "tea@gmail.com", "123")
 console.log(tea.encryptPassword());
 console.log(tea.changeUsername());
 
-//4. New Operator  - New operator lets developer creates new instance of used defined data type or one of the built in type object data type that has a constructor function.
+//2. New Operator  - New operator lets developer creates new instance of used defined data type or one of the built in type object data type that has a constructor function.
 
 
-
-/* 5. Inheritance - Similar to other languages, inheritance in JavaScript works such that:
+/* 3. Inheritance - Similar to other languages, inheritance in JavaScript works such that:
 - If a method or property is present in the child class, it overrides the one in the parent class.
 - If the method or property is not defined in the child class, it will use the one from the parent class.
+- If the child class does not have its own constructor: The parent class's constructor will be automatically called when an object of the child class is created. This happens because JavaScript implicitly creates a default constructor in the child class that simply calls super() (which invokes the parent's constructor) with any arguments passed to the child class's instantiation.
 */
 class vehicle2{
     constructor(name,color,weight)
@@ -171,11 +146,16 @@ Small_car1.getDetails();
 
 console.log("--------------------------------")
 
-// 6. Super() Keyword - This is neccessary to use if you have defined the child class constructor Call the parent class's constructor
+/* 4. Super() Keyword -
+    - Calls the parent class’s constructor.
+    - Lets you access parent class methods inside a child class.
+ This is necessary to use if you have defined the child class constructor to call the parent class's constructor and use that class. */
+
 
 class SmallVehicle2 extends vehicle{   
 
     constructor(name,color,weight,capacity) {
+        // ❌ Error if not : call super before accessing 'this'
         super(name,color,weight) // call's the parent constructor
         this.capacity = capacity;
     }
@@ -192,6 +172,52 @@ class SmallVehicle2 extends vehicle{
 
 }
 
-var small_car2 = new SmallVehicle2("Nano Rang Rover","Black","2332kg",4)
+var small_car2 = new SmallVehicle2("Nano Rang Rover","Black","2332kg",4) // output - 
 // var small_car2 = new SmallVehicle2(7);
 small_car2.getDetails();
+
+
+// Example : Another application of using super() to use paretn's method -
+        class Vehicle {
+    start() {
+        console.log("Vehicle started");
+    }
+    }
+
+    class Car extends Vehicle {
+    start() {
+        super.start();   // ✅ call parent version
+        console.log("Car started");
+    }
+    }
+
+    const c = new Car("BMW", "Black");
+    c.start();
+    // Vehicle started
+    // Car started
+
+/* 5. Access Modifiers in Js : Private and Public 
+
+- Public - By default all the properties and methods are public in js for their instances. It means they can be accessed from outside the class.
+- Private - To make a property or method private, you need to prefix it with a hash symbol (#). Private members cannot be accessed or modified from outside the class. They are only accessible within the class itself.
+
+*/
+
+class MyClass {
+  publicProperty = "I am public"; // Public property
+  publicMethod() {  };          // Public method     
+  #privateProperty = "I am private"; // Private property
+  #privateMethod() { // Private method
+    console.log("This is a private method.");
+  }
+
+  accessPrivateMembers() {
+    console.log(this.#privateProperty); // Accessible within the class
+  }
+}
+
+const instance = new MyClass();
+// console.log(instance.#privateProperty); // This would cause a SyntaxError
+// instance.#privateMethod(); // This would also cause a SyntaxError
+instance.accessPrivateMembers(); // will work
+instance.publicMethod(); // will work

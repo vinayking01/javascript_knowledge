@@ -1,6 +1,7 @@
+
 # 🚀 JavaScript Execution Flow & Single-Threaded Nature  
 
-JavaScript is **single-threaded**, meaning it executes **one task at a time** in a **single Call Stack**. However, it efficiently manages asynchronous tasks using **Web APIs, Event Loop, and Callback Queue**.
+JavaScript is **single-threaded**, meaning it executes **one task at a time** in a **single Call Stack**.So is pure synchronous. However, it efficiently manages asynchronous tasks using **Web APIs, Event Loop, and Callback Queue**. These all async task abilities come from the environment where JS runs: Browser APIs (in Chrome, Firefox, etc.), Node.js APIs (in backend). So we can say that JS using browser feature to perform task async.
 
 This document explains **how JavaScript executes code**, covering key topics like **Execution Context, Memory Management, Call Stack, Event Loop, Web APIs, and the Starvation Problem**.
 
@@ -106,13 +107,12 @@ let obj2 = obj; // Reference is copied, both point to same Heap memory
 
 ## 📌 5. How JavaScript Handles Asynchronous Code  
 
-JavaScript is single-threaded, but it can handle asynchronous operations using **Web APIs, Callback Queue, and Event Loop**.
+JavaScript is single-threaded, but it can handle asynchronous operations using **Web APIs, Callback Queue, and Event Loop**. This are browser provided feature not available not in js .
 
 ### 🔹 How Asynchronous Code Works  
-1. Web APIs handle tasks like `setTimeout()`, `fetch()`, DOM events, etc.
-2. Once completed, the callback moves to the **Callback Queue**.
-3. The **Event Loop** checks if the Call Stack is empty.
-4. If empty, the callback is pushed to the Call Stack for execution.
+1. Web APIs passed these various tasks like `setTimeout()`, `fetch()`, DOM events, event handlers, etc. if found in code in WEB APIs section and continue their previous code back.
+2. Once completed these task completed in WEB APIS, the callback moves to the **Task Queue**. There are multiple Queues.
+3. Then **Event Loop** comes in picture which checks if the Call Stack is empty or not. If empty, the task from queue is pushed to the Call Stack for execution. otherwise wait for empty stack.
 
 ```js
 console.log("Start");
@@ -158,13 +158,18 @@ console.log("End");
 
 ---
 
-## 📌 7. Starvation Problem in JavaScript  
+## 📌 7. 🔄 What is the Event Loop?
+- The Event Loop is the mechanism that lets JavaScript (which is single-threaded) handle asynchronous operations like timers, network requests, and user events without blocking execution by passing it from queues.
+- 👉 The Event Loop is not part of core JavaScript (the language). It’s a runtime feature provided by the host environment:
+
+## 📌 8. Starvation Problem in JavaScript  
 
 ### 🔹 What is the Starvation Problem?  
 Starvation happens when **low-priority tasks** are never executed because **high-priority tasks** keep running.
 
 - In JavaScript, **Microtasks (Promises)** have higher priority than **Macrotasks (setTimeout, fetch)**.
 - If Microtasks keep adding more Microtasks, Macrotasks might never execute, causing **starvation**.
+
 
 ### 🔹 Example of Starvation  
 
@@ -206,3 +211,61 @@ recursiveMicrotask();
 <!-- 1.https://www.youtube.com/watch?v=gPKzwAORly8  -->
 <!-- 2. https://www.youtube.com/watch?v=fFd8OhrHfIM -->
 <!-- To actually heck how works try in this website - https://www.jsv9000.app/  -->
+
+
+
+## Execution context Based Question 
+  - Question 1 :
+    ```jsx
+
+    console.log(1);
+
+    function show() {
+      console.log(1 + " Inside");
+     show();
+      console.log(1 + " Ending");
+    }
+
+    console.log(2 + " Outside");
+    show();
+    
+    Output -  ❌ Result - RangeError: Maximum call stack size exceeded
+  
+    ```
+    - The previous context is still alive (waiting for its inner call to finish).
+    - So new contexts keep piling up → stack overflow.
+
+  - Question 2: 
+    ``` jsx
+
+    console.log(1);
+
+    function show() {
+      console.log(1 + " Inside");
+      setTimeout(show, 0);
+      console.log(1 + " Ending");
+    }
+
+    console.log(2 + " Outside");
+    show();
+    
+    Output - 
+    1
+    2 Outside
+    1 Inside
+    1 Ending
+    1 Inside
+    1 Ending
+    .
+    .
+    .
+    
+    ```
+    - why memory doesn’t blow up ?
+        - When show() runs → it creates a new Execution Context.
+        - After finishing all lines inside it (console.log + scheduling timeout), its context is popped off the Call Stack.
+        - Later, when the event loop picks the setTimeout callback, a new Execution Context for show is created.
+        - Old one is gone. 
+
+
+### Blog link-  [The JavaScript Execution Context, Call-stack & Event Loop ](https://dev.to/thebabscraig/the-javascript-execution-context-call-stack-event-loop-1if1)

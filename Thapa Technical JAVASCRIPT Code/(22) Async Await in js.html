@@ -1,14 +1,10 @@
 <!-- 
+    Async await is just syntactic sugar of how we can consume promise.  An async function always returns a promise, allowing developers to write code that looks synchronous, using the await keyword to pause execution until the promise is resolve
+
     1. there is a special syntax to work with promise in javascript which is known as async Await . You will get more control on asynchronous programming .
-    2. A function can be made async by using Asycnc keyword.
-
+    2. A function can be made async by using Async keyword.
     3. async function always returns a promise that resolves with the value that the function returns.  it automatically wrap the other values as a promise.
-
-    4. The Await Keyword.
-    this keywords always works inside the async function .
-    the await keyowrd makes a javascript wait until the promise settle and returns its value.
-
-
+    4. The Await Keyword - await returns the resolved value, never a promise. works inside the async function . the await keyword makes a javascript wait until the promise settle and returns its value.
  -->
 
 <!DOCTYPE html>
@@ -62,7 +58,7 @@
     // 2. Outside the async function, the function itself behaves asynchronously.
     //3 . The await keyword can only be used with a Promise (or something that returns a Promise).
 
-    // when you run this code the program doesn't stop in a paticular function if there is async function it will run parllely and also wait if there is some await statement but parllely runs the code along with async function .
+    // when you run this code the program doesn't stop in a particular function if there is async function it will run parallel and also wait if there is some await statement but parallel runs the code along with async function .
     //On the other hand, code that is not inside an async function or is outside the scope of await will run in parallel or concurrently. 
     
 
@@ -109,3 +105,18 @@
     </script>
 </body>
 </html>
+
+<!-- Try to understand the code Execution of Async Await one more Time 
+
+1. When an async function is called, a new execution context is created and pushed onto the call stack.
+2. When the function reaches an await, execution inside that function is paused at that point.
+    - The remaining code (after the await) is wrapped and scheduled into the microtask queue. which only executed when call stack is empty.
+    - The async function immediately returns a pending Promise to its caller.
+    - The function’s current execution context is popped off the stack.
+
+3. While the async function is paused, outside synchronous code continues executing normally — nothing is blocked.
+4. If the awaited value is a plain JS Promise, it is resolved by the JS engine’s microtask mechanism (no Web API involved).
+5. If the awaited value comes from a Web API (like fetch, setTimeout, etc.), the Web API resolves/rejects the promise asynchronously, and once settled, the result is placed in the microtask queue.
+6. When the awaited promise settles, the continuation of the async function is picked from the microtask queue, a new execution context is created in stack for half, and execution resumes from where it was paused.
+7. This repeats for each await until the function finishes. At that point, the async function’s returned promise is resolved or rejected.
+-->

@@ -1,3 +1,5 @@
+// Object
+
 // ✅ Object in JavaScript is stored in the form of key-value pairs.
 // In an object, the key can be a string or variable name.
 
@@ -20,6 +22,8 @@
 
 // 1. Creation of Object - 5 ways
 // (a) Using {}  braces/ Object literals
+    // - not required to mention the variables let or const. 
+    // - not required to use function keyword to create the method in object.
 
 var stud = {
     name: "vinay Singh",
@@ -33,7 +37,7 @@ console.log(typeof (stud));  // object
 
 // 🔷 (B) Using Constructor Function 
 // A constructor function is used to create objects with shared structure and behavior.
-
+// Although in javascript every function is object.
 /*--------------------------------------------------------------------------------------------------*/
 // 🔹 (B).1 Constructor Function
 
@@ -61,11 +65,11 @@ stud323.greet();
 /*
 🔍 Concepts:
 - `this` refers to the object being created.
-- `new` keyword:
+- `new` keyword Does what in Object:
     ➤ Creates an empty object.
     ➤ Sets the prototype of that object to `Person.prototype`.
-    ➤ Binds `this` to the new object.
-    ➤ Returns the new object.
+    ➤ Binds `this` to that newly created empty object.
+    ➤ Returns the empty object after adding properties if defined in function.
 - Objects created using `new Person()` inherit from `Person.prototype`.
 */
 
@@ -86,7 +90,7 @@ Person.prototype.changeName = function (name) {
 // 🔹 (B).2 The constructor Property
 
 /*
-✅ Every Object has a constructor function in js, which references the function that was used to create the object. This is true for objects created using object literals, constructor functions, or classes.
+✅ Object made through using object literals, classes , Functions , has a constructor function in property in their prototype of js, which references the function that was used to create the object. This is true for objects created using object literals, constructor functions, or classes.
 The prototype has a `constructor` property pointing back to the function itself.
 */
 
@@ -135,9 +139,9 @@ const personPrototype = {
     }
 };
 
-const person = Object.create(personPrototype);
-person.name = "John";
-person.greet(); // Hello from prototype!
+const person2 = Object.create(personPrototype);
+person2.name = "John";
+person2.greet(); // Hello from prototype!
 
 
 /* 🔴 Warning:
@@ -165,7 +169,7 @@ Dog.prototype.constructor = Dog; // ✅ // This ensures that the constructor pro
 
 // (e) Using Class ( ES6) - which is a syntactical sugar over the constructor function. It provides a cleaner and more concise way to create objects and handle inheritance.
 
-class Person {
+class SomePerson {
     constructor(name, age) {
         this.name = name;
         this.age = age;
@@ -175,7 +179,7 @@ class Person {
     }
 }
 
-const p1 = new Person("John", 30);
+const p1 = new SomePerson("John", 30);
 p1.greet(); // Hi, I'm John
 
 
@@ -283,4 +287,76 @@ console.log(Object.values(Obj3)) // [ 'Pat', 'Gal no 3232 / 10' ]
 const { name3, address } = Obj3
 console.log(`The name is ${name3}, and the address is ${address}`)
 
+
+// Important Concept of when we create Object with Constructor function  which was skipped previously- 2 way fo creating Object
+
+// When you do this During object creation -> const f = new Person() : it does some internal working for creation of object and return to you - let's take one more example to understand 
+
+    function Car() {
+    this.make = "Lambo";     // goes onto auto-created object
+    }
+
+    const myCar = new Car();
+    // console.log(myCar); // { make: 'Lambo' }
+
+/*    1️⃣First Step : - if found new then create an {} empty object and bind `this` actual to that {}    empty object.
+     
+      2️⃣Second Step: - If any properties defined in Constructor function then add those like this.make = "Lambo" above , kuki ab `this` us empty object ko bind krta hai toh usme function me user defined property add ho jayengi and {} object ka prototype function ke prototype ( car.prototype) ko link kr deta hai.
+     
+      3️⃣Third step : now ab ye 2 rule check krta hai before returning this Updated Object which was empty previously-
+                1. if user not return their object from this constructor function in return statement then pass this auto created Object.
+                2. if user has return primitive values ( string, number, boolean etc) but not object still you skip those and pass this auto created object.
+                3. if user has return their own created object then skip the auto created and instance will point to user created object. Auto created object will be discarded.
+
+    */
+
+    // Few Question : 
+
+    function Car2() { 
+    this.make = 'Lamborghini';
+    return { make: 'Maserati' }; // override done 
+    }
+    const myCar2 = new Car2() ;
+    console.log(myCar2); // { make: 'Maserati' } ✅ (overrides this)
+
+    function Car3() {
+    this.make = 'Lamborghini';
+    return {}; // no make property as you override the auto created object by your object
+    }
+    const myCar3 = new Car3(); // {}
+    console.log(myCar3.make); // undefined ⚠️ (this got overridden)
+
+    function Car4(){
+        this.make = 'Jaguar';
+        return "No Jaguar"; // no override as it primitive value
+    }
+    const myCar4 = new Car4(); // {make : "Jaguar"}
+    console.log(myCar4.make); // Jaguar
+
+    
+
+propery of Object are made with some property - enumbarble , writeable etc.
+ You can check witht he help of th GetOwn Proprty Descriptors.
+ The simple wehn u create object with litalrs u cannot modify their prorpty but u can configure when you add proprty like define Porerty method . By default all values are false except the value u gave. U can try to change these when creating with Define property. - It is called property Descriptors. edach property has their own meaning .
+
+ - Har key ke liye js y 4 descriptior property rakhta hai. okay if you see then evey key will have these same 4 things extra. To maintain this duplicacy of info js engine better Optimtize it by implementing some logic. when we create a object JS engine behind the scene create the shape of Object. jab koi key add key toh shape chang eho jati hai uske acoriding. but yha par bhi optimization kiya hi they are connect ed with linked list so that no need to copy as it is with new shape.
+
+var f = { name : "vinay"}
+
+console.log(Object.getOwnPropertyDescriptors(f))
+
+
+// prototype pollution - Attacker can steal your data if he know u written in node js. Because her can us prototype key to make your code work 
+
+const obj = {name : "Avi"}
+const key  = 'name'
+
+if(obj['constructor']) // even though i haven't like this key but it's taking from inheritance which can really cause issue.
+{
+    console.log('granted');
+}
+else
+{
+    console.log('Not granted')
+}
 
