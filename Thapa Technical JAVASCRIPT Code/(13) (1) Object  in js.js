@@ -334,19 +334,14 @@ console.log(`The name is ${name3}, and the address is ${address}`)
     console.log(myCar4.make); // Jaguar
 
     
+// # Property Descriptors 
 
-propery of Object are made with some property - enumbarble , writeable etc.
- You can check witht he help of th GetOwn Proprty Descriptors.
- The simple wehn u create object with litalrs u cannot modify their prorpty but u can configure when you add proprty like define Porerty method . By default all values are false except the value u gave. U can try to change these when creating with Define property. - It is called property Descriptors. edach property has their own meaning .
-
- - Har key ke liye js y 4 descriptior property rakhta hai. okay if you see then evey key will have these same 4 things extra. To maintain this duplicacy of info js engine better Optimtize it by implementing some logic. when we create a object JS engine behind the scene create the shape of Object. jab koi key add key toh shape chang eho jati hai uske acoriding. but yha par bhi optimization kiya hi they are connect ed with linked list so that no need to copy as it is with new shape.
-
-var f = { name : "vinay"}
+ var f = { name : "vinay"}
 
 console.log(Object.getOwnPropertyDescriptors(f))
 
 
-// prototype pollution - Attacker can steal your data if he know u written in node js. Because her can us prototype key to make your code work 
+// prototype pollution - Attacker can steal your data if he know u written in node js. Because he can us prototype key to make your code work ( it's just an one of the example there are many) 
 
 const obj = {name : "Avi"}
 const key  = 'name'
@@ -359,4 +354,62 @@ else
 {
     console.log('Not granted')
 }
+
+
+//12. Deep comparison of array and Objects
+// - Why?🤔 needed because they work on references.
+
+    // for example  -
+        const A = {name : "Vinay "}
+        const B = {name : "Vinay "}
+
+        console.log(A === B) // false  Even though they have the same keys/values, === checks reference, not contents.
+        console.log(A == B) // false
+
+        console.log({} == {})  // false 
+
+    // 1️⃣ - Using JSON.Stringify() - Convert it into string not safe every time 
+            // - Disadvantage - it fails if the order of keys is different.
+        const obj1 = { a: 1, b: 2 };
+        const obj2 = { b: 2, a: 1 };
+
+        console.log(JSON.stringify(obj1) === JSON.stringify(obj2)); // ❌ "{ a: 1, b: 2 }" == "{ b: 2, a: 1 }""
+
+    // 2️⃣ Libraries (for interviews, just mention)
+            // Third Party libraries . Lodash → _.isEqual(obj1, obj2)     
+
+    // 3️⃣ Deep Comparison (recursively check nested objects)
+
+    function DeepEqual( obj1 , obj2)
+    {
+        if(obj1 === obj2) return true ; // True for primitive values
+        
+        // in dono me se koi bhi null hai
+        if(obj1 === null || obj2 === null )
+            return false;
+
+        // in dono me koi agar object nahi hai
+        if(typeof(obj1) !== 'object' || typeof(obj2) !== 'object')
+            return false;
+
+        const key1 =  Object.keys(obj1);
+        const key2 =  Object.keys(obj2);
+        
+        // object keys size not equal
+        if(key1.length !== key2.length) 
+            return false; 
+        
+        // check on if one of them is Array because type is object.
+        if(Array.isArray(obj1) !== Array.isArray(obj2) )
+            return false;
+        
+        //Every() method is array method returns true if all elements satisfy the condition, and false if even one element fails the condition.
+        return key1.every(function (key){
+            return DeepEqual(obj1[key] , obj2[key]); // recursively called so that deeply nested we can check
+        });  
+    }
+
+    console.log("checking Deeply "+ DeepEqual({ a: 1, b: 2 },{  b: 2, a:1}));  // true
+    console.log("checking Deeply "+ DeepEqual({ a: 1, b: 2 },{  b: 2, a:3}));  // false
+
 

@@ -608,6 +608,48 @@ BUT 🤔 when you try to use methods on them, like:
 
   ```
 
+### Shallow Copy vs Deep Copy
+1. `Shallow Copy` - 
+    - Copies only one level of properties.
+    - If the object contains nested objects/arrays, only the reference to those nested objects is copied.
+    - So changes in nested objects affect both copies.
+    - ⚠️ Limitation: Nested objects/arrays are still referenced.
+
+    ```js
+
+    const originalArray = [1, 2, 3];
+    const shallowCopy = originalArray;
+
+    shallowCopy[0] = 10;
+
+    console.log(originalArray); // Output: [10, 2, 3]
+    
+    const originalArray = [1, 2, 3];
+    const shallowCopy = [...originalArray];
+
+    ```
+
+2. `Deep Copy` 
+    - Deep copying, on the other hand, creates a completely independent copy of the original data structure, including all nested objects or arrays. It recursively traverses the entire data structure and creates new instances of all properties or elements.
+    - Nested objects/arrays are duplicated, not referenced.
+    - Changes in nested objects do not affect the original.
+
+    ```js
+
+    const originalArray = [1, 2, 3];
+    const deepCopy = JSON.parse(JSON.stringify(originalArray)); //
+    // Disadvantage of above method - ❌ Doesn’t handle functions, undefined, Date, Map, Set.
+
+    deepCopy[0] = 10;
+
+    console.log(originalArray); // Output: [1, 2, 3]
+    console.log(deepCopy); // Output: [10, 2, 3]
+    
+    ```
+3. ✅ Interview takeaway (short answer)
+    - Shallow copy → only first level copied, nested objects share reference.
+    - Deep copy → full independent copy, nested objects cloned.
+
 
 ### (Lec -  21) Promises 
 1. <img src="../Images/promise.webp" alt="String" width="500"/>
